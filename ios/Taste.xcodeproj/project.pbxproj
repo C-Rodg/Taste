@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* TasteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TasteTests.m */; };
+		135F67CF6403CE09113D49C3 /* libPods-Taste.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B370D20456F25A1CBD01DFF1 /* libPods-Taste.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -16,11 +17,13 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* TasteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TasteTests.m */; };
-		40E6D7A13B6D4C3ADB1C6921 /* libPods-Taste-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E4EE8CEDA1EE3EF603302CB /* libPods-Taste-tvOSTests.a */; };
-		747EAB7B97E78B57563AED2A /* libPods-Taste.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E67159C0E6A39168C67E6D /* libPods-Taste.a */; };
-		74C04B8D85E2D177594AED74 /* libPods-TasteTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F983E7B2D8C205063A2C961 /* libPods-TasteTests.a */; };
-		E01A8D9602F928616433D27B /* libPods-Taste-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE8DD65F9C52CB6504C4C1D /* libPods-Taste-tvOS.a */; };
-		E9088DC922EE3DB900E0BFD7 /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9088DC622EE3D8900E0BFD7 /* libReactNativeNavigation.a */; };
+		A6C0AC6EEDFF5070DB1BC9A2 /* libPods-TasteTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B32198BD7E48A8430F47CEE /* libPods-TasteTests.a */; };
+		C6E1A3FB2AC3320564651133 /* libPods-Taste-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7F822D96ACB287F94AD595 /* libPods-Taste-tvOSTests.a */; };
+		C6EB899E76EDF22A37C6FE29 /* libPods-Taste-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B1FA271A64098088F425A2E /* libPods-Taste-tvOS.a */; };
+		E9A8BA4022EE5F95005AF2F2 /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A8BA3D22EE5F88005AF2F2 /* libReactNativeNavigation.a */; };
+		E9A8BA4A22EE69AA005AF2F2 /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A8BA3D22EE5F88005AF2F2 /* libReactNativeNavigation.a */; };
+		E9A8BA4B22EE69B1005AF2F2 /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A8BA3D22EE5F88005AF2F2 /* libReactNativeNavigation.a */; };
+		E9A8BA4C22EE69B9005AF2F2 /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A8BA3D22EE5F88005AF2F2 /* libReactNativeNavigation.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,19 +41,131 @@
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
 			remoteInfo = "Taste-tvOS";
 		};
-		E9088DC522EE3D8900E0BFD7 /* PBXContainerItemProxy */ = {
+		E9A8BA3C22EE5F88005AF2F2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E9088DC022EE3D8900E0BFD7 /* ReactNativeNavigation.xcodeproj */;
+			containerPortal = E9A8BA3722EE5F88005AF2F2 /* ReactNativeNavigation.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D8AFADBD1BEE6F3F00A4592D;
 			remoteInfo = ReactNativeNavigation;
 		};
-		E9088DC722EE3D8900E0BFD7 /* PBXContainerItemProxy */ = {
+		E9A8BA3E22EE5F88005AF2F2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E9088DC022EE3D8900E0BFD7 /* ReactNativeNavigation.xcodeproj */;
+			containerPortal = E9A8BA3722EE5F88005AF2F2 /* ReactNativeNavigation.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 7B49FEBB1E95090800DEB3EA;
 			remoteInfo = ReactNativeNavigationTests;
+		};
+		E9A8BA6122EE6C7D005AF2F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9A8BA4E22EE6C7D005AF2F2 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
+			remoteInfo = React;
+		};
+		E9A8BA6322EE6C7D005AF2F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9A8BA4E22EE6C7D005AF2F2 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28131D9B038B00D4039D;
+			remoteInfo = "React-tvOS";
+		};
+		E9A8BA6522EE6C7D005AF2F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9A8BA4E22EE6C7D005AF2F2 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3C059A1DE3340900C268FA;
+			remoteInfo = yoga;
+		};
+		E9A8BA6722EE6C7D005AF2F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9A8BA4E22EE6C7D005AF2F2 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3C06751DE3340C00C268FA;
+			remoteInfo = "yoga-tvOS";
+		};
+		E9A8BA6922EE6C7D005AF2F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9A8BA4E22EE6C7D005AF2F2 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3CD9251DE5FBEC00167DC4;
+			remoteInfo = cxxreact;
+		};
+		E9A8BA6B22EE6C7D005AF2F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9A8BA4E22EE6C7D005AF2F2 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3CD9321DE5FBEE00167DC4;
+			remoteInfo = "cxxreact-tvOS";
+		};
+		E9A8BA6D22EE6C7D005AF2F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9A8BA4E22EE6C7D005AF2F2 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EBF21BDC1FC498900052F4D5;
+			remoteInfo = jsinspector;
+		};
+		E9A8BA6F22EE6C7D005AF2F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9A8BA4E22EE6C7D005AF2F2 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EBF21BFA1FC4989A0052F4D5;
+			remoteInfo = "jsinspector-tvOS";
+		};
+		E9A8BA7122EE6C7D005AF2F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9A8BA4E22EE6C7D005AF2F2 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 139D7ECE1E25DB7D00323FB7;
+			remoteInfo = "third-party";
+		};
+		E9A8BA7322EE6C7D005AF2F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9A8BA4E22EE6C7D005AF2F2 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D383D3C1EBD27B6005632C8;
+			remoteInfo = "third-party-tvOS";
+		};
+		E9A8BA7522EE6C7D005AF2F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9A8BA4E22EE6C7D005AF2F2 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 139D7E881E25C6D100323FB7;
+			remoteInfo = "double-conversion";
+		};
+		E9A8BA7722EE6C7D005AF2F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9A8BA4E22EE6C7D005AF2F2 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D383D621EBD27B9005632C8;
+			remoteInfo = "double-conversion-tvOS";
+		};
+		E9A8BA7922EE6C7D005AF2F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9A8BA4E22EE6C7D005AF2F2 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EDEBC6D6214B3E7000DD5AC8;
+			remoteInfo = jsi;
+		};
+		E9A8BA7B22EE6C7D005AF2F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9A8BA4E22EE6C7D005AF2F2 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EDEBC73B214B45A300DD5AC8;
+			remoteInfo = jsiexecutor;
+		};
+		E9A8BA7D22EE6C7D005AF2F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9A8BA4E22EE6C7D005AF2F2 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ED296FB6214C9A0900B7C4FE;
+			remoteInfo = "jsi-tvOS";
+		};
+		E9A8BA7F22EE6C7D005AF2F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9A8BA4E22EE6C7D005AF2F2 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ED296FEE214C9CF800B7C4FE;
+			remoteInfo = "jsiexecutor-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -59,7 +174,9 @@
 		00E356EE1AD99517003FC87E /* TasteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TasteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* TasteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TasteTests.m; sourceTree = "<group>"; };
-		11E67159C0E6A39168C67E6D /* libPods-Taste.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Taste.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		09E86882DF58DAC34EBCA8A0 /* Pods-Taste-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taste-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Taste-tvOSTests/Pods-Taste-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		0B305735C283A924C46EE662 /* Pods-Taste-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taste-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Taste-tvOS/Pods-Taste-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		0B32198BD7E48A8430F47CEE /* libPods-TasteTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TasteTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* Taste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Taste/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Taste/AppDelegate.m; sourceTree = "<group>"; };
@@ -67,22 +184,21 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Taste/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Taste/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Taste/main.m; sourceTree = "<group>"; };
-		14707A84279D13717F592EDE /* Pods-Taste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taste.debug.xcconfig"; path = "Target Support Files/Pods-Taste/Pods-Taste.debug.xcconfig"; sourceTree = "<group>"; };
-		1E4EE8CEDA1EE3EF603302CB /* libPods-Taste-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Taste-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		27A7FD1535C6E33988808DDD /* Pods-Taste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taste.release.xcconfig"; path = "Target Support Files/Pods-Taste/Pods-Taste.release.xcconfig"; sourceTree = "<group>"; };
-		27AE0D192AC3BB353F004745 /* Pods-Taste-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taste-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Taste-tvOS/Pods-Taste-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		2823641F3558A4205C08062F /* Pods-Taste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taste.release.xcconfig"; path = "Target Support Files/Pods-Taste/Pods-Taste.release.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* Taste-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Taste-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Taste-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Taste-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F983E7B2D8C205063A2C961 /* libPods-TasteTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TasteTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		565EDD5DACE45829F6AE775D /* Pods-TasteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TasteTests.release.xcconfig"; path = "Target Support Files/Pods-TasteTests/Pods-TasteTests.release.xcconfig"; sourceTree = "<group>"; };
-		7E9DF8FE332E06B5DA627D34 /* Pods-Taste-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taste-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Taste-tvOSTests/Pods-Taste-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		990A664C9A24D2DDEB979D65 /* Pods-Taste-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taste-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Taste-tvOSTests/Pods-Taste-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9C1CDF71EEAF7115AC5E3BDB /* Pods-TasteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TasteTests.debug.xcconfig"; path = "Target Support Files/Pods-TasteTests/Pods-TasteTests.debug.xcconfig"; sourceTree = "<group>"; };
-		ABE8DD65F9C52CB6504C4C1D /* libPods-Taste-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Taste-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E09CF925772246B7DFFAAC23 /* Pods-Taste-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taste-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Taste-tvOS/Pods-Taste-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		E9088DC022EE3D8900E0BFD7 /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeNavigation.xcodeproj; path = "../node_modules/react-native-navigation/lib/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; };
+		6D7F822D96ACB287F94AD595 /* libPods-Taste-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Taste-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E5790D8EC1E426D06E05B63 /* Pods-TasteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TasteTests.release.xcconfig"; path = "Target Support Files/Pods-TasteTests/Pods-TasteTests.release.xcconfig"; sourceTree = "<group>"; };
+		8B1FA271A64098088F425A2E /* libPods-Taste-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Taste-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B370D20456F25A1CBD01DFF1 /* libPods-Taste.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Taste.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C773B144D9CFAFB14C74BBC0 /* Pods-Taste-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taste-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Taste-tvOSTests/Pods-Taste-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E9A8BA3722EE5F88005AF2F2 /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeNavigation.xcodeproj; path = "../node_modules/react-native-navigation/lib/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; };
+		E9A8BA4E22EE6C7D005AF2F2 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		EE39CEDDFC06CB1E85F30D5C /* Pods-Taste-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taste-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Taste-tvOS/Pods-Taste-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		EE894F47F9F7263D0CE0548A /* Pods-Taste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taste.debug.xcconfig"; path = "Target Support Files/Pods-Taste/Pods-Taste.debug.xcconfig"; sourceTree = "<group>"; };
+		F733F437E875255E15C9307F /* Pods-TasteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TasteTests.debug.xcconfig"; path = "Target Support Files/Pods-TasteTests/Pods-TasteTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +206,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74C04B8D85E2D177594AED74 /* libPods-TasteTests.a in Frameworks */,
+				E9A8BA4A22EE69AA005AF2F2 /* libReactNativeNavigation.a in Frameworks */,
+				A6C0AC6EEDFF5070DB1BC9A2 /* libPods-TasteTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,8 +215,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9088DC922EE3DB900E0BFD7 /* libReactNativeNavigation.a in Frameworks */,
-				747EAB7B97E78B57563AED2A /* libPods-Taste.a in Frameworks */,
+				E9A8BA4022EE5F95005AF2F2 /* libReactNativeNavigation.a in Frameworks */,
+				135F67CF6403CE09113D49C3 /* libPods-Taste.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +224,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E01A8D9602F928616433D27B /* libPods-Taste-tvOS.a in Frameworks */,
+				E9A8BA4B22EE69B1005AF2F2 /* libReactNativeNavigation.a in Frameworks */,
+				C6EB899E76EDF22A37C6FE29 /* libPods-Taste-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +233,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40E6D7A13B6D4C3ADB1C6921 /* libPods-Taste-tvOSTests.a in Frameworks */,
+				E9A8BA4C22EE69B9005AF2F2 /* libReactNativeNavigation.a in Frameworks */,
+				C6E1A3FB2AC3320564651133 /* libPods-Taste-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,10 +277,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				11E67159C0E6A39168C67E6D /* libPods-Taste.a */,
-				ABE8DD65F9C52CB6504C4C1D /* libPods-Taste-tvOS.a */,
-				1E4EE8CEDA1EE3EF603302CB /* libPods-Taste-tvOSTests.a */,
-				4F983E7B2D8C205063A2C961 /* libPods-TasteTests.a */,
+				B370D20456F25A1CBD01DFF1 /* libPods-Taste.a */,
+				8B1FA271A64098088F425A2E /* libPods-Taste-tvOS.a */,
+				6D7F822D96ACB287F94AD595 /* libPods-Taste-tvOSTests.a */,
+				0B32198BD7E48A8430F47CEE /* libPods-TasteTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -169,7 +288,8 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				E9088DC022EE3D8900E0BFD7 /* ReactNativeNavigation.xcodeproj */,
+				E9A8BA4E22EE6C7D005AF2F2 /* React.xcodeproj */,
+				E9A8BA3722EE5F88005AF2F2 /* ReactNativeNavigation.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -200,11 +320,34 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E9088DC122EE3D8900E0BFD7 /* Products */ = {
+		E9A8BA3822EE5F88005AF2F2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E9088DC622EE3D8900E0BFD7 /* libReactNativeNavigation.a */,
-				E9088DC822EE3D8900E0BFD7 /* ReactNativeNavigationTests.xctest */,
+				E9A8BA3D22EE5F88005AF2F2 /* libReactNativeNavigation.a */,
+				E9A8BA3F22EE5F88005AF2F2 /* ReactNativeNavigationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E9A8BA4F22EE6C7D005AF2F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E9A8BA6222EE6C7D005AF2F2 /* libReact.a */,
+				E9A8BA6422EE6C7D005AF2F2 /* libReact.a */,
+				E9A8BA6622EE6C7D005AF2F2 /* libyoga.a */,
+				E9A8BA6822EE6C7D005AF2F2 /* libyoga.a */,
+				E9A8BA6A22EE6C7D005AF2F2 /* libcxxreact.a */,
+				E9A8BA6C22EE6C7D005AF2F2 /* libcxxreact.a */,
+				E9A8BA6E22EE6C7D005AF2F2 /* libjsinspector.a */,
+				E9A8BA7022EE6C7D005AF2F2 /* libjsinspector-tvOS.a */,
+				E9A8BA7222EE6C7D005AF2F2 /* libthird-party.a */,
+				E9A8BA7422EE6C7D005AF2F2 /* libthird-party.a */,
+				E9A8BA7622EE6C7D005AF2F2 /* libdouble-conversion.a */,
+				E9A8BA7822EE6C7D005AF2F2 /* libdouble-conversion.a */,
+				E9A8BA7A22EE6C7D005AF2F2 /* libjsi.a */,
+				E9A8BA7C22EE6C7D005AF2F2 /* libjsiexecutor.a */,
+				E9A8BA7E22EE6C7D005AF2F2 /* libjsi-tvOS.a */,
+				E9A8BA8022EE6C7D005AF2F2 /* libjsiexecutor-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -212,14 +355,14 @@
 		F5109062F1B78BDFD8A9D4A0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				14707A84279D13717F592EDE /* Pods-Taste.debug.xcconfig */,
-				27A7FD1535C6E33988808DDD /* Pods-Taste.release.xcconfig */,
-				E09CF925772246B7DFFAAC23 /* Pods-Taste-tvOS.debug.xcconfig */,
-				27AE0D192AC3BB353F004745 /* Pods-Taste-tvOS.release.xcconfig */,
-				990A664C9A24D2DDEB979D65 /* Pods-Taste-tvOSTests.debug.xcconfig */,
-				7E9DF8FE332E06B5DA627D34 /* Pods-Taste-tvOSTests.release.xcconfig */,
-				9C1CDF71EEAF7115AC5E3BDB /* Pods-TasteTests.debug.xcconfig */,
-				565EDD5DACE45829F6AE775D /* Pods-TasteTests.release.xcconfig */,
+				EE894F47F9F7263D0CE0548A /* Pods-Taste.debug.xcconfig */,
+				2823641F3558A4205C08062F /* Pods-Taste.release.xcconfig */,
+				EE39CEDDFC06CB1E85F30D5C /* Pods-Taste-tvOS.debug.xcconfig */,
+				0B305735C283A924C46EE662 /* Pods-Taste-tvOS.release.xcconfig */,
+				C773B144D9CFAFB14C74BBC0 /* Pods-Taste-tvOSTests.debug.xcconfig */,
+				09E86882DF58DAC34EBCA8A0 /* Pods-Taste-tvOSTests.release.xcconfig */,
+				F733F437E875255E15C9307F /* Pods-TasteTests.debug.xcconfig */,
+				7E5790D8EC1E426D06E05B63 /* Pods-TasteTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -231,7 +374,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "TasteTests" */;
 			buildPhases = (
-				0755FB8983D54FD83183EC50 /* [CP] Check Pods Manifest.lock */,
+				04577E2082114E8089833913 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
@@ -250,7 +393,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Taste" */;
 			buildPhases = (
-				08B83FC0FF2BB050656D1396 /* [CP] Check Pods Manifest.lock */,
+				7CB48EAC3D8F7ECD3FFCE90F /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
@@ -270,7 +413,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Taste-tvOS" */;
 			buildPhases = (
-				AA298E323C1681DFECF9EF9C /* [CP] Check Pods Manifest.lock */,
+				B14FE3A35B4B07D3D8F83510 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -290,7 +433,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Taste-tvOSTests" */;
 			buildPhases = (
-				EA2789834B1B67420B195BF4 /* [CP] Check Pods Manifest.lock */,
+				0C0F354379374409C06761E2 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -311,7 +454,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -343,8 +486,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = E9088DC122EE3D8900E0BFD7 /* Products */;
-					ProjectRef = E9088DC022EE3D8900E0BFD7 /* ReactNativeNavigation.xcodeproj */;
+					ProductGroup = E9A8BA4F22EE6C7D005AF2F2 /* Products */;
+					ProjectRef = E9A8BA4E22EE6C7D005AF2F2 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = E9A8BA3822EE5F88005AF2F2 /* Products */;
+					ProjectRef = E9A8BA3722EE5F88005AF2F2 /* ReactNativeNavigation.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -358,18 +505,130 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		E9088DC622EE3D8900E0BFD7 /* libReactNativeNavigation.a */ = {
+		E9A8BA3D22EE5F88005AF2F2 /* libReactNativeNavigation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libReactNativeNavigation.a;
-			remoteRef = E9088DC522EE3D8900E0BFD7 /* PBXContainerItemProxy */;
+			remoteRef = E9A8BA3C22EE5F88005AF2F2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E9088DC822EE3D8900E0BFD7 /* ReactNativeNavigationTests.xctest */ = {
+		E9A8BA3F22EE5F88005AF2F2 /* ReactNativeNavigationTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = ReactNativeNavigationTests.xctest;
-			remoteRef = E9088DC722EE3D8900E0BFD7 /* PBXContainerItemProxy */;
+			remoteRef = E9A8BA3E22EE5F88005AF2F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E9A8BA6222EE6C7D005AF2F2 /* libReact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReact.a;
+			remoteRef = E9A8BA6122EE6C7D005AF2F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E9A8BA6422EE6C7D005AF2F2 /* libReact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReact.a;
+			remoteRef = E9A8BA6322EE6C7D005AF2F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E9A8BA6622EE6C7D005AF2F2 /* libyoga.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libyoga.a;
+			remoteRef = E9A8BA6522EE6C7D005AF2F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E9A8BA6822EE6C7D005AF2F2 /* libyoga.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libyoga.a;
+			remoteRef = E9A8BA6722EE6C7D005AF2F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E9A8BA6A22EE6C7D005AF2F2 /* libcxxreact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcxxreact.a;
+			remoteRef = E9A8BA6922EE6C7D005AF2F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E9A8BA6C22EE6C7D005AF2F2 /* libcxxreact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcxxreact.a;
+			remoteRef = E9A8BA6B22EE6C7D005AF2F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E9A8BA6E22EE6C7D005AF2F2 /* libjsinspector.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libjsinspector.a;
+			remoteRef = E9A8BA6D22EE6C7D005AF2F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E9A8BA7022EE6C7D005AF2F2 /* libjsinspector-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libjsinspector-tvOS.a";
+			remoteRef = E9A8BA6F22EE6C7D005AF2F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E9A8BA7222EE6C7D005AF2F2 /* libthird-party.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libthird-party.a";
+			remoteRef = E9A8BA7122EE6C7D005AF2F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E9A8BA7422EE6C7D005AF2F2 /* libthird-party.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libthird-party.a";
+			remoteRef = E9A8BA7322EE6C7D005AF2F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E9A8BA7622EE6C7D005AF2F2 /* libdouble-conversion.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libdouble-conversion.a";
+			remoteRef = E9A8BA7522EE6C7D005AF2F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E9A8BA7822EE6C7D005AF2F2 /* libdouble-conversion.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libdouble-conversion.a";
+			remoteRef = E9A8BA7722EE6C7D005AF2F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E9A8BA7A22EE6C7D005AF2F2 /* libjsi.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libjsi.a;
+			remoteRef = E9A8BA7922EE6C7D005AF2F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E9A8BA7C22EE6C7D005AF2F2 /* libjsiexecutor.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libjsiexecutor.a;
+			remoteRef = E9A8BA7B22EE6C7D005AF2F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E9A8BA7E22EE6C7D005AF2F2 /* libjsi-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libjsi-tvOS.a";
+			remoteRef = E9A8BA7D22EE6C7D005AF2F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E9A8BA8022EE6C7D005AF2F2 /* libjsiexecutor-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libjsiexecutor-tvOS.a";
+			remoteRef = E9A8BA7F22EE6C7D005AF2F2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -423,7 +682,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		0755FB8983D54FD83183EC50 /* [CP] Check Pods Manifest.lock */ = {
+		04577E2082114E8089833913 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -445,7 +704,43 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		08B83FC0FF2BB050656D1396 /* [CP] Check Pods Manifest.lock */ = {
+		0C0F354379374409C06761E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Taste-tvOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native Code And Images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		7CB48EAC3D8F7ECD3FFCE90F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -467,21 +762,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Bundle React Native Code And Images";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
-		};
-		AA298E323C1681DFECF9EF9C /* [CP] Check Pods Manifest.lock */ = {
+		B14FE3A35B4B07D3D8F83510 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -497,28 +778,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Taste-tvOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EA2789834B1B67420B195BF4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Taste-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -630,13 +889,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C1CDF71EEAF7115AC5E3BDB /* Pods-TasteTests.debug.xcconfig */;
+			baseConfigurationReference = F733F437E875255E15C9307F /* Pods-TasteTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TasteTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -653,10 +913,11 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 565EDD5DACE45829F6AE775D /* Pods-TasteTests.release.xcconfig */;
+			baseConfigurationReference = 7E5790D8EC1E426D06E05B63 /* Pods-TasteTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TasteTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -673,11 +934,36 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14707A84279D13717F592EDE /* Pods-Taste.debug.xcconfig */;
+			baseConfigurationReference = EE894F47F9F7263D0CE0548A /* Pods-Taste.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/DoubleConversion\"",
+					"\"${PODS_ROOT}/Headers/Public/React-Core\"",
+					"\"${PODS_ROOT}/Headers/Public/React-DevSupport\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTActionSheet\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTAnimation\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTBlob\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTImage\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTLinking\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTNetwork\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTSettings\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTText\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTVibration\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTWebSocket\"",
+					"\"${PODS_ROOT}/Headers/Public/React-cxxreact\"",
+					"\"${PODS_ROOT}/Headers/Public/React-fishhook\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsi\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsiexecutor\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsinspector\"",
+					"\"${PODS_ROOT}/Headers/Public/glog\"",
+					"\"${PODS_ROOT}/Headers/Public/yoga\"",
+					"\"$(SRCROOT)/../node_modules/react-native-navigation/lib/ios\"",
+				);
 				INFOPLIST_FILE = Taste/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -693,10 +979,35 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27A7FD1535C6E33988808DDD /* Pods-Taste.release.xcconfig */;
+			baseConfigurationReference = 2823641F3558A4205C08062F /* Pods-Taste.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/DoubleConversion\"",
+					"\"${PODS_ROOT}/Headers/Public/React-Core\"",
+					"\"${PODS_ROOT}/Headers/Public/React-DevSupport\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTActionSheet\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTAnimation\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTBlob\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTImage\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTLinking\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTNetwork\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTSettings\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTText\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTVibration\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTWebSocket\"",
+					"\"${PODS_ROOT}/Headers/Public/React-cxxreact\"",
+					"\"${PODS_ROOT}/Headers/Public/React-fishhook\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsi\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsiexecutor\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsinspector\"",
+					"\"${PODS_ROOT}/Headers/Public/glog\"",
+					"\"${PODS_ROOT}/Headers/Public/yoga\"",
+					"\"$(SRCROOT)/../node_modules/react-native-navigation/lib/ios\"",
+				);
 				INFOPLIST_FILE = Taste/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -712,7 +1023,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E09CF925772246B7DFFAAC23 /* Pods-Taste-tvOS.debug.xcconfig */;
+			baseConfigurationReference = EE39CEDDFC06CB1E85F30D5C /* Pods-Taste-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -723,6 +1034,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Taste-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -740,7 +1052,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27AE0D192AC3BB353F004745 /* Pods-Taste-tvOS.release.xcconfig */;
+			baseConfigurationReference = 0B305735C283A924C46EE662 /* Pods-Taste-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -751,6 +1063,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Taste-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -768,7 +1081,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 990A664C9A24D2DDEB979D65 /* Pods-Taste-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = C773B144D9CFAFB14C74BBC0 /* Pods-Taste-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -778,6 +1091,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Taste-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -795,7 +1109,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E9DF8FE332E06B5DA627D34 /* Pods-Taste-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 09E86882DF58DAC34EBCA8A0 /* Pods-Taste-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -805,6 +1119,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Taste-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -851,6 +1166,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -866,6 +1182,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -904,6 +1221,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -912,6 +1230,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
