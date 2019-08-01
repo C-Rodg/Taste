@@ -5,9 +5,9 @@ import {
 	ScrollView,
 	View,
 	Text,
-	StatusBar,
-	AsyncStorage
+	StatusBar
 } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import { goToAuth, goToHome } from './navigation';
 import { USER_KEY } from '../config/config';
