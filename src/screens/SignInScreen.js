@@ -8,7 +8,7 @@ import {
 	StatusBar
 } from 'react-native';
 
-const SignInSignUpScreen = () => {
+const SignInScreen = () => {
 	return (
 		<Fragment>
 			<StatusBar barStyle="dark-content" />
@@ -21,4 +21,4 @@ const SignInSignUpScreen = () => {
 	);
 };
 
-export default SignInSignUpScreen;
+export default SignInScreen;
