@@ -11,7 +11,9 @@ A dating app revolving around foodies.
 ## Libraries
 
 [Async-Storage](https://github.com/react-native-community/async-storage)
+
 [React-Native-Vector-Icons](https://github.com/oblador/react-native-vector-icons)
+
 [React-Native-Navigation](https://wix.github.io/react-native-navigation/)
 
 ## Troubleshooting
@@ -47,4 +49,6 @@ Issues:
 
 ## Contributors
 
-Curtis (me)
+[Curtis](https://curtisrodgers.com/)
+
+[Tomoki](https://github.com/lamt3/)
