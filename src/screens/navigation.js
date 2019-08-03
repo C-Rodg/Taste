@@ -5,11 +5,16 @@ export const goToAuth = () =>
 	Navigation.setRoot({
 		root: {
 			stack: {
-				id: 'Auth',
 				children: [
 					{
 						component: {
-							name: 'taste.SignInScreen'
+							id: 'SignInOrSignUpScreen',
+							name: 'taste.SignInOrSignUpScreen',
+							options: {
+								topBar: {
+									visible: false
+								}
+							}
 						}
 					}
 				]
@@ -61,3 +66,11 @@ export const goToHome = () =>
 			}
 		}
 	});
+
+// ---------- APPLICATION NAVIGATION ------------ //
+// root -> StartInitializingScreen
+// not logged in -> Sign In or Sign Up : Sign In || Sign Up
+// logged in -> 3 tabs:
+// 1.) Swipe Screen -> Filters side menu
+// 2.) Connections Screen -> Calendar Screen || Read Message Screen
+// 3.) Profile Screen -> Edit Profile Screen

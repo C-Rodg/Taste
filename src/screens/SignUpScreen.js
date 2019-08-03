@@ -8,12 +8,12 @@ import {
 	StatusBar
 } from 'react-native';
 
-class SignInScreen extends Component {
+class SignUpScreen extends Component {
 	static get options() {
 		return {
 			topBar: {
 				title: {
-					text: 'Sign In'
+					text: 'Register Now'
 				}
 			}
 		};
@@ -25,7 +25,7 @@ class SignInScreen extends Component {
 				<StatusBar barStyle="dark-content" />
 				<SafeAreaView>
 					<View>
-						<Text>TODO: ENTER YOUR USERNAME & PASSWORD</Text>
+						<Text>TODO: Enter your email & password and 'Sign Up'</Text>
 					</View>
 				</SafeAreaView>
 			</Fragment>
@@ -33,4 +33,4 @@ class SignInScreen extends Component {
 	}
 }
 
-export default SignInScreen;
+export default SignUpScreen;
