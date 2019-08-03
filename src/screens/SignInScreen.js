@@ -5,8 +5,10 @@ import {
 	ScrollView,
 	View,
 	Text,
-	StatusBar
+	StatusBar,
+	Button
 } from 'react-native';
+import { goToHome } from './navigation';
 
 class SignInScreen extends Component {
 	static get options() {
@@ -19,6 +21,11 @@ class SignInScreen extends Component {
 		};
 	}
 
+	// EVENT - authenticate and then go home
+	handleMainButtonPress = () => {
+		goToHome();
+	};
+
 	render() {
 		return (
 			<Fragment>
@@ -26,6 +33,7 @@ class SignInScreen extends Component {
 				<SafeAreaView>
 					<View>
 						<Text>TODO: ENTER YOUR USERNAME & PASSWORD</Text>
+						<Button title="Continue" onPress={this.handleMainButtonPress} />
 					</View>
 				</SafeAreaView>
 			</Fragment>

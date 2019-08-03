@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 
 class SignInOrSignUpScreen extends Component {
+	// Navigate to the SignInScreen or the SignUpScreen
 	navigateTo = name => {
 		Navigation.push(this.props.componentId, {
 			component: {
