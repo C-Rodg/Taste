@@ -1,3 +1,4 @@
+// Libraries
 import React, { Fragment } from 'react';
 import {
 	SafeAreaView,

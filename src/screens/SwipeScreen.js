@@ -1,3 +1,4 @@
+// Libraries
 import React, { Fragment, Component } from 'react';
 import {
 	SafeAreaView,
@@ -11,21 +12,6 @@ import {
 import { Navigation } from 'react-native-navigation';
 
 class SwipeScreen extends Component {
-	static options(passProps) {
-		return {
-			topBar: {
-				leftButtons: [],
-				rightButtons: [
-					{
-						id: 'button-filters',
-						//icon: require('icon.png')
-						text: 'Filters'
-					}
-				]
-			}
-		};
-	}
-
 	componentDidMount() {
 		// Listen for navigation button presses
 		this.navigationEventListener = Navigation.events().bindComponent(this);

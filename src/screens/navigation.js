@@ -50,11 +50,6 @@ export const goToHome = () =>
 				},
 				center: {
 					bottomTabs: {
-						options: {
-							bottomTabs: {
-								hideShadow: true
-							}
-						},
 						id: 'mainApplicationTabs',
 						children: [
 							{
@@ -70,10 +65,18 @@ export const goToHome = () =>
 														text: 'Home'
 													},
 													topBar: {
-														noBorder: true,
 														title: {
 															text: 'Taste'
-														}
+														},
+														leftButtons: [],
+														rightButtons: [
+															{
+																id: 'button-filters',
+																//icon: require('icon.png')
+																text: 'Filters'
+																//component: { name: 'taste.IconFilter' }
+															}
+														]
 													}
 												}
 											}
@@ -94,10 +97,17 @@ export const goToHome = () =>
 														text: 'Connections'
 													},
 													topBar: {
-														noBorder: true,
 														title: {
 															text: 'Connections'
-														}
+														},
+														leftButtons: [],
+														rightButtons: [
+															{
+																id: 'button-upcoming',
+																//icon: require('icon.png')
+																text: 'Upcoming'
+															}
+														]
 													}
 												}
 											}
@@ -118,10 +128,17 @@ export const goToHome = () =>
 														text: 'Profile'
 													},
 													topBar: {
-														noBorder: true,
 														title: {
 															text: 'Profile'
-														}
+														},
+														leftButtons: [],
+														rightButtons: [
+															{
+																id: 'button-edit-profile',
+																//icon: require('icon.png')
+																text: 'Edit'
+															}
+														]
 													}
 												}
 											}

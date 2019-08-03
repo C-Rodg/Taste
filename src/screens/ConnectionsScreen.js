@@ -1,3 +1,4 @@
+// Libraries
 import React, { Component } from 'react';
 import {
 	SafeAreaView,
@@ -7,22 +8,27 @@ import {
 	Text,
 	StatusBar
 } from 'react-native';
+import { Navigation } from 'react-native-navigation';
 
 class ConnectionsScreen extends Component {
-	static options(passProps) {
-		return {
-			topBar: {
-				leftButtons: [],
-				rightButtons: [
-					{
-						id: 'button-upcoming',
-						//icon: require('icon.png')
-						text: 'Upcoming'
-					}
-				]
-			}
-		};
+	componentDidMount() {
+		// Listen for navigation button presses
+		this.navigationEventListener = Navigation.events().bindComponent(this);
 	}
+	componentWillUnmount() {
+		// Remove event listener
+		if (this.navigationEventListener) {
+			this.navigationEventListener.remove();
+		}
+	}
+
+	// EVENT - navigation button pressed
+	navigationButtonPressed({ buttonId }) {
+		if (buttonId === 'button-upcoming') {
+			// TODO: push upcoming dates screen
+		}
+	}
+
 	render() {
 		return (
 			<SafeAreaView>

@@ -11,8 +11,27 @@ import ProfileScreen from './screens/ProfileScreen';
 import StartInitializingScreen from './screens/StartInitializingScreen';
 import FilterSideMenu from './screens/FilterSideMenu';
 
+// Modals
+import EditProfileScreen from './screens/EditProfileScreen';
+
+// Components
+
+// Set defaults
+Navigation.setDefaultOptions({
+	topBar: {
+		noBorder: true
+	},
+	bottomTabs: {
+		hideShadow: true
+	}
+});
+
 // Register screens
 // TODO: Move to Map() and just loop through
+Navigation.registerComponent(
+	'taste.EditProfileScreen',
+	() => EditProfileScreen
+);
 
 // Root Component
 Navigation.registerComponent(
