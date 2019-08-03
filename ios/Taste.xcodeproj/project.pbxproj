@@ -20,6 +20,10 @@
 		A6C0AC6EEDFF5070DB1BC9A2 /* libPods-TasteTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B32198BD7E48A8430F47CEE /* libPods-TasteTests.a */; };
 		C6E1A3FB2AC3320564651133 /* libPods-Taste-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7F822D96ACB287F94AD595 /* libPods-Taste-tvOSTests.a */; };
 		C6EB899E76EDF22A37C6FE29 /* libPods-Taste-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B1FA271A64098088F425A2E /* libPods-Taste-tvOS.a */; };
+		E91B268522F55F8D007D22ED /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91B267222F55F8D007D22ED /* MaterialCommunityIcons.ttf */; };
+		E91B268622F55F8D007D22ED /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91B267222F55F8D007D22ED /* MaterialCommunityIcons.ttf */; };
+		E91B268722F55F8D007D22ED /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91B267222F55F8D007D22ED /* MaterialCommunityIcons.ttf */; };
+		E91B268822F55F8D007D22ED /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91B267222F55F8D007D22ED /* MaterialCommunityIcons.ttf */; };
 		E9A8BA4022EE5F95005AF2F2 /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A8BA3D22EE5F88005AF2F2 /* libReactNativeNavigation.a */; };
 		E9A8BA4A22EE69AA005AF2F2 /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A8BA3D22EE5F88005AF2F2 /* libReactNativeNavigation.a */; };
 		E9A8BA4B22EE69B1005AF2F2 /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A8BA3D22EE5F88005AF2F2 /* libReactNativeNavigation.a */; };
@@ -192,6 +196,7 @@
 		8B1FA271A64098088F425A2E /* libPods-Taste-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Taste-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B370D20456F25A1CBD01DFF1 /* libPods-Taste.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Taste.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C773B144D9CFAFB14C74BBC0 /* Pods-Taste-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taste-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Taste-tvOSTests/Pods-Taste-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E91B267222F55F8D007D22ED /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		E9A8BA3722EE5F88005AF2F2 /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeNavigation.xcodeproj; path = "../node_modules/react-native-navigation/lib/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; };
 		E9A8BA4E22EE6C7D005AF2F2 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -267,6 +272,7 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
+				E91B267222F55F8D007D22ED /* MaterialCommunityIcons.ttf */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = Taste;
@@ -399,6 +405,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				DFD9423E1CFC88268DAE35FC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -638,6 +645,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E91B268622F55F8D007D22ED /* MaterialCommunityIcons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,6 +654,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				E91B268522F55F8D007D22ED /* MaterialCommunityIcons.ttf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -654,6 +663,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E91B268722F55F8D007D22ED /* MaterialCommunityIcons.ttf in Resources */,
 				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -662,6 +672,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E91B268822F55F8D007D22ED /* MaterialCommunityIcons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -782,6 +793,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFD9423E1CFC88268DAE35FC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Taste/Pods-Taste-resources.sh",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Brands.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Regular.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Solid.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fontisto.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Taste/Pods-Taste-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {

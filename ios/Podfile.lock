@@ -85,6 +85,8 @@ PODS:
     - React
   - RNCAsyncStorage (1.6.1):
     - React
+  - RNVectorIcons (6.6.0):
+    - React
   - yoga (0.60.4.React)
 
 DEPENDENCIES:
@@ -111,6 +113,7 @@ DEPENDENCIES:
   - React-RCTWebSocket (from `../node_modules/react-native/Libraries/WebSocket`)
   - ReactNativeNavigation (from `../node_modules/react-native-navigation`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-community/async-storage`)"
+  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -164,6 +167,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-navigation"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-community/async-storage"
+  RNVectorIcons:
+    :path: "../node_modules/react-native-vector-icons"
   yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -192,6 +197,7 @@ SPEC CHECKSUMS:
   React-RCTWebSocket: 163873f4cdd5f1058a9483443404fc3801581cb6
   ReactNativeNavigation: 1f2f7267841a11d5098e7fd9fd9f538398531c73
   RNCAsyncStorage: 2e2e3feb9bdadc752a026703d8c4065ca912e75a
+  RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   yoga: c2c050f6ae6e222534760cc82f559b89214b67e2
 
 PODFILE CHECKSUM: ac0f6ac9867797594c69b19c113e5e9ac8c3852d
