@@ -11,37 +11,52 @@ import {
 import { Navigation } from 'react-native-navigation';
 
 class SwipeScreen extends Component {
-	// static options(passProps) {
-	// 	return {
-	// 		topBar: {
-	// 			leftButtons: [],
-	// 			rightButtons: [
-	// 				{
-	// 					id: 'buttonOne',
-	// 					//icon: require('icon.png')
-	// 					text: 'Filters'
-	// 				}
-	// 			]
-	// 		}
-	// 	};
-	// }
-	testMethod() {
-		Navigation.mergeOptions('FilterSideMenu', {
-			sideMenu: {
-				left: {
-					visible: true
-				}
+	static options(passProps) {
+		return {
+			topBar: {
+				leftButtons: [],
+				rightButtons: [
+					{
+						id: 'button-filters',
+						//icon: require('icon.png')
+						text: 'Filters'
+					}
+				]
 			}
-		});
+		};
 	}
+
+	componentDidMount() {
+		// Listen for navigation button presses
+		this.navigationEventListener = Navigation.events().bindComponent(this);
+	}
+	componentWillUnmount() {
+		// Remove event listener
+		if (this.navigationEventListener) {
+			this.navigationEventListener.remove();
+		}
+	}
+
+	// EVENT - navigation button pressed
+	navigationButtonPressed({ buttonId }) {
+		if (buttonId === 'button-filters') {
+			// Show the filters menu
+			Navigation.mergeOptions('FilterSideMenu', {
+				sideMenu: {
+					right: {
+						visible: true
+					}
+				}
+			});
+		}
+	}
+
 	render() {
 		return (
 			<Fragment>
-				<StatusBar barStyle="dark-content" />
 				<SafeAreaView>
 					<View>
 						<Text>Swiper Screen</Text>
-						<Button title="open menu" onPress={this.testMethod} />
 					</View>
 				</SafeAreaView>
 			</Fragment>

@@ -11,7 +11,6 @@ import {
 const FilterSideMenu = () => {
 	return (
 		<Fragment>
-			<StatusBar barStyle="dark-content" />
 			<SafeAreaView>
 				<View>
 					<Text>Filters</Text>
