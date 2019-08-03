@@ -33,10 +33,15 @@ cd .. && react-native run-ios
 
 ## TODO:
 
-- colorizing
+- change back icons
+- colorizing - fix to correct ones
+- insert custom font
 - hook up redux
 - start styling
 - setup API calls
+
+- color calendar icon based off upcoming dates
+- find fix for badge on messages tabbar
 
 ## Contributors
 
