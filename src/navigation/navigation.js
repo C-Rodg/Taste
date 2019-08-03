@@ -178,7 +178,6 @@ export const setNavigationDefaultOptions = () => {
 		topBar: {
 			noBorder: true,
 			backButton: {
-				//showTitle: false,
 				color: colors.PINK
 			},
 			title: {

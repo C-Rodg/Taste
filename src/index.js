@@ -26,9 +26,3 @@ Navigation.events().registerAppLaunchedListener(() => {
 		}
 	});
 });
-
-// TODO:
-// implement the screen structure
-// setup redux
-// include UI library
-// start building screens
