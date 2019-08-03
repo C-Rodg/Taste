@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 import { Navigation } from 'react-native-navigation';
 
+import { EDIT_PROFILE_SCREEN } from '../navigation/screens';
+
 class ProfileScreen extends Component {
 	componentDidMount() {
 		// Listen for navigation button presses
@@ -27,7 +29,7 @@ class ProfileScreen extends Component {
 		if (buttonId === 'button-edit-profile') {
 			Navigation.push(this.props.componentId, {
 				component: {
-					name: 'taste.EditProfileScreen',
+					name: EDIT_PROFILE_SCREEN,
 					options: {
 						topBar: {
 							rightButtons: [

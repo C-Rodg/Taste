@@ -10,12 +10,14 @@ import {
 	Button
 } from 'react-native';
 
+import { SIGNUP_SCREEN, SIGNIN_SCREEN } from '../navigation/screens';
+
 class SignInOrSignUpScreen extends Component {
 	// Navigate to the SignInScreen or the SignUpScreen
 	navigateTo = name => {
 		Navigation.push(this.props.componentId, {
 			component: {
-				name: `taste.${name}`
+				name
 			}
 		});
 	};
@@ -33,11 +35,11 @@ class SignInOrSignUpScreen extends Component {
 						</Text>
 						<Button
 							title="Sign In"
-							onPress={() => this.navigateTo('SignInScreen')}
+							onPress={() => this.navigateTo(SIGNIN_SCREEN)}
 						/>
 						<Button
 							title="Register Now"
-							onPress={() => this.navigateTo('SignUpScreen')}
+							onPress={() => this.navigateTo(SIGNUP_SCREEN)}
 						/>
 					</View>
 				</SafeAreaView>

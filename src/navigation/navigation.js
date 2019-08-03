@@ -17,7 +17,7 @@ export const goToAuth = () =>
 				children: [
 					{
 						component: {
-							id: 'SignInOrSignUpScreen',
+							id: 'taste.SignInOrSignUpScreen',
 							name: 'taste.SignInOrSignUpScreen',
 							options: {
 								topBar: {
@@ -44,7 +44,7 @@ export const goToHome = () =>
 				},
 				right: {
 					component: {
-						id: 'FilterSideMenu',
+						id: 'taste.FilterSideMenu',
 						name: 'taste.FilterSideMenu'
 					}
 				},
@@ -57,7 +57,7 @@ export const goToHome = () =>
 									children: [
 										{
 											component: {
-												id: 'SwipeScreen',
+												id: 'taste.SwipeScreen',
 												name: 'taste.SwipeScreen',
 												options: {
 													bottomTab: {
@@ -89,7 +89,7 @@ export const goToHome = () =>
 									children: [
 										{
 											component: {
-												id: 'ConnectionsScreen',
+												id: 'taste.ConnectionsScreen',
 												name: 'taste.ConnectionsScreen',
 												options: {
 													bottomTab: {
@@ -120,7 +120,7 @@ export const goToHome = () =>
 									children: [
 										{
 											component: {
-												id: 'ProfileScreen',
+												id: 'taste.ProfileScreen',
 												name: 'taste.ProfileScreen',
 												options: {
 													bottomTab: {

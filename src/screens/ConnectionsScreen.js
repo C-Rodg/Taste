@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 import { Navigation } from 'react-native-navigation';
 
+import { UPCOMING_DATES_SCREEN } from '../navigation/screens';
+
 class ConnectionsScreen extends Component {
 	componentDidMount() {
 		// Listen for navigation button presses
@@ -27,7 +29,7 @@ class ConnectionsScreen extends Component {
 		if (buttonId === 'button-upcoming') {
 			Navigation.push(this.props.componentId, {
 				component: {
-					name: 'taste.UpcomingDatesScreen'
+					name: UPCOMING_DATES_SCREEN
 				}
 			});
 		}

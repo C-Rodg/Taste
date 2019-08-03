@@ -11,6 +11,8 @@ import {
 } from 'react-native';
 import { Navigation } from 'react-native-navigation';
 
+import { FILTER_SIDE_MENU } from '../navigation/screens';
+
 class SwipeScreen extends Component {
 	componentDidMount() {
 		// Listen for navigation button presses
@@ -27,7 +29,7 @@ class SwipeScreen extends Component {
 	navigationButtonPressed({ buttonId }) {
 		if (buttonId === 'button-filters') {
 			// Show the filters menu
-			Navigation.mergeOptions('FilterSideMenu', {
+			Navigation.mergeOptions(FILTER_SIDE_MENU, {
 				sideMenu: {
 					right: {
 						visible: true
