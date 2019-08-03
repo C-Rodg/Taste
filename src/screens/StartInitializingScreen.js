@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 
-import { goToAuth, goToHome } from './navigation';
+import { goToAuth, goToHome } from '../navigation/navigation';
 import { USER_KEY } from '../config/config';
 
 class StartInitializingScreen extends Component {

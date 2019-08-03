@@ -25,7 +25,11 @@ class ConnectionsScreen extends Component {
 	// EVENT - navigation button pressed
 	navigationButtonPressed({ buttonId }) {
 		if (buttonId === 'button-upcoming') {
-			// TODO: push upcoming dates screen
+			Navigation.push(this.props.componentId, {
+				component: {
+					name: 'taste.UpcomingDatesScreen'
+				}
+			});
 		}
 	}
 

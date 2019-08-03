@@ -30,13 +30,10 @@ class ProfileScreen extends Component {
 					name: 'taste.EditProfileScreen',
 					options: {
 						topBar: {
-							backButton: {
-								title: 'Cancel'
-							},
 							rightButtons: [
 								{
 									id: 'button-save-edits',
-									text: 'Done'
+									text: 'Save'
 								}
 							]
 						}

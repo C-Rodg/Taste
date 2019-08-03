@@ -8,7 +8,7 @@ import {
 	StatusBar,
 	Button
 } from 'react-native';
-import { goToHome } from './navigation';
+import { goToHome } from '../navigation/navigation';
 
 class SignInScreen extends Component {
 	static get options() {

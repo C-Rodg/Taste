@@ -1,61 +1,27 @@
 // Libraries
 import { Navigation } from 'react-native-navigation';
 
-// Screens
-import SignInOrSignUpScreen from './screens/SignInOrSignUpScreen';
-import SignUpScreen from './screens/SignUpScreen';
-import SignInScreen from './screens/SignInScreen';
-import SwipeScreen from './screens/SwipeScreen';
-import ConnectionsScreen from './screens/ConnectionsScreen';
-import ProfileScreen from './screens/ProfileScreen';
-import StartInitializingScreen from './screens/StartInitializingScreen';
-import FilterSideMenu from './screens/FilterSideMenu';
+import { Screens } from './navigation/screens';
 
-// Modals
-import EditProfileScreen from './screens/EditProfileScreen';
-
-// Components
-
-// Set defaults
+// NAVIGATION - Default Options
 Navigation.setDefaultOptions({
 	topBar: {
-		noBorder: true
+		noBorder: true,
+		backButton: {
+			// title: 'Cancel',
+			showTitle: false
+		}
 	},
 	bottomTabs: {
 		hideShadow: true
 	}
 });
 
-// Register screens
-// TODO: Move to Map() and just loop through
-Navigation.registerComponent(
-	'taste.EditProfileScreen',
-	() => EditProfileScreen
+Screens.forEach((screenComponent, key) =>
+	Navigation.registerComponent(key, () => screenComponent)
 );
 
-// Root Component
-Navigation.registerComponent(
-	'taste.StartInitializingScreen',
-	() => StartInitializingScreen
-);
-// Authentication Stack
-Navigation.registerComponent(
-	'taste.SignInOrSignUpScreen',
-	() => SignInOrSignUpScreen
-);
-Navigation.registerComponent('taste.SignUpScreen', () => SignUpScreen);
-Navigation.registerComponent('taste.SignInScreen', () => SignInScreen);
-
-// Main Application Stack
-Navigation.registerComponent('taste.SwipeScreen', () => SwipeScreen);
-Navigation.registerComponent(
-	'taste.ConnectionsScreen',
-	() => ConnectionsScreen
-);
-Navigation.registerComponent('taste.ProfileScreen', () => ProfileScreen);
-Navigation.registerComponent('taste.FilterSideMenu', () => FilterSideMenu);
-
-// Set the root
+// NAVIGATION - set the root of the application
 Navigation.events().registerAppLaunchedListener(() => {
 	Navigation.setRoot({
 		root: {

@@ -9,7 +9,7 @@ import {
 	Button
 } from 'react-native';
 
-import { goToHome } from './navigation';
+import { goToHome } from '../navigation/navigation';
 
 class SignUpScreen extends Component {
 	static get options() {
