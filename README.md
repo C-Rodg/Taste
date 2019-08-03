@@ -33,6 +33,7 @@ cd .. && react-native run-ios
 ## TODO:
 
 - implement icons
+- hook up redux
 - start styling
 - setup API calls
 

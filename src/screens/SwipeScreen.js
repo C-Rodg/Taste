@@ -11,7 +11,15 @@ import {
 } from 'react-native';
 import { Navigation } from 'react-native-navigation';
 
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 import { FILTER_SIDE_MENU } from '../navigation/screens';
+
+// TODO:
+// extract colors and styles
+const colors = {
+	GRAY: '#8f8f8f'
+};
 
 class SwipeScreen extends Component {
 	componentDidMount() {
@@ -44,7 +52,17 @@ class SwipeScreen extends Component {
 			<Fragment>
 				<SafeAreaView>
 					<View>
-						<Text>Swiper Screen</Text>
+						<Text>
+							Swiper Screen
+							<Icon
+								name="silverware-fork-knife"
+								size={30}
+								color={colors.GRAY}
+							/>
+							<Icon name="map-marker" size={30} color={colors.GRAY} />
+							<Icon name="school" size={30} color={colors.GRAY} />
+							<Icon name="information" size={30} color={colors.GRAY} />
+						</Text>
 					</View>
 				</SafeAreaView>
 			</Fragment>
