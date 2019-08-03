@@ -171,3 +171,26 @@ const loadAsyncNavigationIcons = async () => {
 	]);
 	return requiredIcons;
 };
+
+// NAVIGATION - Default Options
+export const setNavigationDefaultOptions = () => {
+	Navigation.setDefaultOptions({
+		topBar: {
+			noBorder: true,
+			backButton: {
+				//showTitle: false,
+				color: colors.PINK
+			},
+			title: {
+				fontSize: 21,
+				color: colors.BLACK
+			}
+		},
+		bottomTabs: {
+			hideShadow: true
+		},
+		bottomTab: {
+			selectedIconColor: colors.PINK
+		}
+	});
+};

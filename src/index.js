@@ -4,29 +4,13 @@ import { Navigation } from 'react-native-navigation';
 // Screens
 import { Screens } from './navigation/screens';
 
-// Styles
-import colors from './styles/colors';
+// Actions
+import { setNavigationDefaultOptions } from './navigation/navigation';
 
-// NAVIGATION - Default Options
-Navigation.setDefaultOptions({
-	topBar: {
-		noBorder: true,
-		backButton: {
-			showTitle: false
-		},
-		title: {
-			fontSize: 21,
-			color: colors.BLACK
-		}
-	},
-	bottomTabs: {
-		hideShadow: true
-	},
-	bottomTab: {
-		selectedIconColor: colors.PINK
-	}
-});
+// NAVIGATION - Set default options
+setNavigationDefaultOptions();
 
+// NAVIGATION - Register screens
 Screens.forEach((screenComponent, key) =>
 	Navigation.registerComponent(key, () => screenComponent)
 );

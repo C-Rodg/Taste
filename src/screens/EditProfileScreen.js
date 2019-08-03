@@ -10,6 +10,15 @@ import {
 } from 'react-native';
 
 class EditProfileScreen extends Component {
+	static get options() {
+		return {
+			topBar: {
+				backButton: {
+					title: 'Cancel'
+				}
+			}
+		};
+	}
 	render() {
 		return (
 			<SafeAreaView>
