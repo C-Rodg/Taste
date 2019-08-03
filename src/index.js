@@ -1,19 +1,29 @@
 // Libraries
 import { Navigation } from 'react-native-navigation';
 
+// Screens
 import { Screens } from './navigation/screens';
+
+// Styles
+import colors from './styles/colors';
 
 // NAVIGATION - Default Options
 Navigation.setDefaultOptions({
 	topBar: {
 		noBorder: true,
 		backButton: {
-			// title: 'Cancel',
 			showTitle: false
+		},
+		title: {
+			fontSize: 21,
+			color: colors.BLACK
 		}
 	},
 	bottomTabs: {
 		hideShadow: true
+	},
+	bottomTab: {
+		selectedIconColor: colors.PINK
 	}
 });
 

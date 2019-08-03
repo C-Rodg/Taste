@@ -3,6 +3,9 @@ import { Navigation } from 'react-native-navigation';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 
+// Styles
+import colors from '../styles/colors';
+
 // ---------------------- APPLICATION NAVIGATION -------------------------- //
 // root -> StartInitializingScreen
 // not logged in -> Sign In or Sign Up : Sign In || Sign Up
@@ -96,7 +99,9 @@ export const goToHome = () => {
 													name: 'taste.ConnectionsScreen',
 													options: {
 														bottomTab: {
-															icon: iconArray[1]
+															icon: iconArray[1],
+															badge: '3',
+															badgeColor: colors.PINK
 														},
 														topBar: {
 															title: {
@@ -135,7 +140,8 @@ export const goToHome = () => {
 															rightButtons: [
 																{
 																	id: 'button-edit-profile',
-																	text: 'Edit'
+																	text: 'Edit',
+																	color: colors.PINK
 																}
 															]
 														}
@@ -157,11 +163,11 @@ export const goToHome = () => {
 // Load icons used in navigation
 const loadAsyncNavigationIcons = async () => {
 	const requiredIcons = await Promise.all([
-		IonIcon.getImageSource('md-radio-button-on', 36, '#000'), // Plate icon
-		MaterialCommunityIcon.getImageSource('forum', 36, '#000'), // Messaging icon
-		MaterialCommunityIcon.getImageSource('account', 36, '#000'), // Profile icon
-		MaterialCommunityIcon.getImageSource('filter-variant', 36, '#000'), // Filter icon
-		MaterialCommunityIcon.getImageSource('calendar', 36, '#000') // Calendar icon
+		IonIcon.getImageSource('md-radio-button-on', 32, colors.GRAY), // Plate icon
+		MaterialCommunityIcon.getImageSource('forum', 32, colors.GRAY), // Messaging icon
+		MaterialCommunityIcon.getImageSource('account', 32, colors.GRAY), // Profile icon
+		MaterialCommunityIcon.getImageSource('filter-variant', 32, colors.BLACK), // Filter icon
+		MaterialCommunityIcon.getImageSource('calendar', 28, colors.BLACK) // Calendar icon
 	]);
 	return requiredIcons;
 };

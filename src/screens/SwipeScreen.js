@@ -15,11 +15,8 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import IonIcon from 'react-native-vector-icons/Ionicons';
 import { FILTER_SIDE_MENU } from '../navigation/screens';
 
-// TODO:
-// extract colors and styles
-const colors = {
-	GRAY: '#8f8f8f'
-};
+// Styles
+import colors from '../styles/colors';
 
 class SwipeScreen extends Component {
 	componentDidMount() {
