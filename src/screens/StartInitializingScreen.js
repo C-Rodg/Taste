@@ -20,7 +20,9 @@ class StartInitializingScreen extends Component {
 			if (user) {
 				goToHome();
 			} else {
-				goToAuth();
+				//goToAuth();
+				// TESTING
+				goToHome();
 			}
 		} catch (err) {
 			console.log('error:', err);

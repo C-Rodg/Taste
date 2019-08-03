@@ -9,6 +9,7 @@ import SwipeScreen from './screens/SwipeScreen';
 import ConnectionsScreen from './screens/ConnectionsScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import StartInitializingScreen from './screens/StartInitializingScreen';
+import FilterSideMenu from './screens/FilterSideMenu';
 
 // Register screens
 // TODO: Move to Map() and just loop through
@@ -33,6 +34,7 @@ Navigation.registerComponent(
 	() => ConnectionsScreen
 );
 Navigation.registerComponent('taste.ProfileScreen', () => ProfileScreen);
+Navigation.registerComponent('taste.FilterSideMenu', () => FilterSideMenu);
 
 // Set the root
 Navigation.events().registerAppLaunchedListener(() => {

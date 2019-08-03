@@ -26,76 +26,102 @@ export const goToAuth = () =>
 export const goToHome = () =>
 	Navigation.setRoot({
 		root: {
-			bottomTabs: {
-				id: 'mainApplicationTabs',
-				children: [
-					{
-						stack: {
-							children: [
-								{
-									component: {
-										name: 'taste.SwipeScreen',
-										options: {
-											topBar: {
-												title: {
-													text: 'Taste'
-												}
-											},
-											bottomTab: {
-												fontSize: 12,
-												text: 'Home'
-											}
-										}
-									}
-								}
-							]
-						}
-					},
-					{
-						stack: {
-							children: [
-								{
-									component: {
-										name: 'taste.ConnectionsScreen',
-										options: {
-											topBar: {
-												title: {
-													text: 'Connections'
-												}
-											},
-											bottomTab: {
-												fontSize: 12,
-												text: 'Connections'
-											}
-										}
-									}
-								}
-							]
-						}
-					},
-					{
-						stack: {
-							children: [
-								{
-									component: {
-										name: 'taste.ProfileScreen',
-										options: {
-											topBar: {
-												title: {
-													text: 'Profile'
-												}
-											},
-											bottomTab: {
-												fontSize: 12,
-												text: 'Profile'
-											}
-										}
-									}
-								}
-							]
-						}
+			sideMenu: {
+				left: {
+					component: {
+						id: 'FilterSideMenu',
+						name: 'taste.FilterSideMenu'
 					}
-				]
+				},
+				center: {
+					bottomTabs: {
+						id: 'mainApplicationTabs',
+						options: {
+							topBar: {
+								visible: true,
+								leftButtons: [
+									{
+										id: 'filters',
+										text: 'Filters'
+									}
+								]
+							}
+						},
+						children: [
+							{
+								stack: {
+									children: [
+										{
+											component: {
+												name: 'taste.SwipeScreen',
+												options: {
+													bottomTab: {
+														fontSize: 12,
+														text: 'Home'
+													},
+													topBar: {
+														title: {
+															text: 'Taste'
+														}
+													}
+												}
+											}
+										}
+									]
+								}
+							},
+							{
+								stack: {
+									children: [
+										{
+											component: {
+												name: 'taste.ConnectionsScreen',
+												options: {
+													bottomTab: {
+														fontSize: 12,
+														text: 'Connections'
+													},
+													topBar: {
+														title: {
+															text: 'Connections'
+														}
+													}
+												}
+											}
+										}
+									]
+								}
+							},
+							{
+								stack: {
+									children: [
+										{
+											component: {
+												name: 'taste.ProfileScreen',
+												options: {
+													bottomTab: {
+														fontSize: 12,
+														text: 'Profile'
+													},
+													topBar: {
+														title: {
+															text: 'Profile'
+														}
+													}
+												}
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+				// right: {
+				// 	component: {
+				// 		name: 'taste.FilterSideMenu'
+				// 	}
+				// }
 			}
 		}
 	});
