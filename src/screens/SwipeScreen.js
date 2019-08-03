@@ -12,7 +12,7 @@ import {
 import { Navigation } from 'react-native-navigation';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import IonIcon from 'react-native-vector-icons/Ionicons';
 import { FILTER_SIDE_MENU } from '../navigation/screens';
 
 // TODO:
@@ -59,6 +59,7 @@ class SwipeScreen extends Component {
 								size={30}
 								color={colors.GRAY}
 							/>
+							<IonIcon name="ios-link" size={30} color={colors.GRAY} />
 							<Icon name="map-marker" size={30} color={colors.GRAY} />
 							<Icon name="school" size={30} color={colors.GRAY} />
 							<Icon name="information" size={30} color={colors.GRAY} />

@@ -25,9 +25,10 @@ rm -rf ios/build/; kill \$(lsof -t -i:8081); react-native run-ios
 Everything is broken:
 watchman watch-del-all
 rm -rf node_modules && yarn install
-rm -rf /tmp/metro-bundler-cache-#
+rm -rf /tmp/metro-bundler-cache-\*
 rm -rf /tmp/haste-map-react-native-packager-\*
 cd ios && pod install
+?? attempt to build in xcode (will fail)
 cd .. && react-native run-ios
 
 ## TODO:
