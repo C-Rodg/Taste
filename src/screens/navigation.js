@@ -27,39 +27,72 @@ export const goToHome = () =>
 	Navigation.setRoot({
 		root: {
 			bottomTabs: {
-				id: 'BottomTabsId',
+				id: 'mainApplicationTabs',
 				children: [
 					{
-						component: {
-							name: 'taste.SwipeScreen',
-							options: {
-								bottomTab: {
-									fontSize: 12,
-									text: 'Home'
+						stack: {
+							children: [
+								{
+									component: {
+										name: 'taste.SwipeScreen',
+										options: {
+											topBar: {
+												title: {
+													text: 'Taste'
+												}
+											},
+											bottomTab: {
+												fontSize: 12,
+												text: 'Home'
+											}
+										}
+									}
 								}
-							}
+							]
 						}
 					},
 					{
-						component: {
-							name: 'taste.ConnectionsScreen',
-							options: {
-								bottomTab: {
-									fontSize: 12,
-									text: 'Connections'
+						stack: {
+							children: [
+								{
+									component: {
+										name: 'taste.ConnectionsScreen',
+										options: {
+											topBar: {
+												title: {
+													text: 'Connections'
+												}
+											},
+											bottomTab: {
+												fontSize: 12,
+												text: 'Connections'
+											}
+										}
+									}
 								}
-							}
+							]
 						}
 					},
 					{
-						component: {
-							name: 'taste.ProfileScreen',
-							options: {
-								bottomTab: {
-									fontSize: 12,
-									text: 'Profile'
+						stack: {
+							children: [
+								{
+									component: {
+										name: 'taste.ProfileScreen',
+										options: {
+											topBar: {
+												title: {
+													text: 'Profile'
+												}
+											},
+											bottomTab: {
+												fontSize: 12,
+												text: 'Profile'
+											}
+										}
+									}
 								}
-							}
+							]
 						}
 					}
 				]
