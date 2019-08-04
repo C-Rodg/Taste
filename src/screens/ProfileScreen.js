@@ -27,19 +27,16 @@ class ProfileScreen extends Component {
 	// EVENT - navigation button pressed
 	navigationButtonPressed({ buttonId }) {
 		if (buttonId === 'button-edit-profile') {
-			Navigation.push(this.props.componentId, {
-				component: {
-					name: EDIT_PROFILE_SCREEN,
-					options: {
-						topBar: {
-							rightButtons: [
-								{
-									id: 'button-save-edits',
-									text: 'Save'
-								}
-							]
+			// Show edit profile modal
+			Navigation.showModal({
+				stack: {
+					children: [
+						{
+							component: {
+								name: EDIT_PROFILE_SCREEN
+							}
 						}
-					}
+					]
 				}
 			});
 		}

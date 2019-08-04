@@ -8,17 +8,54 @@ import {
 	Text,
 	StatusBar
 } from 'react-native';
+import { Navigation } from 'react-native-navigation';
 
 class EditProfileScreen extends Component {
 	static get options() {
 		return {
 			topBar: {
-				backButton: {
-					title: 'Cancel'
-				}
+				title: {
+					text: 'Edit Profile'
+				},
+				leftButtons: [
+					{
+						id: 'button-close',
+						text: 'Cancel'
+					}
+				],
+				rightButtons: [
+					{
+						id: 'button-save',
+						text: 'Save'
+					}
+				]
 			}
 		};
 	}
+
+	componentDidMount() {
+		// Listen for navigation button presses
+		this.navigationEventListener = Navigation.events().bindComponent(this);
+	}
+	componentWillUnmount() {
+		// Remove event listener
+		if (this.navigationEventListener) {
+			this.navigationEventListener.remove();
+		}
+	}
+
+	// EVENT - navigation button pressed
+	navigationButtonPressed({ buttonId }) {
+		if (buttonId === 'button-close') {
+			Navigation.dismissModal(this.props.componentId);
+		} else if (buttonId === 'button-save') {
+			// TODO: Save profile changes
+
+			// Close modal
+			Navigation.dismissModal(this.props.componentId);
+		}
+	}
+
 	render() {
 		return (
 			<SafeAreaView>
