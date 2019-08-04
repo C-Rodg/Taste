@@ -39,6 +39,11 @@ _Everything is broken:_
 ## TODO:
 
 - start styling
+  - login / signup pages
+  - initializing screen
+  - swiper screen
+  - profile screen
+  - edit profile screen
 - setup API calls
 
 Issues:
