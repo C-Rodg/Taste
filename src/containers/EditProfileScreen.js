@@ -20,13 +20,15 @@ class EditProfileScreen extends Component {
 				leftButtons: [
 					{
 						id: 'button-close',
-						text: 'Cancel'
+						text: 'Cancel',
+						fontFamily: 'Fira Sans'
 					}
 				],
 				rightButtons: [
 					{
 						id: 'button-save',
-						text: 'Save'
+						text: 'Save',
+						fontFamily: 'Fira Sans'
 					}
 				]
 			}

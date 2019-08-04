@@ -141,7 +141,8 @@ export const goToHome = () => {
 																{
 																	id: 'button-edit-profile',
 																	text: 'Edit',
-																	color: colors.PINK
+																	color: colors.PINK,
+																	fontFamily: 'Fira Sans'
 																}
 															]
 														}
@@ -182,6 +183,7 @@ export const setNavigationDefaultOptions = () => {
 			},
 			title: {
 				fontSize: 21,
+				fontFamily: 'Fira Sans',
 				color: colors.BLACK
 			}
 		},

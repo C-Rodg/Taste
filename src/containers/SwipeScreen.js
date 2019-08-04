@@ -49,7 +49,7 @@ class SwipeScreen extends Component {
 			<Fragment>
 				<SafeAreaView>
 					<View>
-						<Text>
+						<Text style={{ fontFamily: 'Fira Sans' }}>
 							Swiper Screen
 							<Icon
 								name="silverware-fork-knife"
@@ -60,6 +60,16 @@ class SwipeScreen extends Component {
 							<Icon name="map-marker" size={30} color={colors.GRAY} />
 							<Icon name="school" size={30} color={colors.GRAY} />
 							<Icon name="information" size={30} color={colors.GRAY} />
+						</Text>
+						<Text style={{ fontFamily: 'Fira Sans', fontWeight: '300' }}>
+							Just another piece of text
+						</Text>
+						<Text style={{ fontFamily: 'Fira Sans', fontWeight: '500' }}>
+							Just another piece of text
+						</Text>
+
+						<Text style={{ fontFamily: 'Fira Sans', fontWeight: '700' }}>
+							Just another piece of text
 						</Text>
 					</View>
 				</SafeAreaView>

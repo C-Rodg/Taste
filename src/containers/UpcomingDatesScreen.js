@@ -20,7 +20,8 @@ class UpcomingDatesScreen extends Component {
 				leftButtons: [
 					{
 						id: 'button-close',
-						text: 'Back'
+						text: 'Back',
+						fontFamily: 'Fira Sans'
 					}
 				],
 				rightButtons: []
