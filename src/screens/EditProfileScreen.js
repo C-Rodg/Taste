@@ -47,6 +47,7 @@ class EditProfileScreen extends Component {
 	// EVENT - navigation button pressed
 	navigationButtonPressed({ buttonId }) {
 		if (buttonId === 'button-close') {
+			// Close button pressed
 			Navigation.dismissModal(this.props.componentId);
 		} else if (buttonId === 'button-save') {
 			// TODO: Save profile changes

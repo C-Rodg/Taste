@@ -10,6 +10,19 @@ import {
 } from 'react-native';
 
 class MessagingScreen extends Component {
+	static get options() {
+		return {
+			topBar: {
+				title: {
+					text: 'PERSONS_NAME'
+				},
+				backButton: {
+					showTitle: false
+				}
+			}
+		};
+	}
+
 	render() {
 		return (
 			<SafeAreaView>

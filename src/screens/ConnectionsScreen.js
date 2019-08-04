@@ -6,11 +6,12 @@ import {
 	ScrollView,
 	View,
 	Text,
+	Button,
 	StatusBar
 } from 'react-native';
 import { Navigation } from 'react-native-navigation';
 
-import { UPCOMING_DATES_SCREEN } from '../navigation/screens';
+import { UPCOMING_DATES_SCREEN, MESSAGING_SCREEN } from '../navigation/screens';
 
 class ConnectionsScreen extends Component {
 	componentDidMount() {
@@ -27,19 +28,36 @@ class ConnectionsScreen extends Component {
 	// EVENT - navigation button pressed
 	navigationButtonPressed({ buttonId }) {
 		if (buttonId === 'button-upcoming') {
-			Navigation.push(this.props.componentId, {
-				component: {
-					name: UPCOMING_DATES_SCREEN
+			Navigation.showModal({
+				stack: {
+					children: [
+						{
+							component: {
+								name: UPCOMING_DATES_SCREEN
+							}
+						}
+					]
 				}
 			});
 		}
 	}
+
+	// EVENT - go to message screen
+	goToMessageScreen = () => {
+		Navigation.push(this.props.componentId, {
+			component: {
+				name: MESSAGING_SCREEN
+			}
+		});
+	};
 
 	render() {
 		return (
 			<SafeAreaView>
 				<View>
 					<Text>Connections Screen</Text>
+
+					<Button title="Sample Message" onPress={this.goToMessageScreen} />
 				</View>
 			</SafeAreaView>
 		);
