@@ -55,6 +55,9 @@
 	<array>
 		<string>MaterialCommunityIcons.ttf</string>
 		<string>Ionicons.ttf</string>
+		<string>FiraSans-Bold.ttf</string>
+		<string>FiraSans-Medium.ttf</string>
+		<string>FiraSans-Light.ttf</string>
 	</array>
 </dict>
 </plist>
