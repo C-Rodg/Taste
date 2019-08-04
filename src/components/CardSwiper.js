@@ -68,6 +68,26 @@ class CardSwiper extends Component {
 				...this.position.getTranslateTransform()
 			]
 		};
+		this.likeOpacity = this.position.x.interpolate({
+			inputRange: [-SCREEN_WIDTH / 2, 0, SCREEN_WIDTH / 2],
+			outputRange: [0, 0, 1],
+			extrapolate: 'clamp'
+		});
+		this.dislikeOpacity = this.position.x.interpolate({
+			inputRange: [-SCREEN_WIDTH / 2, 0, SCREEN_WIDTH / 2],
+			outputRange: [1, 0, 0],
+			extrapolate: 'clamp'
+		});
+		this.nextCardOpacity = this.position.x.interpolate({
+			inputRange: [-SCREEN_WIDTH / 2, 0, SCREEN_WIDTH / 2],
+			outputRange: [1, 0, 1],
+			extrapolate: 'clamp'
+		});
+		this.nextCardScale = this.position.x.interpolate({
+			inputRange: [-SCREEN_WIDTH / 2, 0, SCREEN_WIDTH / 2],
+			outputRange: [1, 0.8, 1],
+			extrapolate: 'clamp'
+		});
 		this.state = {
 			currentIndex: 0
 		};
@@ -78,7 +98,44 @@ class CardSwiper extends Component {
 			onPanResponderMove: (evt, gestureState) => {
 				this.position.setValue({ x: gestureState.dx, y: gestureState.dy });
 			},
-			onPanResponderRelease: (evt, gestureState) => {}
+			onPanResponderRelease: (evt, gestureState) => {
+				if (gestureState.dx > 120) {
+					Animated.spring(this.position, {
+						toValue: { x: SCREEN_WIDTH + 100, y: gestureState.dy }
+					}).start(() => {
+						this.setState(
+							prevState => {
+								return {
+									currentIndex: prevState.currentIndex + 1
+								};
+							},
+							() => {
+								this.position.setValue({ x: 0, y: 0 });
+							}
+						);
+					});
+				} else if (gestureState.dx < -120) {
+					Animated.spring(this.position, {
+						toValue: { x: -SCREEN_WIDTH - 100, y: gestureState.dy }
+					}).start(() => {
+						this.setState(
+							prevState => {
+								return {
+									currentIndex: prevState.currentIndex + 1
+								};
+							},
+							() => {
+								this.position.setValue({ x: 0, y: 0 });
+							}
+						);
+					});
+				} else {
+					Animated.spring(this.position, {
+						toValue: { x: 0, y: 0 },
+						friction: 4
+					}).start();
+				}
+			}
 		});
 	}
 
@@ -103,8 +160,59 @@ class CardSwiper extends Component {
 							}
 						]}
 					>
+						<Animated.View
+							style={{
+								opacity: this.likeOpacity,
+								transform: [{ rotate: '-30deg' }],
+								position: 'absolute',
+								top: 50,
+								left: 40,
+								zIndex: 1000
+							}}
+						>
+							<Text
+								style={{
+									borderWidth: 1,
+									borderColor: 'green',
+									color: 'green',
+									fontSize: 32,
+									fontWeight: '800',
+									padding: 10
+								}}
+							>
+								LIKE
+							</Text>
+						</Animated.View>
+						<Animated.View
+							style={{
+								opacity: this.dislikeOpacity,
+								transform: [{ rotate: '30deg' }],
+								position: 'absolute',
+								top: 50,
+								right: 40,
+								zIndex: 1000
+							}}
+						>
+							<Text
+								style={{
+									borderWidth: 1,
+									borderColor: 'red',
+									color: 'red',
+									fontSize: 32,
+									fontWeight: '800',
+									padding: 10
+								}}
+							>
+								NOPE
+							</Text>
+						</Animated.View>
 						<View
-							style={{ backgroundColor: '#fff', borderRadius: 20, padding: 8 }}
+							style={{
+								height: 300,
+								backgroundColor: '#fff',
+								borderRadius: 20,
+								padding: 8
+							}}
 						>
 							<Text>
 								{user.firstName} {user.lastName}
@@ -124,6 +232,8 @@ class CardSwiper extends Component {
 						key={user.firstName}
 						style={[
 							{
+								opacity: this.nextCardOpacity,
+								transform: [{ scale: this.nextCardScale }],
 								width: SCREEN_WIDTH - 20,
 								margin: 10,
 								position: 'absolute'
