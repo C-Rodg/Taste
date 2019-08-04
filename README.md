@@ -45,7 +45,6 @@ _Everything is broken:_
 
 Issues:
 
-- pop stack on tab bar change
 - color calendar icon based off upcoming dates
 - find fix for badge on messages tabbar
 
