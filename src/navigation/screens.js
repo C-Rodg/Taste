@@ -1,17 +1,17 @@
 // Screens
-import StartInitializingScreen from '../screens/StartInitializingScreen';
-import SignInOrSignUpScreen from '../screens/SignInOrSignUpScreen';
-import SignUpScreen from '../screens/SignUpScreen';
-import SignInScreen from '../screens/SignInScreen';
-import SwipeScreen from '../screens/SwipeScreen';
-import ConnectionsScreen from '../screens/ConnectionsScreen';
-import ProfileScreen from '../screens/ProfileScreen';
-import FilterSideMenu from '../screens/FilterSideMenu';
+import StartInitializingScreen from '../containers/StartInitializingScreen';
+import SignInOrSignUpScreen from '../containers/SignInOrSignUpScreen';
+import SignUpScreen from '../containers/SignUpScreen';
+import SignInScreen from '../containers/SignInScreen';
+import SwipeScreen from '../containers/SwipeScreen';
+import ConnectionsScreen from '../containers/ConnectionsScreen';
+import ProfileScreen from '../containers/ProfileScreen';
+import FilterSideMenu from '../containers/FilterSideMenu';
 
 // Modals
-import EditProfileScreen from '../screens/EditProfileScreen';
-import UpcomingDatesScreen from '../screens/UpcomingDatesScreen';
-import MessagingScreen from '../screens/MessagingScreen';
+import EditProfileScreen from '../containers/EditProfileScreen';
+import UpcomingDatesScreen from '../containers/UpcomingDatesScreen';
+import MessagingScreen from '../containers/MessagingScreen';
 
 // Screen Keys
 export const START_INITIALIZING_SCREEN = 'taste.StartInitializingScreen';
