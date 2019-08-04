@@ -24,18 +24,18 @@
 		E91B268622F55F8D007D22ED /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91B267222F55F8D007D22ED /* MaterialCommunityIcons.ttf */; };
 		E91B268722F55F8D007D22ED /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91B267222F55F8D007D22ED /* MaterialCommunityIcons.ttf */; };
 		E91B268822F55F8D007D22ED /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91B267222F55F8D007D22ED /* MaterialCommunityIcons.ttf */; };
-		E91C193822F6664100208EA9 /* FiraSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C192322F6664000208EA9 /* FiraSans-Bold.ttf */; };
-		E91C193922F6664100208EA9 /* FiraSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C192322F6664000208EA9 /* FiraSans-Bold.ttf */; };
-		E91C193A22F6664100208EA9 /* FiraSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C192322F6664000208EA9 /* FiraSans-Bold.ttf */; };
-		E91C193B22F6664100208EA9 /* FiraSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C192322F6664000208EA9 /* FiraSans-Bold.ttf */; };
-		E91C193C22F6664100208EA9 /* FiraSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C193622F6664100208EA9 /* FiraSans-Light.ttf */; };
-		E91C193D22F6664100208EA9 /* FiraSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C193622F6664100208EA9 /* FiraSans-Light.ttf */; };
-		E91C193E22F6664100208EA9 /* FiraSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C193622F6664100208EA9 /* FiraSans-Light.ttf */; };
-		E91C193F22F6664100208EA9 /* FiraSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C193622F6664100208EA9 /* FiraSans-Light.ttf */; };
-		E91C194022F6664100208EA9 /* FiraSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C193722F6664100208EA9 /* FiraSans-Medium.ttf */; };
-		E91C194122F6664100208EA9 /* FiraSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C193722F6664100208EA9 /* FiraSans-Medium.ttf */; };
-		E91C194222F6664100208EA9 /* FiraSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C193722F6664100208EA9 /* FiraSans-Medium.ttf */; };
-		E91C194322F6664100208EA9 /* FiraSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C193722F6664100208EA9 /* FiraSans-Medium.ttf */; };
+		E91C196C22F6C42300208EA9 /* FiraSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C196922F6C42300208EA9 /* FiraSans-Bold.ttf */; };
+		E91C196D22F6C42300208EA9 /* FiraSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C196922F6C42300208EA9 /* FiraSans-Bold.ttf */; };
+		E91C196E22F6C42300208EA9 /* FiraSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C196922F6C42300208EA9 /* FiraSans-Bold.ttf */; };
+		E91C196F22F6C42300208EA9 /* FiraSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C196922F6C42300208EA9 /* FiraSans-Bold.ttf */; };
+		E91C197022F6C42300208EA9 /* FiraSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C196A22F6C42300208EA9 /* FiraSans-Light.ttf */; };
+		E91C197122F6C42300208EA9 /* FiraSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C196A22F6C42300208EA9 /* FiraSans-Light.ttf */; };
+		E91C197222F6C42300208EA9 /* FiraSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C196A22F6C42300208EA9 /* FiraSans-Light.ttf */; };
+		E91C197322F6C42300208EA9 /* FiraSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C196A22F6C42300208EA9 /* FiraSans-Light.ttf */; };
+		E91C197422F6C42300208EA9 /* FiraSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C196B22F6C42300208EA9 /* FiraSans-Medium.ttf */; };
+		E91C197522F6C42300208EA9 /* FiraSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C196B22F6C42300208EA9 /* FiraSans-Medium.ttf */; };
+		E91C197622F6C42300208EA9 /* FiraSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C196B22F6C42300208EA9 /* FiraSans-Medium.ttf */; };
+		E91C197722F6C42300208EA9 /* FiraSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E91C196B22F6C42300208EA9 /* FiraSans-Medium.ttf */; };
 		E97B867B22F6152D00CF6C70 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E97B866822F6152D00CF6C70 /* Ionicons.ttf */; };
 		E97B867C22F6152D00CF6C70 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E97B866822F6152D00CF6C70 /* Ionicons.ttf */; };
 		E97B867D22F6152D00CF6C70 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E97B866822F6152D00CF6C70 /* Ionicons.ttf */; };
@@ -213,9 +213,9 @@
 		B370D20456F25A1CBD01DFF1 /* libPods-Taste.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Taste.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C773B144D9CFAFB14C74BBC0 /* Pods-Taste-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taste-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Taste-tvOSTests/Pods-Taste-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E91B267222F55F8D007D22ED /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
-		E91C192322F6664000208EA9 /* FiraSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FiraSans-Bold.ttf"; path = "../graphics/Fira_Sans/FiraSans-Bold.ttf"; sourceTree = "<group>"; };
-		E91C193622F6664100208EA9 /* FiraSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FiraSans-Light.ttf"; path = "../graphics/Fira_Sans/FiraSans-Light.ttf"; sourceTree = "<group>"; };
-		E91C193722F6664100208EA9 /* FiraSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FiraSans-Medium.ttf"; path = "../graphics/Fira_Sans/FiraSans-Medium.ttf"; sourceTree = "<group>"; };
+		E91C196922F6C42300208EA9 /* FiraSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FiraSans-Bold.ttf"; path = "../assets/fonts/FiraSans-Bold.ttf"; sourceTree = "<group>"; };
+		E91C196A22F6C42300208EA9 /* FiraSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FiraSans-Light.ttf"; path = "../assets/fonts/FiraSans-Light.ttf"; sourceTree = "<group>"; };
+		E91C196B22F6C42300208EA9 /* FiraSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FiraSans-Medium.ttf"; path = "../assets/fonts/FiraSans-Medium.ttf"; sourceTree = "<group>"; };
 		E97B866822F6152D00CF6C70 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		E9A8BA3722EE5F88005AF2F2 /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeNavigation.xcodeproj; path = "../node_modules/react-native-navigation/lib/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; };
 		E9A8BA4E22EE6C7D005AF2F2 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
@@ -286,14 +286,14 @@
 		13B07FAE1A68108700A75B9A /* Taste */ = {
 			isa = PBXGroup;
 			children = (
+				E91C196922F6C42300208EA9 /* FiraSans-Bold.ttf */,
+				E91C196A22F6C42300208EA9 /* FiraSans-Light.ttf */,
+				E91C196B22F6C42300208EA9 /* FiraSans-Medium.ttf */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				E91C192322F6664000208EA9 /* FiraSans-Bold.ttf */,
-				E91C193622F6664100208EA9 /* FiraSans-Light.ttf */,
-				E91C193722F6664100208EA9 /* FiraSans-Medium.ttf */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				E91B267222F55F8D007D22ED /* MaterialCommunityIcons.ttf */,
 				E97B866822F6152D00CF6C70 /* Ionicons.ttf */,
@@ -669,10 +669,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E91C193922F6664100208EA9 /* FiraSans-Bold.ttf in Resources */,
+				E91C196D22F6C42300208EA9 /* FiraSans-Bold.ttf in Resources */,
 				E97B867C22F6152D00CF6C70 /* Ionicons.ttf in Resources */,
-				E91C194122F6664100208EA9 /* FiraSans-Medium.ttf in Resources */,
-				E91C193D22F6664100208EA9 /* FiraSans-Light.ttf in Resources */,
+				E91C197522F6C42300208EA9 /* FiraSans-Medium.ttf in Resources */,
+				E91C197122F6C42300208EA9 /* FiraSans-Light.ttf in Resources */,
 				E91B268622F55F8D007D22ED /* MaterialCommunityIcons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -684,9 +684,9 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				E91B268522F55F8D007D22ED /* MaterialCommunityIcons.ttf in Resources */,
 				E97B867B22F6152D00CF6C70 /* Ionicons.ttf in Resources */,
-				E91C193C22F6664100208EA9 /* FiraSans-Light.ttf in Resources */,
-				E91C194022F6664100208EA9 /* FiraSans-Medium.ttf in Resources */,
-				E91C193822F6664100208EA9 /* FiraSans-Bold.ttf in Resources */,
+				E91C197022F6C42300208EA9 /* FiraSans-Light.ttf in Resources */,
+				E91C197422F6C42300208EA9 /* FiraSans-Medium.ttf in Resources */,
+				E91C196C22F6C42300208EA9 /* FiraSans-Bold.ttf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -697,9 +697,9 @@
 			files = (
 				E91B268722F55F8D007D22ED /* MaterialCommunityIcons.ttf in Resources */,
 				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
-				E91C194222F6664100208EA9 /* FiraSans-Medium.ttf in Resources */,
-				E91C193A22F6664100208EA9 /* FiraSans-Bold.ttf in Resources */,
-				E91C193E22F6664100208EA9 /* FiraSans-Light.ttf in Resources */,
+				E91C197622F6C42300208EA9 /* FiraSans-Medium.ttf in Resources */,
+				E91C196E22F6C42300208EA9 /* FiraSans-Bold.ttf in Resources */,
+				E91C197222F6C42300208EA9 /* FiraSans-Light.ttf in Resources */,
 				E97B867D22F6152D00CF6C70 /* Ionicons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -708,10 +708,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E91C193B22F6664100208EA9 /* FiraSans-Bold.ttf in Resources */,
+				E91C196F22F6C42300208EA9 /* FiraSans-Bold.ttf in Resources */,
 				E97B867E22F6152D00CF6C70 /* Ionicons.ttf in Resources */,
-				E91C194322F6664100208EA9 /* FiraSans-Medium.ttf in Resources */,
-				E91C193F22F6664100208EA9 /* FiraSans-Light.ttf in Resources */,
+				E91C197722F6C42300208EA9 /* FiraSans-Medium.ttf in Resources */,
+				E91C197322F6C42300208EA9 /* FiraSans-Light.ttf in Resources */,
 				E91B268822F55F8D007D22ED /* MaterialCommunityIcons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
