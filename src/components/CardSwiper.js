@@ -50,6 +50,13 @@ const MOCK_CARDS = [
 	}
 ];
 
+// TODO:
+// fix widths
+// tweak animation
+// style cards behind
+// style card correctly
+// enable touch to expand/close
+
 class CardSwiper extends Component {
 	constructor() {
 		super();
