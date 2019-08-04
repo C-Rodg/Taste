@@ -6,8 +6,8 @@ const INITIAL_STATE = {
 	currentUser: null
 };
 
+// JUST A DUMMY REDUCER FOR NOW
 export default function(state = INITIAL_STATE, action) {
-	console.log(action.type);
 	switch (action.type) {
 		case SET_USER_DATA:
 			return {

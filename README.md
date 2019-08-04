@@ -38,7 +38,6 @@ _Everything is broken:_
 
 ## TODO:
 
-- hook up redux
 - start styling
 - setup API calls
 
@@ -46,6 +45,7 @@ Issues:
 
 - color calendar icon based off upcoming dates
 - find fix for badge on messages tabbar
+- persisting data?
 
 ## Contributors
 

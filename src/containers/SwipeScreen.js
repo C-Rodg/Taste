@@ -1,7 +1,6 @@
 // Libraries
 import React, { Fragment, Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import {
 	SafeAreaView,
 	StyleSheet,
@@ -31,6 +30,7 @@ class SwipeScreen extends Component {
 		// Listen for navigation button presses
 		this.navigationEventListener = Navigation.events().bindComponent(this);
 
+		// TESTING
 		this.props.getUserData();
 	}
 	componentWillUnmount() {
@@ -101,13 +101,9 @@ const mapStateToProps = state => {
 	};
 };
 
-const mapDispatchToProps = dispatch =>
-	bindActionCreators(
-		{
-			getUserData
-		},
-		dispatch
-	);
+const mapDispatchToProps = dispatch => ({
+	getUserData: () => dispatch(getUserData())
+});
 
 export default connect(
 	mapStateToProps,

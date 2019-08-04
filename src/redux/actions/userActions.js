@@ -21,9 +21,10 @@ const mockUserData = {
 };
 
 export const getUserData = () => {
-	console.log('GETTING USER DATA!');
-	return {
-		type: SET_USER_DATA,
-		payload: mockUserData
+	return dispatch => {
+		dispatch({
+			type: SET_USER_DATA,
+			payload: mockUserData
+		});
 	};
 };
