@@ -38,7 +38,6 @@ _Everything is broken:_
 
 ## TODO:
 
-- insert custom font
 - hook up redux
 - start styling
 - setup API calls

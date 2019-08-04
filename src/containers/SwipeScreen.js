@@ -1,5 +1,7 @@
 // Libraries
 import React, { Fragment, Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import {
 	SafeAreaView,
 	StyleSheet,
@@ -11,9 +13,15 @@ import {
 } from 'react-native';
 import { Navigation } from 'react-native-navigation';
 
+// Icons
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import IonIcon from 'react-native-vector-icons/Ionicons';
+
+// Screens
 import { FILTER_SIDE_MENU } from '../navigation/screens';
+
+// Actions
+import { getUserData } from '../redux/actions/userActions';
 
 // Styles
 import colors from '../styles/colors';
@@ -22,6 +30,8 @@ class SwipeScreen extends Component {
 	componentDidMount() {
 		// Listen for navigation button presses
 		this.navigationEventListener = Navigation.events().bindComponent(this);
+
+		this.props.getUserData();
 	}
 	componentWillUnmount() {
 		// Remove event listener
@@ -71,6 +81,10 @@ class SwipeScreen extends Component {
 						<Text style={{ fontFamily: 'Fira Sans', fontWeight: '700' }}>
 							Just another piece of text
 						</Text>
+
+						<Text style={{ fontFamily: 'Fira Sans', fontWeight: '500' }}>
+							{this.props.currentUser && this.props.currentUser.firstName}
+						</Text>
 					</View>
 				</SafeAreaView>
 			</Fragment>
@@ -78,4 +92,24 @@ class SwipeScreen extends Component {
 	}
 }
 
-export default SwipeScreen;
+const mapStateToProps = state => {
+	const {
+		user: { currentUser }
+	} = state;
+	return {
+		currentUser
+	};
+};
+
+const mapDispatchToProps = dispatch =>
+	bindActionCreators(
+		{
+			getUserData
+		},
+		dispatch
+	);
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(SwipeScreen);

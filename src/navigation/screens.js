@@ -27,14 +27,47 @@ export const UPCOMING_DATES_SCREEN = 'taste.UpcomingDatesScreen';
 export const MESSAGING_SCREEN = 'taste.MessagingScreen';
 
 export const Screens = new Map();
-Screens.set(START_INITIALIZING_SCREEN, StartInitializingScreen);
-Screens.set(SIGNIN_OR_SIGNUP_SCREEN, SignInOrSignUpScreen);
-Screens.set(SIGNUP_SCREEN, SignUpScreen);
-Screens.set(SIGNIN_SCREEN, SignInScreen);
-Screens.set(SWIPE_SCREEN, SwipeScreen);
-Screens.set(CONNECTIONS_SCREEN, ConnectionsScreen);
-Screens.set(PROFILE_SCREEN, ProfileScreen);
-Screens.set(FILTER_SIDE_MENU, FilterSideMenu);
-Screens.set(EDIT_PROFILE_SCREEN, EditProfileScreen);
-Screens.set(UPCOMING_DATES_SCREEN, UpcomingDatesScreen);
-Screens.set(MESSAGING_SCREEN, MessagingScreen);
+Screens.set(START_INITIALIZING_SCREEN, {
+	component: StartInitializingScreen,
+	isConnected: false
+});
+Screens.set(SIGNIN_OR_SIGNUP_SCREEN, {
+	component: SignInOrSignUpScreen,
+	isConnected: false
+});
+Screens.set(SIGNUP_SCREEN, {
+	component: SignUpScreen,
+	isConnected: false
+});
+Screens.set(SIGNIN_SCREEN, {
+	component: SignInScreen,
+	isConnected: false
+});
+Screens.set(SWIPE_SCREEN, {
+	component: SwipeScreen,
+	isConnected: true
+});
+Screens.set(CONNECTIONS_SCREEN, {
+	component: ConnectionsScreen,
+	isConnected: false
+});
+Screens.set(PROFILE_SCREEN, {
+	component: ProfileScreen,
+	isConnected: false
+});
+Screens.set(FILTER_SIDE_MENU, {
+	component: FilterSideMenu,
+	isConnected: false
+});
+Screens.set(EDIT_PROFILE_SCREEN, {
+	component: EditProfileScreen,
+	isConnected: false
+});
+Screens.set(UPCOMING_DATES_SCREEN, {
+	component: UpcomingDatesScreen,
+	isConnected: false
+});
+Screens.set(MESSAGING_SCREEN, {
+	component: MessagingScreen,
+	isConnected: false
+});
