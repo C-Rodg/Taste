@@ -38,6 +38,9 @@ _Everything is broken:_
 
 ## TODO:
 
+- switch login/signup path to just single screen with one button that kicks it all off
+  - new user response would go to a collect data/edit profile screen
+  - existing will just go to app
 - start styling
   - login / signup pages
   - initializing screen
