@@ -38,7 +38,6 @@ _Everything is broken:_
 
 ## TODO:
 
-- colorizing - fix to correct ones
 - insert custom font
 - hook up redux
 - start styling
