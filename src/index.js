@@ -9,9 +9,6 @@ import { Screens } from './navigation/screens';
 import { setNavigationDefaultOptions } from './navigation/navigation';
 import { store } from './redux/store';
 
-// NAVIGATION - Set default options
-setNavigationDefaultOptions();
-
 // NAVIGATION - Register screens with or without redux
 Screens.forEach((screen, key) => {
 	screen.isConnected
@@ -26,6 +23,9 @@ Screens.forEach((screen, key) => {
 
 // NAVIGATION - set the root of the application
 Navigation.events().registerAppLaunchedListener(() => {
+	// NAVIGATION - Set default options
+	setNavigationDefaultOptions();
+
 	Navigation.setRoot({
 		root: {
 			component: {
