@@ -1,8 +1,8 @@
-graphics/
-
 # OSX
 #
 .DS_Store
+
+graphics/
 
 # Xcode
 #

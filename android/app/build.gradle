@@ -75,6 +75,13 @@ import com.android.build.OutputFile
  * ]
  */
 
+ // CR! Adding react-native-vector-icons
+ project.ext.vectoricons = [
+    iconFontNames: [ 'MaterialCommunityIcons.ttf', 'Ionicons.ttf' ] 
+]
+
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
 project.ext.react = [
     entryFile: "index.js",
     enableHermes: false,  // clean and rebuild if changing
@@ -131,7 +138,6 @@ android {
         applicationId "com.taste"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        missingDimensionStrategy "RNN.reactNativeVersion", "reactNative57_5"
         versionCode 1
         versionName "1.0"
     }
@@ -189,12 +195,9 @@ android {
 }
 
 dependencies {
-    //implementation fileTree(dir: "libs", include: ["*.jar"])
-    //implementation "com.facebook.react:react-native:+"  // From node_modules
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
-    implementation "com.facebook.react:react-native:+"
-    implementation project(':react-native-navigation')
+    implementation "com.facebook.react:react-native:+"  // From node_modules
+
     if (enableHermes) {
       def hermesPath = "../../node_modules/hermesvm/android/";
       debugImplementation files(hermesPath + "hermes-debug.aar")

@@ -1,5 +1,5 @@
 // Libraries
-import React, { Component } from 'react';
+import React, { Fragment, Component } from 'react';
 import {
 	SafeAreaView,
 	StyleSheet,
@@ -9,59 +9,55 @@ import {
 	Button,
 	StatusBar
 } from 'react-native';
-import { Navigation } from 'react-native-navigation';
+import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import { UPCOMING_DATES_SCREEN, MESSAGING_SCREEN } from '../navigation/screens';
+// Styles
+import COLORS from '../styles/colors';
 
 class ConnectionsScreen extends Component {
-	componentDidMount() {
-		// Listen for navigation button presses
-		this.navigationEventListener = Navigation.events().bindComponent(this);
-	}
-	componentWillUnmount() {
-		// Remove event listener
-		if (this.navigationEventListener) {
-			this.navigationEventListener.remove();
-		}
-	}
-
-	// EVENT - navigation button pressed
-	navigationButtonPressed({ buttonId }) {
-		if (buttonId === 'button-upcoming') {
-			Navigation.showModal({
-				stack: {
-					children: [
-						{
-							component: {
-								name: UPCOMING_DATES_SCREEN
-							}
-						}
-					]
-				}
-			});
-		}
-	}
-
-	// EVENT - go to message screen
-	goToMessageScreen = () => {
-		Navigation.push(this.props.componentId, {
-			component: {
-				name: MESSAGING_SCREEN
-			}
-		});
+	static navigationOptions = ({ navigation }) => {
+		return {
+			title: 'Connections',
+			headerRight: (
+				<MaterialCommunityIcon
+					color={COLORS.black}
+					size={32}
+					name="calendar"
+					onPress={() => navigation.navigate('UpcomingDates')}
+				/>
+			)
+		};
 	};
+
+	componentDidMount() {
+		// TODO: navigate to home or auth routes
+	}
 
 	render() {
 		return (
-			<SafeAreaView>
-				<View>
-					<Text>Connections Screen</Text>
+			<Fragment>
+				<StatusBar barStyle="dark-content" />
+				<SafeAreaView>
+					<View style={styles.container}>
+						<Text>Connection screen</Text>
 
-					<Button title="Sample Message" onPress={this.goToMessageScreen} />
-				</View>
-			</SafeAreaView>
+						<Button
+							title="Sample Message"
+							onPress={() => this.props.navigation.navigate('Messaging')}
+						/>
+					</View>
+				</SafeAreaView>
+			</Fragment>
 		);
 	}
 }
 
 export default ConnectionsScreen;
+
+const styles = StyleSheet.create({
+	container: {
+		//flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center'
+	}
+});

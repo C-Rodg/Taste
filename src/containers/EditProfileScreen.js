@@ -6,68 +6,66 @@ import {
 	ScrollView,
 	View,
 	Text,
-	StatusBar
+	StatusBar,
+	TouchableOpacity
 } from 'react-native';
-import { Navigation } from 'react-native-navigation';
+
+// Components
+import HeaderButton from '../components/HeaderButton';
 
 class EditProfileScreen extends Component {
-	static get options() {
-		return {
-			topBar: {
-				title: {
-					text: 'Edit Profile'
-				},
-				leftButtons: [
-					{
-						id: 'button-close',
-						text: 'Cancel',
-						fontFamily: 'Fira Sans'
-					}
-				],
-				rightButtons: [
-					{
-						id: 'button-save',
-						text: 'Save',
-						fontFamily: 'Fira Sans'
-					}
-				]
-			}
-		};
-	}
-
+	static navigationOptions = ({ navigation }) => ({
+		title: 'Edit Profile',
+		headerLeft: (
+			<HeaderButton onHeaderButtonPress={() => navigation.goBack(null)}>
+				Cancel
+			</HeaderButton>
+		),
+		headerLeftContainerStyle: {
+			paddingLeft: 12
+		},
+		headerRightContainerStyle: {
+			paddingRight: 12
+		},
+		headerRight: (
+			<HeaderButton
+				onHeaderButtonPress={navigation.getParam('saveProfileEdits')}
+			>
+				Done
+			</HeaderButton>
+		)
+	});
 	componentDidMount() {
-		// Listen for navigation button presses
-		this.navigationEventListener = Navigation.events().bindComponent(this);
-	}
-	componentWillUnmount() {
-		// Remove event listener
-		if (this.navigationEventListener) {
-			this.navigationEventListener.remove();
-		}
+		// Allow for interaction with the header save button
+		this.props.navigation.setParams({
+			saveProfileEdits: this._saveProfileEdits
+		});
 	}
 
-	// EVENT - navigation button pressed
-	navigationButtonPressed({ buttonId }) {
-		if (buttonId === 'button-close') {
-			// Close button pressed
-			Navigation.dismissModal(this.props.componentId);
-		} else if (buttonId === 'button-save') {
-			// TODO: Save profile changes
-
-			// Close modal
-			Navigation.dismissModal(this.props.componentId);
-		}
-	}
+	_saveProfileEdits = () => {
+		console.log('SAVING PROFILE!!!!');
+	};
 
 	render() {
 		return (
-			<SafeAreaView>
-				<View>
-					<Text>Edit Profile now!!!</Text>
-				</View>
-			</SafeAreaView>
+			<Fragment>
+				<StatusBar barStyle="dark-content" />
+				<SafeAreaView>
+					<View style={styles.container}>
+						<Text>Edit profile here..</Text>
+					</View>
+				</SafeAreaView>
+			</Fragment>
 		);
 	}
 }
 
 export default EditProfileScreen;
+
+const styles = StyleSheet.create({
+	container: {
+		//flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center'
+	}
+});

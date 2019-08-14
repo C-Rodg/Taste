@@ -10,13 +10,15 @@ A dating app revolving around foodies.
 
 ## Libraries
 
+[React Navigation](https://reactnavigation.org)
+
 [Async-Storage](https://github.com/react-native-community/async-storage)
 
 [React-Native-Vector-Icons](https://github.com/oblador/react-native-vector-icons)
 
 [React-Native-Navigation](https://wix.github.io/react-native-navigation/)
 
-## Troubleshooting
+## Troubleshooting iOS
 
 _Missing native dependencies:_
 
@@ -36,24 +38,22 @@ _Everything is broken:_
 - ?? attempt to build in xcode (will fail)
 - cd .. && react-native run-ios
 
+## Troubleshooting Android
+
+_:app:installDebug failed_
+
+- start up Android project
+- go to AVD manager and run your virtual device
+
 ## TODO:
 
-- switch login/signup path to just single screen with one button that kicks it all off
-  - new user response would go to a collect data/edit profile screen
-  - existing will just go to app
-- start styling
-  - login / signup pages
-  - initializing screen
-  - swiper screen
-  - profile screen
-  - edit profile screen
-- setup API calls
-
-Issues:
-
-- color calendar icon based off upcoming dates
-- find fix for badge on messages tabbar
-- persisting data?
+- figure out badge icons for tab bar & calendar
+- test navigation layout on android
+- add Async storage library
+- test with async on iOS
+- test with async on Android
+- build out login screen
+  - single screen with one button that kicks it all off. new user response would go to a collect data/edit profile screen. existing will just go to app
 
 ## Contributors
 

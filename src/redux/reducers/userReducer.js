@@ -3,7 +3,7 @@ import { SET_USER_DATA } from '../types';
 
 // Initial State
 const INITIAL_STATE = {
-	currentUser: null
+	currentUser: 'blallala '
 };
 
 // JUST A DUMMY REDUCER FOR NOW

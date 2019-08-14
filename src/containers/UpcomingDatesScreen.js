@@ -8,55 +8,35 @@ import {
 	Text,
 	StatusBar
 } from 'react-native';
-import { Navigation } from 'react-native-navigation';
 
 class UpcomingDatesScreen extends Component {
-	static get options() {
-		return {
-			topBar: {
-				title: {
-					text: 'Upcoming Dates'
-				},
-				leftButtons: [
-					{
-						id: 'button-close',
-						text: 'Back',
-						fontFamily: 'Fira Sans'
-					}
-				],
-				rightButtons: []
-			}
-		};
-	}
-
+	static navigationOptions = {
+		title: 'Upcoming Dates'
+	};
 	componentDidMount() {
-		// Listen for navigation button presses
-		this.navigationEventListener = Navigation.events().bindComponent(this);
-	}
-	componentWillUnmount() {
-		// Remove event listener
-		if (this.navigationEventListener) {
-			this.navigationEventListener.remove();
-		}
-	}
-
-	// EVENT - navigation button pressed
-	navigationButtonPressed({ buttonId }) {
-		if (buttonId === 'button-close') {
-			// Close button pressed
-			Navigation.dismissModal(this.props.componentId);
-		}
+		// TODO: navigate to home or auth routes
 	}
 
 	render() {
 		return (
-			<SafeAreaView>
-				<View>
-					<Text>List of all my upcoming dates...</Text>
-				</View>
-			</SafeAreaView>
+			<Fragment>
+				<StatusBar barStyle="dark-content" />
+				<SafeAreaView>
+					<View style={styles.container}>
+						<Text>Upcoming dates and stuff..</Text>
+					</View>
+				</SafeAreaView>
+			</Fragment>
 		);
 	}
 }
 
 export default UpcomingDatesScreen;
+
+const styles = StyleSheet.create({
+	container: {
+		//flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center'
+	}
+});

@@ -9,7 +9,7 @@ import {
 	StatusBar
 } from 'react-native';
 
-class SignInScreen extends Component {
+class FiltersScreen extends Component {
 	componentDidMount() {
 		// TODO: navigate to home or auth routes
 	}
@@ -20,7 +20,7 @@ class SignInScreen extends Component {
 				<StatusBar barStyle="dark-content" />
 				<SafeAreaView>
 					<View style={styles.container}>
-						<Text>Sign in here...</Text>
+						<Text>Filters screen stuff</Text>
 					</View>
 				</SafeAreaView>
 			</Fragment>
@@ -28,7 +28,7 @@ class SignInScreen extends Component {
 	}
 }
 
-export default SignInScreen;
+export default FiltersScreen;
 
 const styles = StyleSheet.create({
 	container: {

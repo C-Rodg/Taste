@@ -9,9 +9,15 @@ import {
 	StatusBar
 } from 'react-native';
 
-class SignInScreen extends Component {
+class InitializingScreen extends Component {
 	componentDidMount() {
 		// TODO: navigate to home or auth routes
+		const hasToken = true;
+		if (hasToken) {
+			this.props.navigation.navigate('App');
+		} else {
+			this.props.navigation.navigate('Auth');
+		}
 	}
 
 	render() {
@@ -20,7 +26,7 @@ class SignInScreen extends Component {
 				<StatusBar barStyle="dark-content" />
 				<SafeAreaView>
 					<View style={styles.container}>
-						<Text>Sign in here...</Text>
+						<Text>Starting to initialize...</Text>
 					</View>
 				</SafeAreaView>
 			</Fragment>
@@ -28,7 +34,7 @@ class SignInScreen extends Component {
 	}
 }
 
-export default SignInScreen;
+export default InitializingScreen;
 
 const styles = StyleSheet.create({
 	container: {

@@ -6,50 +6,51 @@ import {
 	ScrollView,
 	View,
 	Text,
+	Button,
 	StatusBar
 } from 'react-native';
-import { Navigation } from 'react-native-navigation';
 
-import { EDIT_PROFILE_SCREEN } from '../navigation/screens';
+// Components
+import HeaderButton from '../components/HeaderButton';
 
 class ProfileScreen extends Component {
+	static navigationOptions = ({ navigation }) => {
+		return {
+			title: 'Profile',
+			headerRight: (
+				<HeaderButton onHeaderButtonPress={() => navigation.navigate('Edit')}>
+					Edit
+				</HeaderButton>
+			),
+			headerRightContainerStyle: {
+				paddingRight: 15
+			}
+		};
+	};
 	componentDidMount() {
-		// Listen for navigation button presses
-		this.navigationEventListener = Navigation.events().bindComponent(this);
-	}
-	componentWillUnmount() {
-		// Remove event listener
-		if (this.navigationEventListener) {
-			this.navigationEventListener.remove();
-		}
+		// TODO: navigate to home or auth routes
 	}
 
-	// EVENT - navigation button pressed
-	navigationButtonPressed({ buttonId }) {
-		if (buttonId === 'button-edit-profile') {
-			// Show edit profile modal
-			Navigation.showModal({
-				stack: {
-					children: [
-						{
-							component: {
-								name: EDIT_PROFILE_SCREEN
-							}
-						}
-					]
-				}
-			});
-		}
-	}
 	render() {
 		return (
-			<SafeAreaView>
-				<View>
-					<Text>Profile Screen</Text>
-				</View>
-			</SafeAreaView>
+			<Fragment>
+				<StatusBar barStyle="dark-content" />
+				<SafeAreaView>
+					<View style={styles.container}>
+						<Text>Profile screen</Text>
+					</View>
+				</SafeAreaView>
+			</Fragment>
 		);
 	}
 }
 
 export default ProfileScreen;
+
+const styles = StyleSheet.create({
+	container: {
+		//flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center'
+	}
+});
