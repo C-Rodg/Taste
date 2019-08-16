@@ -9,27 +9,26 @@ import {
 	Button,
 	StatusBar
 } from 'react-native';
-import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { connect } from 'react-redux';
 
-// Styles
-import COLORS from '../styles/colors';
+// Components
+import HeaderCalendarIcon from '../components/HeaderCalendarIcon';
+
+// Actions
+import { setConnectionsViewed } from '../redux/actions/connections';
 
 class ConnectionsScreen extends Component {
 	static navigationOptions = ({ navigation }) => {
 		return {
 			title: 'Connections',
-			headerRight: (
-				<MaterialCommunityIcon
-					color={COLORS.black}
-					size={32}
-					name="calendar"
-					onPress={() => navigation.navigate('UpcomingDates')}
-				/>
-			)
+			headerRight: <HeaderCalendarIcon navigation={navigation} />
 		};
 	};
 
 	componentDidMount() {
+		// Set new connections and new messages as viewed
+		this.props.setConnectionsViewed();
+
 		// TODO: navigate to home or auth routes
 	}
 
@@ -52,7 +51,14 @@ class ConnectionsScreen extends Component {
 	}
 }
 
-export default ConnectionsScreen;
+const mapDispatchToProps = dispatch => ({
+	setConnectionsViewed: () => dispatch(setConnectionsViewed())
+});
+
+export default connect(
+	null,
+	mapDispatchToProps
+)(ConnectionsScreen);
 
 const styles = StyleSheet.create({
 	container: {

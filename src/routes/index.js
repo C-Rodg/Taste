@@ -29,8 +29,15 @@ import UpcomingDatesScreen from '../containers/UpcomingDatesScreen';
 import MessagingScreen from '../containers/MessagingScreen';
 import EditProfileScreen from '../containers/EditProfileScreen';
 
+// Connected icon
+import TabBarMessagesIcon from '../components/TabBarMessagesIcon';
+
 // Default header props
 const defaultNavigationOptions = {
+	headerStyle: {
+		elevation: 0, // remove shadow on android
+		shadowOpacity: 0 // remove shadow on iOS
+	},
 	headerTitleStyle: {
 		fontFamily: FONTS.family.medium,
 		fontWeight: FONTS.weights.medium,
@@ -65,6 +72,7 @@ const SwipeStack = createStackNavigator(
 	{
 		initialRouteName: 'Swipe',
 		defaultNavigationOptions,
+		headerLayoutPreset: 'center',
 		navigationOptions: {
 			tabBarIcon: ({ tintColor }) => (
 				<IonIcon name="md-radio-button-on" size={32} color={tintColor} />
@@ -81,6 +89,7 @@ const ConnectionsStack = createStackNavigator(
 	},
 	{
 		initialRouteName: 'Connections',
+		headerLayoutPreset: 'center',
 		defaultNavigationOptions
 	}
 );
@@ -93,15 +102,14 @@ ConnectionsStack.navigationOptions = ({ navigation }) => {
 
 	return {
 		tabBarVisible,
-		tabBarIcon: ({ tintColor }) => (
-			<MaterialCommunityIcon name="forum" size={32} color={tintColor} />
-		)
+		tabBarIcon: ({ tintColor }) => <TabBarMessagesIcon tintColor={tintColor} />
 	};
 };
 const ProfileStack = createStackNavigator(
 	{ Profile: ProfileScreen, Edit: EditProfileScreen },
 	{
 		initialRouteName: 'Profile',
+		headerLayoutPreset: 'center',
 		defaultNavigationOptions
 	}
 );
@@ -136,7 +144,10 @@ const TabNavigator = createBottomTabNavigator(
 			activeTintColor: COLORS.pink,
 			inactiveTintColor: COLORS.gray,
 			style: {
-				paddingTop: 10
+				paddingTop: 10,
+				paddingBottom: 10, // TODO: may need to set to smaller for iOS
+				backgroundColor: 'white',
+				borderTopColor: 'transparent'
 			}
 		}
 	}

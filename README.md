@@ -16,11 +16,14 @@ A dating app revolving around foodies.
 
 [React-Native-Vector-Icons](https://github.com/oblador/react-native-vector-icons)
 
-[React-Native-Navigation](https://wix.github.io/react-native-navigation/)
+## Startup
+
+- iOS: react-native run-ios
+- Android: react-native run-android
 
 ## Troubleshooting iOS
 
-_Missing native dependencies:_
+_Missing native dependencies (iOS):_
 
 - cd ios && pod install
 
@@ -28,7 +31,7 @@ _No bundle URL found:_
 
 - rm -rf ios/build/; kill \$(lsof -t -i:8081); react-native run-ios
 
-_Everything is broken:_
+_Everything is broken (iOS):_
 
 - watchman watch-del-all
 - rm -rf node_modules && yarn install
@@ -47,8 +50,7 @@ _:app:installDebug failed_
 
 ## TODO:
 
-- figure out badge icons for tab bar & calendar
-- test navigation layout on android
+- test navigation layout on ios
 - add Async storage library
 - test with async on iOS
 - test with async on Android
