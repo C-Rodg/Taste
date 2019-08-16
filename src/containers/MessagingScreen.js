@@ -8,11 +8,26 @@ import {
 	Text,
 	StatusBar
 } from 'react-native';
+import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+
+// Styles
+import COLORS from '../styles/colors';
 
 class MessagingScreen extends Component {
-	static navigationOptions = {
-		title: 'TODO: PERSONS NAME'
-	};
+	static navigationOptions = ({ navigation }) => ({
+		title: 'PERSONS_NAME',
+		headerLeftContainerStyle: {
+			paddingLeft: 5
+		},
+		headerLeft: (
+			<MaterialCommunityIcon
+				size={32}
+				color={COLORS.black}
+				name="arrow-left"
+				onPress={() => navigation.goBack(null)}
+			/>
+		)
+	});
 	componentDidMount() {
 		// TODO: navigate to home or auth routes
 	}

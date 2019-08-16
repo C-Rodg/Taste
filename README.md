@@ -50,7 +50,6 @@ _:app:installDebug failed_
 
 ## TODO:
 
-- test navigation layout on ios
 - add Async storage library
 - test with async on iOS
 - test with async on Android
