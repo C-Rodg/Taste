@@ -36,7 +36,7 @@ import TabBarMessagesIcon from '../components/TabBarMessagesIcon';
 const defaultNavigationOptions = {
 	headerStyle: {
 		elevation: 0, // remove shadow on android
-		shadowOpacity: 0 // remove shadow on iOS
+		borderBottomWidth: 0
 	},
 	headerTitleStyle: {
 		fontFamily: FONTS.family.medium,
