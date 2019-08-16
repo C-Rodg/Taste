@@ -35,7 +35,7 @@ class UpcomingDatesScreen extends Component {
 	render() {
 		return (
 			<Fragment>
-				<StatusBar barStyle="dark-content" />
+				<StatusBar barStyle="light-content" />
 				<SafeAreaView>
 					<View style={styles.container}>
 						<Text>Upcoming dates and stuff..</Text>

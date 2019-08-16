@@ -35,7 +35,7 @@ class MessagingScreen extends Component {
 	render() {
 		return (
 			<Fragment>
-				<StatusBar barStyle="dark-content" />
+				<StatusBar barStyle="light-content" />
 				<SafeAreaView>
 					<View style={styles.container}>
 						<Text>Messaging stuff..</Text>

@@ -50,7 +50,15 @@ const defaultNavigationOptions = {
 };
 
 // Authentication
-const AuthStack = createStackNavigator({ SignIn: SignInScreen });
+const AuthStack = createStackNavigator(
+	{ SignIn: SignInScreen },
+
+	{
+		initialRouteName: 'SignIn',
+		headerLayoutPreset: 'center',
+		defaultNavigationOptions
+	}
+);
 
 // Swipe Screen
 SwipeScreen.navigationOptions = ({ navigation }) => {

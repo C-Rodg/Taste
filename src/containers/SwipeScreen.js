@@ -22,7 +22,7 @@ class SwipeScreen extends Component {
 		console.log(this.props.currentUser);
 		return (
 			<Fragment>
-				<StatusBar barStyle="dark-content" />
+				<StatusBar barStyle="light-content" />
 				<SafeAreaView>
 					<View style={styles.container}>
 						<Text style={{ fontFamily: 'FiraSans-Bold', fontSize: 34 }}>

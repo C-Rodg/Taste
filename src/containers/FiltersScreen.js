@@ -17,7 +17,6 @@ class FiltersScreen extends Component {
 	render() {
 		return (
 			<Fragment>
-				<StatusBar barStyle="dark-content" />
 				<SafeAreaView>
 					<View style={styles.container}>
 						<Text>Filters screen stuff</Text>

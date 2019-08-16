@@ -50,11 +50,11 @@ _:app:installDebug failed_
 
 ## TODO:
 
-- add Async storage library
 - test with async on iOS
-- test with async on Android
 - build out login screen
   - single screen with one button that kicks it all off. new user response would go to a collect data/edit profile screen. existing will just go to app
+- build out swipe screen
+- create logo
 
 ## Contributors
 

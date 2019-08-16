@@ -6,7 +6,8 @@ import {
 	ScrollView,
 	View,
 	Text,
-	StatusBar
+	StatusBar,
+	Button
 } from 'react-native';
 
 class SignInScreen extends Component {
@@ -17,10 +18,14 @@ class SignInScreen extends Component {
 	render() {
 		return (
 			<Fragment>
-				<StatusBar barStyle="dark-content" />
+				<StatusBar barStyle="light-content" />
 				<SafeAreaView>
 					<View style={styles.container}>
 						<Text>Sign in here...</Text>
+						<Button
+							title="Go to app"
+							onPress={() => this.props.navigation.navigate('App')}
+						/>
 					</View>
 				</SafeAreaView>
 			</Fragment>
