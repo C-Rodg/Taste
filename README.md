@@ -50,9 +50,18 @@ _:app:installDebug failed_
 
 ## TODO:
 
-- build out login screen
-  - single screen with one button that kicks it all off. new user response would go to a collect data/edit profile screen. existing will just go to app
+LOGIN:
+
+- hook up requests for login screen: click 'Get Started' and go to facebook auth or call our internal auth endpoint?
+- new user response would go to collect data/edit profile screen
+- fix styling on login page
+
+SWIPE:
+
 - build out swipe screen
+
+OTHER:
+
 - create logo
 
 ## Contributors
