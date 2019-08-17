@@ -7,8 +7,18 @@ import {
 	View,
 	Text,
 	StatusBar,
-	Button
+	Button,
+	ImageBackground,
+	Image,
 } from 'react-native';
+import styled from 'styled-components';
+
+// Images
+const backgroundImage = require('../assets/coffee_1_bw.png');
+
+// Props
+import FONTS from '../styles/fonts';
+import COLORS from '../styles/colors';
 
 class SignInScreen extends Component {
 	componentDidMount() {
@@ -19,15 +29,24 @@ class SignInScreen extends Component {
 		return (
 			<Fragment>
 				<StatusBar barStyle="light-content" />
-				<SafeAreaView>
-					<View style={styles.container}>
-						<Text>Sign in here...</Text>
-						<Button
-							title="Go to app"
-							onPress={() => this.props.navigation.navigate('App')}
-						/>
-					</View>
-				</SafeAreaView>
+
+				<BackgroundImageView
+					source={backgroundImage}
+					resizeMode="cover"
+					imageStyle={{ width: '100%' }}
+				>
+					<SafeAreaView style={{ flex: 1 }}>
+						<ContentWrapperView>
+							<LogoView />
+							<TagLineText>What's your Taste?</TagLineText>
+							<GetStartedTouchable
+								onPress={() => this.props.navigation.navigate('App')}
+							>
+								<GetStartedTouchableText>Get Started</GetStartedTouchableText>
+							</GetStartedTouchable>
+						</ContentWrapperView>
+					</SafeAreaView>
+				</BackgroundImageView>
 			</Fragment>
 		);
 	}
@@ -35,10 +54,46 @@ class SignInScreen extends Component {
 
 export default SignInScreen;
 
-const styles = StyleSheet.create({
-	container: {
-		//flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center'
-	}
-});
+// Styles
+const BackgroundImageView = styled.ImageBackground`
+	width: 100%;
+	height: null;
+	flex: 1;
+`;
+
+const ContentWrapperView = styled.View`
+	margin: 20px;
+	justify-content: center;
+	align-items: center;
+`;
+
+// Temporary logo
+const LogoView = styled.View`
+	width: 76px;
+	height: 76px;
+	border-radius: 38;
+	background-color: ${COLORS.pink};
+`;
+
+const TagLineText = styled.Text`
+	font-family: ${FONTS.family.medium};
+	font-size: ${FONTS.sizes.large};
+	font-weight: ${FONTS.weights.medium};
+	margin: 30px 0 20px 0;
+`;
+
+const GetStartedTouchable = styled.TouchableOpacity`
+	width: 100%;
+	background-color: ${COLORS.pink};
+	padding-top: 20;
+	padding-bottom: 20;
+	justify-content: center;
+	align-items: center;
+	border-radius: 40px;
+`;
+const GetStartedTouchableText = styled.Text`
+	font-size: 20;
+	color: #fff;
+	font-family: ${FONTS.family.medium};
+	font-weight: ${FONTS.weights.medium};
+`;

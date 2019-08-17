@@ -12,6 +12,10 @@ const fonts = {
 		medium: '500',
 		regular: '400',
 		light: '300'
+	},
+	sizes: {
+		regular: 18,
+		large: 24
 	}
 };
 
