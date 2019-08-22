@@ -14,7 +14,7 @@ import {
 import styled from 'styled-components';
 
 // Images
-const backgroundImage = require('../assets/coffee_1_bw.png');
+const backgroundImage = require('../assets/coffee_1.png');
 
 // Props
 import FONTS from '../styles/fonts';
@@ -30,23 +30,25 @@ class SignInScreen extends Component {
 			<Fragment>
 				<StatusBar barStyle="light-content" />
 
-				<BackgroundImageView
-					source={backgroundImage}
-					resizeMode="cover"
-					imageStyle={{ width: '100%' }}
-				>
-					<SafeAreaView style={{ flex: 1 }}>
-						<ContentWrapperView>
-							<LogoView />
-							<TagLineText>What's your Taste?</TagLineText>
-							<GetStartedTouchable
-								onPress={() => this.props.navigation.navigate('App')}
-							>
-								<GetStartedTouchableText>Get Started</GetStartedTouchableText>
-							</GetStartedTouchable>
-						</ContentWrapperView>
-					</SafeAreaView>
-				</BackgroundImageView>
+				<SafeAreaView style={{ flex: 1 }}>
+					<ContentWrapperView>
+						<LogoView />
+						<TagLineText>What's your Taste?</TagLineText>
+					</ContentWrapperView>
+
+					<Image
+						source={backgroundImage}
+						style={{ width: '100%', flexShrink: 1 }}
+						resizeMode="cover"
+					/>
+					<ContentWrapperView>
+						<GetStartedTouchable
+							onPress={() => this.props.navigation.navigate('App')}
+						>
+							<GetStartedTouchableText>Get Started</GetStartedTouchableText>
+						</GetStartedTouchable>
+					</ContentWrapperView>
+				</SafeAreaView>
 			</Fragment>
 		);
 	}
@@ -55,12 +57,6 @@ class SignInScreen extends Component {
 export default SignInScreen;
 
 // Styles
-const BackgroundImageView = styled.ImageBackground`
-	width: 100%;
-	height: null;
-	flex: 1;
-`;
-
 const ContentWrapperView = styled.View`
 	margin: 20px;
 	justify-content: center;
