@@ -9,7 +9,7 @@ graphics/
 docker/
 
 # API Keys
-src/secrets/
+src/secrets/index.js
 
 # Xcode
 #
