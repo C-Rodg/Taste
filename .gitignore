@@ -2,8 +2,14 @@
 #
 .DS_Store
 
+# Documents/Other
 graphics/
+
+# Backend setup
 docker/
+
+# API Keys
+src/secrets/
 
 # Xcode
 #
