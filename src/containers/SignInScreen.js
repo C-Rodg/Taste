@@ -31,16 +31,17 @@ class SignInScreen extends Component {
 				<StatusBar barStyle="light-content" />
 
 				<SafeAreaView style={{ flex: 1 }}>
-					<ContentWrapperView>
+					<ContentWrapperView style={{ flex: 1 }}>
 						<LogoView />
-						<TagLineText>What's your Taste?</TagLineText>
+						<LogoTextWrapperView>
+							<TitleText>Taste</TitleText>
+							<SubtitleText>The dating app for foodies.</SubtitleText>
+						</LogoTextWrapperView>
+						<TaglineTextWrapperView>
+							<TaglineText>What's your Taste?</TaglineText>
+						</TaglineTextWrapperView>
 					</ContentWrapperView>
 
-					<Image
-						source={backgroundImage}
-						style={{ width: '100%', flexShrink: 1 }}
-						resizeMode="cover"
-					/>
 					<ContentWrapperView>
 						<GetStartedTouchable
 							onPress={() => this.props.navigation.navigate('App')}
@@ -65,31 +66,52 @@ const ContentWrapperView = styled.View`
 
 // Temporary logo
 const LogoView = styled.View`
-	width: 76px;
-	height: 76px;
-	border-radius: 38;
+	width: 182px;
+	height: 182px;
+	border-radius: 74;
 	background-color: ${COLORS.pink};
 `;
 
-const TagLineText = styled.Text`
+const LogoTextWrapperView = styled.View`
+	margin: 30px 0;
+`;
+
+const TaglineTextWrapperView = styled.View``;
+
+const TitleText = styled.Text`
+	text-align: center;
 	font-family: ${FONTS.family.medium};
-	font-size: ${FONTS.sizes.large};
+	font-size: ${FONTS.sizes.larger};
 	font-weight: ${FONTS.weights.medium};
-	margin: 30px 0 20px 0;
+`;
+
+const SubtitleText = styled.Text`
+	text-align: center;
+	font-family: ${FONTS.family.medium};
+	font-size: ${FONTS.sizes.regular};
+	font-weight: ${FONTS.weights.regular};
+	margin: 8px 0;
+`;
+
+const TaglineText = styled.Text`
+	text-align: center;
+	font-family: ${FONTS.family.medium};
+	font-size: ${FONTS.sizes.regular};
+	font-weight: ${FONTS.weights.medium};
 `;
 
 const GetStartedTouchable = styled.TouchableOpacity`
 	width: 100%;
-	background-color: ${COLORS.pink};
+	border: 1px solid ${COLORS.pink};
 	padding-top: 20;
 	padding-bottom: 20;
 	justify-content: center;
 	align-items: center;
-	border-radius: 40px;
+	border-radius: 10px;
 `;
 const GetStartedTouchableText = styled.Text`
 	font-size: 20;
-	color: #fff;
+	color: ${COLORS.pink};
 	font-family: ${FONTS.family.medium};
 	font-weight: ${FONTS.weights.medium};
 `;
