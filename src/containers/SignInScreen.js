@@ -1,29 +1,16 @@
 // Libraries
 import React, { Fragment, Component } from 'react';
-import {
-	SafeAreaView,
-	StyleSheet,
-	ScrollView,
-	View,
-	Text,
-	StatusBar,
-	Button,
-	ImageBackground,
-	Image,
-} from 'react-native';
+import { SafeAreaView, View, StatusBar } from 'react-native';
 import styled from 'styled-components';
-
-// Images
-const backgroundImage = require('../assets/coffee_1.png');
 
 // Props
 import FONTS from '../styles/fonts';
 import COLORS from '../styles/colors';
 
 class SignInScreen extends Component {
-	componentDidMount() {
-		// TODO: navigate to home or auth routes
-	}
+	handleLogin = () => {
+		// TODO: Call facebook sdk
+	};
 
 	render() {
 		return (
@@ -37,9 +24,9 @@ class SignInScreen extends Component {
 							<TitleText>Taste</TitleText>
 							<SubtitleText>The dating app for foodies.</SubtitleText>
 						</LogoTextWrapperView>
-						<TaglineTextWrapperView>
+						<View>
 							<TaglineText>What's your Taste?</TaglineText>
-						</TaglineTextWrapperView>
+						</View>
 					</ContentWrapperView>
 
 					<ContentWrapperView>
@@ -75,8 +62,6 @@ const LogoView = styled.View`
 const LogoTextWrapperView = styled.View`
 	margin: 30px 0;
 `;
-
-const TaglineTextWrapperView = styled.View``;
 
 const TitleText = styled.Text`
 	text-align: center;

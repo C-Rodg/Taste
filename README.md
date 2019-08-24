@@ -1,12 +1,8 @@
 # Taste
 
-What's your Taste?
+Welcome to Taste. The dating app for foodies. Who cares how horrible your date is when you have good food?
 
-Who cares how horrible your date is when you have good food?
-
-## Description
-
-A dating app revolving around foodies.
+**What's your Taste?**
 
 ## Libraries
 
@@ -29,6 +25,7 @@ _Missing native dependencies (iOS):_
 
 _No bundle URL found:_
 
+- just wait for graph dependencies to load
 - rm -rf ios/build/; kill \$(lsof -t -i:8081); react-native run-ios
 
 _Everything is broken (iOS):_

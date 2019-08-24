@@ -1,13 +1,16 @@
 {
-	"name": "Taste",
+	"name": "taste",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
 		"start": "react-native start",
 		"test": "jest",
-		"lint": "eslint ."
+		"lint": "eslint .",
+		"docker:stop": "docker-compose stop",
+		"docker:start": "cd docker && docker-compose up -d"
 	},
 	"dependencies": {
+		"@fadidev/react-native-fblogin": "^1.0.5",
 		"@react-native-community/async-storage": "^1.6.1",
 		"react": "16.8.6",
 		"react-native": "0.60.4",
