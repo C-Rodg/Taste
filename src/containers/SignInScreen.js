@@ -2,14 +2,31 @@
 import React, { Fragment, Component } from 'react';
 import { SafeAreaView, View, StatusBar } from 'react-native';
 import styled from 'styled-components';
+import { loginInWithPermissions } from '@fadidev/react-native-fblogin';
 
 // Props
 import FONTS from '../styles/fonts';
 import COLORS from '../styles/colors';
 
 class SignInScreen extends Component {
-	handleLogin = () => {
-		// TODO: Call facebook sdk
+	state = {
+		login: false,
+	};
+
+	renderLogin = () => {
+		const { login } = this.state;
+		if (login) {
+			return loginInWithPermissions({
+				runNow: true,
+				redirectUrl: 'https://facebook.com/connect/login_success.html',
+				getMyInformationsFields: ['id,first_name,last_name,name,email,picture'],
+				clientId: 'REPLACE_WITH_YOUR_APP_ID',
+				secretKey: 'REPLACE_WITH_YOUR_SECRET_KEY',
+				onLoginSuccess: data => console.log(data),
+				onLoginFailure: error => console.log(error),
+			});
+		}
+		// eventually call: this.props.navigation.navigate('App')
 	};
 
 	render() {
@@ -30,12 +47,11 @@ class SignInScreen extends Component {
 					</ContentWrapperView>
 
 					<ContentWrapperView>
-						<GetStartedTouchable
-							onPress={() => this.props.navigation.navigate('App')}
-						>
+						<GetStartedTouchable onPress={() => this.setState({ login: true })}>
 							<GetStartedTouchableText>Get Started</GetStartedTouchableText>
 						</GetStartedTouchable>
 					</ContentWrapperView>
+					{this.renderLogin()}
 				</SafeAreaView>
 			</Fragment>
 		);
