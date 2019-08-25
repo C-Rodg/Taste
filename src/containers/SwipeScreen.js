@@ -8,7 +8,7 @@ import {
 	View,
 	Text,
 	Button,
-	StatusBar
+	StatusBar,
 } from 'react-native';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import IonIcon from 'react-native-vector-icons/Ionicons';
@@ -19,7 +19,6 @@ class SwipeScreen extends Component {
 	componentDidMount() {}
 
 	render() {
-		console.log(this.props.currentUser);
 		return (
 			<Fragment>
 				<StatusBar barStyle="light-content" />
@@ -62,7 +61,7 @@ class SwipeScreen extends Component {
 const mapStateToProps = state => {
 	const { currentUser } = state.user;
 	return {
-		currentUser
+		currentUser,
 	};
 };
 
@@ -72,6 +71,6 @@ const styles = StyleSheet.create({
 	container: {
 		//flex: 1,
 		justifyContent: 'center',
-		alignItems: 'center'
-	}
+		alignItems: 'center',
+	},
 });

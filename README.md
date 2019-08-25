@@ -12,6 +12,8 @@ Welcome to Taste. The dating app for foodies. Who cares how horrible your date i
 
 [React-Native-Vector-Icons](https://github.com/oblador/react-native-vector-icons)
 
+[React Native Webview](https://github.com/react-native-community/react-native-webview)
+
 ## Startup
 
 - iOS: react-native run-ios
@@ -26,7 +28,9 @@ _Missing native dependencies (iOS):_
 _No bundle URL found:_
 
 - just wait for graph dependencies to load
-- rm -rf ios/build/; kill \$(lsof -t -i:8081); react-native run-ios
+- rm -rf ios/build/
+- kill \$(lsof -t -i:8081)
+- react-native run-ios
 
 _Everything is broken (iOS):_
 
