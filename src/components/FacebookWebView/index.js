@@ -22,6 +22,7 @@ class FacebookWebView extends Component {
 
 	state = {
 		url: {
+			//authLoginUrl: `https://www.facebook.com/v3.3/dialog/oauth?client_id=${this.props.clientId}&redirect_uri=${this.props.redirectUrl}&response_type=token`,
 			authLoginUrl: `https://www.facebook.com/dialog/oauth?client_id=${this.props.clientId}&redirect_uri=${this.props.redirectUrl}&scope=email`,
 			authTokenUrl: `https://graph.facebook.com/oauth/access_token?client_id=${this.props.clientId}&redirect_uri=${this.props.redirectUrl}&client_secret=${this.props.secretKey}&code=`,
 		},
@@ -32,6 +33,7 @@ class FacebookWebView extends Component {
 	};
 
 	_onNavigationStateChange = event => {
+		console.log(event);
 		const { onLoginFailure } = this.props;
 		const { authTokenUrl } = this.state.url;
 		let getEvent = event;
@@ -46,13 +48,17 @@ class FacebookWebView extends Component {
 					getEvent.url.includes('login_success.html?code=') &&
 					//getEvent.jsEvaluationValue === '' &&
 					getEvent.loading === false
+					//getEvent.url.includes('login_success.html#access_token=')
 				) {
 					if (getEvent.url.includes('code=')) {
+						//if (getEvent.url.includes('#access_token=')) {
 						let decodeURL = getEvent.url
 							.substr(50, 350)
 							.replace('#', '')
 							.replace('code=', '');
 						const urlFinal = authTokenUrl + decodeURL;
+						console.log('URL FINAL IS:');
+						console.log(urlFinal);
 						this.setState({ randomUrl: urlFinal.toString() }, () => {
 							this._openCloseModal(false, () => {
 								this._requester(this.state.randomUrl);
@@ -145,6 +151,8 @@ class FacebookWebView extends Component {
 	async _requester(url) {
 		try {
 			const { status, data } = await Axios.get(url);
+			console.log(status);
+			console.log(data);
 			if (status === 200) {
 				this.setState({ loginData: data }, () => {
 					this._setAccessToken();
@@ -175,6 +183,8 @@ class FacebookWebView extends Component {
 					'&access_token=' +
 					this.state.loginData.access_token
 			);
+			console.log(status);
+			console.log(data);
 
 			if (status === 200) {
 				this.setState({ ready: true }, () => {

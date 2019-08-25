@@ -21,7 +21,7 @@ class SignInScreen extends Component {
 	handleLoginSuccess = data => {
 		console.log(data);
 		const { access_token } = data;
-
+		console.log(access_token);
 		// Login with our service
 		axios
 			.post(
@@ -32,7 +32,8 @@ class SignInScreen extends Component {
 				},
 				{ headers: { 'Content-Type': 'application/json' } }
 			)
-			.then(({ data }) => {
+			.then(({ data, ...resp }) => {
+				console.log(resp);
 				console.log(data);
 				if (data.error) {
 					throw new Error(resp.errorMessage);
