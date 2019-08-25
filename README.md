@@ -53,7 +53,8 @@ _:app:installDebug failed_
 
 LOGIN:
 
-- new user response would go to collect data/edit profile screen
+- setup 'new user' routes
+- test on android
 
 SWIPE:
 
