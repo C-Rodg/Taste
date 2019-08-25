@@ -4,9 +4,13 @@ import { SafeAreaView, View, StatusBar } from 'react-native';
 import styled from 'styled-components';
 import { loginInWithPermissions } from '../components/FacebookWebView';
 import axios from 'axios';
+import AsyncStorage from '@react-native-community/async-storage';
 
 // Secrets
 import { SECRETS } from '../secrets';
+
+// Storage
+import { JWT_TOKEN } from '../config/config';
 
 // Props
 import FONTS from '../styles/fonts';
@@ -33,6 +37,10 @@ class SignInScreen extends Component {
 			if (data.error) {
 				throw new Error(resp.errorMessage);
 			}
+
+			// Save off JWT token
+			await AsyncStorage.setItem(JWT_TOKEN, data.jwtToken);
+
 			if (data.newUser) {
 				// TODO: GO TO NEW PROFILE SETUP
 				console.log('New User');

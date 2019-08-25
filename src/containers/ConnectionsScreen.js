@@ -7,12 +7,12 @@ import {
 	View,
 	Text,
 	Button,
-	StatusBar
+	StatusBar,
 } from 'react-native';
 import { connect } from 'react-redux';
 
 // Components
-import HeaderCalendarIcon from '../components/HeaderCalendarIcon';
+import { HeaderCalendarIcon } from '../components/NavigationItems';
 
 // Actions
 import { setConnectionsViewed } from '../redux/actions/connections';
@@ -21,7 +21,7 @@ class ConnectionsScreen extends Component {
 	static navigationOptions = ({ navigation }) => {
 		return {
 			title: 'Connections',
-			headerRight: <HeaderCalendarIcon navigation={navigation} />
+			headerRight: <HeaderCalendarIcon navigation={navigation} />,
 		};
 	};
 
@@ -52,7 +52,7 @@ class ConnectionsScreen extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-	setConnectionsViewed: () => dispatch(setConnectionsViewed())
+	setConnectionsViewed: () => dispatch(setConnectionsViewed()),
 });
 
 export default connect(
@@ -64,6 +64,6 @@ const styles = StyleSheet.create({
 	container: {
 		//flex: 1,
 		justifyContent: 'center',
-		alignItems: 'center'
-	}
+		alignItems: 'center',
+	},
 });

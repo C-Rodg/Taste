@@ -6,18 +6,17 @@ import {
 	ScrollView,
 	View,
 	Text,
-	StatusBar
+	StatusBar,
 } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 
-import { USER_KEY } from '../config/config';
+import { JWT_TOKEN } from '../config/config';
 
 class InitializingScreen extends Component {
 	async componentDidMount() {
 		// Determine if user is logged in or not
 		try {
-			const user = await AsyncStorage.getItem(USER_KEY);
-			console.log('user: ', user);
+			const user = await AsyncStorage.getItem(JWT_TOKEN);
 			if (user) {
 				this.props.navigation.navigate('App');
 			} else {
@@ -49,6 +48,6 @@ const styles = StyleSheet.create({
 	container: {
 		//flex: 1,
 		justifyContent: 'center',
-		alignItems: 'center'
-	}
+		alignItems: 'center',
+	},
 });

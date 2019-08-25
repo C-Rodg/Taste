@@ -7,11 +7,11 @@ import {
 	View,
 	Text,
 	Button,
-	StatusBar
+	StatusBar,
 } from 'react-native';
 
 // Components
-import HeaderButton from '../components/HeaderButton';
+import { HeaderButton } from '../components/NavigationItems';
 
 class ProfileScreen extends Component {
 	static navigationOptions = ({ navigation }) => {
@@ -23,8 +23,8 @@ class ProfileScreen extends Component {
 				</HeaderButton>
 			),
 			headerRightContainerStyle: {
-				paddingRight: 15
-			}
+				paddingRight: 15,
+			},
 		};
 	};
 	componentDidMount() {
@@ -51,6 +51,6 @@ const styles = StyleSheet.create({
 	container: {
 		//flex: 1,
 		justifyContent: 'center',
-		alignItems: 'center'
-	}
+		alignItems: 'center',
+	},
 });

@@ -7,11 +7,11 @@ import {
 	View,
 	Text,
 	StatusBar,
-	TouchableOpacity
+	TouchableOpacity,
 } from 'react-native';
 
 // Components
-import HeaderButton from '../components/HeaderButton';
+import { HeaderButton } from '../components/NavigationItems';
 
 class EditProfileScreen extends Component {
 	static navigationOptions = ({ navigation }) => ({
@@ -22,10 +22,10 @@ class EditProfileScreen extends Component {
 			</HeaderButton>
 		),
 		headerLeftContainerStyle: {
-			paddingLeft: 12
+			paddingLeft: 12,
 		},
 		headerRightContainerStyle: {
-			paddingRight: 12
+			paddingRight: 12,
 		},
 		headerRight: (
 			<HeaderButton
@@ -33,12 +33,12 @@ class EditProfileScreen extends Component {
 			>
 				Done
 			</HeaderButton>
-		)
+		),
 	});
 	componentDidMount() {
 		// Allow for interaction with the header save button
 		this.props.navigation.setParams({
-			saveProfileEdits: this._saveProfileEdits
+			saveProfileEdits: this._saveProfileEdits,
 		});
 	}
 
@@ -66,6 +66,6 @@ const styles = StyleSheet.create({
 	container: {
 		//flex: 1,
 		justifyContent: 'center',
-		alignItems: 'center'
-	}
+		alignItems: 'center',
+	},
 });

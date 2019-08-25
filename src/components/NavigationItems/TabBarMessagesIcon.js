@@ -5,7 +5,7 @@ import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIc
 import { connect } from 'react-redux';
 
 // Styles
-import COLORS from '../styles/colors';
+import COLORS from '../../styles/colors';
 
 function TabBarMessagesIcon({ tintColor, newMessages, newConnections }) {
 	return (
@@ -18,11 +18,11 @@ function TabBarMessagesIcon({ tintColor, newMessages, newConnections }) {
 
 const mapStateToProps = state => {
 	const {
-		connections: { newMessages, newConnections }
+		connections: { newMessages, newConnections },
 	} = state;
 	return {
 		newMessages,
-		newConnections
+		newConnections,
 	};
 };
 
@@ -38,6 +38,6 @@ const styles = StyleSheet.create({
 		width: 10,
 		height: 10,
 		justifyContent: 'center',
-		alignItems: 'center'
-	}
+		alignItems: 'center',
+	},
 });

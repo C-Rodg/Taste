@@ -5,7 +5,7 @@ import {
 	createStackNavigator,
 	createBottomTabNavigator,
 	createDrawerNavigator,
-	createAppContainer
+	createAppContainer,
 } from 'react-navigation';
 import { Provider } from 'react-redux';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -30,23 +30,23 @@ import MessagingScreen from '../containers/MessagingScreen';
 import EditProfileScreen from '../containers/EditProfileScreen';
 
 // Connected icon
-import TabBarMessagesIcon from '../components/TabBarMessagesIcon';
+import { TabBarMessagesIcon } from '../components/NavigationItems/';
 
 // Default header props
 const defaultNavigationOptions = {
 	headerStyle: {
 		elevation: 0, // remove shadow on android
-		borderBottomWidth: 0 // remove border on iOS
+		borderBottomWidth: 0, // remove border on iOS
 	},
 	headerTitleStyle: {
 		fontFamily: FONTS.family.medium,
 		fontWeight: FONTS.weights.medium,
 		fontSize: 24,
-		color: COLORS.black
+		color: COLORS.black,
 	},
 	headerRightContainerStyle: {
-		paddingRight: 10
-	}
+		paddingRight: 10,
+	},
 };
 
 // Authentication
@@ -56,7 +56,7 @@ const AuthStack = createStackNavigator(
 	{
 		initialRouteName: 'SignIn',
 		headerLayoutPreset: 'center',
-		defaultNavigationOptions
+		defaultNavigationOptions,
 	}
 );
 
@@ -72,7 +72,7 @@ SwipeScreen.navigationOptions = ({ navigation }) => {
 				name="filter-variant"
 				onPress={navigation.openDrawer}
 			/>
-		)
+		),
 	};
 };
 const SwipeStack = createStackNavigator(
@@ -84,8 +84,8 @@ const SwipeStack = createStackNavigator(
 		navigationOptions: {
 			tabBarIcon: ({ tintColor }) => (
 				<IonIcon name="md-radio-button-on" size={32} color={tintColor} />
-			)
-		}
+			),
+		},
 	}
 );
 
@@ -93,12 +93,12 @@ const ConnectionsStack = createStackNavigator(
 	{
 		Connections: ConnectionsScreen,
 		Messaging: MessagingScreen,
-		UpcomingDates: UpcomingDatesScreen
+		UpcomingDates: UpcomingDatesScreen,
 	},
 	{
 		initialRouteName: 'Connections',
 		headerLayoutPreset: 'center',
-		defaultNavigationOptions
+		defaultNavigationOptions,
 	}
 );
 // Set Tab bar visible = false for modal routes
@@ -110,7 +110,7 @@ ConnectionsStack.navigationOptions = ({ navigation }) => {
 
 	return {
 		tabBarVisible,
-		tabBarIcon: ({ tintColor }) => <TabBarMessagesIcon tintColor={tintColor} />
+		tabBarIcon: ({ tintColor }) => <TabBarMessagesIcon tintColor={tintColor} />,
 	};
 };
 const ProfileStack = createStackNavigator(
@@ -118,7 +118,7 @@ const ProfileStack = createStackNavigator(
 	{
 		initialRouteName: 'Profile',
 		headerLayoutPreset: 'center',
-		defaultNavigationOptions
+		defaultNavigationOptions,
 	}
 );
 // Set Tab bar visible = false for modal routes
@@ -133,7 +133,7 @@ ProfileStack.navigationOptions = ({ navigation }) => {
 			return (
 				<MaterialCommunityIcon name="account" size={32} color={tintColor} />
 			);
-		}
+		},
 	};
 };
 
@@ -142,7 +142,7 @@ const TabNavigator = createBottomTabNavigator(
 	{
 		Swipe: SwipeStack,
 		Connections: ConnectionsStack,
-		Profile: ProfileStack
+		Profile: ProfileStack,
 	},
 	{
 		//initialRouteName: 'Swipe',
@@ -155,19 +155,19 @@ const TabNavigator = createBottomTabNavigator(
 				paddingTop: 10,
 				paddingBottom: 10, // TODO: may need to set to smaller for iOS
 				backgroundColor: 'white',
-				borderTopColor: 'transparent'
-			}
-		}
+				borderTopColor: 'transparent',
+			},
+		},
 	}
 );
 
 // Drawer
 const DrawerNavigator = createDrawerNavigator(
 	{
-		App: TabNavigator
+		App: TabNavigator,
 	},
 	{
-		contentComponent: FiltersScreen
+		contentComponent: FiltersScreen,
 	}
 );
 
@@ -177,10 +177,10 @@ const AppContainer = createAppContainer(
 		{
 			Initializing: InitializingScreen,
 			App: DrawerNavigator,
-			Auth: AuthStack
+			Auth: AuthStack,
 		},
 		{
-			initialRouteName: 'Initializing'
+			initialRouteName: 'Initializing',
 		}
 	)
 );
