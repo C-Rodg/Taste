@@ -9,9 +9,6 @@ import AsyncStorage from '@react-native-community/async-storage';
 // Secrets
 import { SECRETS } from '../secrets';
 
-// Storage
-import { JWT_TOKEN } from '../config/config';
-
 // Props
 import FONTS from '../styles/fonts';
 import COLORS from '../styles/colors';
@@ -38,16 +35,26 @@ class SignInScreen extends Component {
 				throw new Error(resp.errorMessage);
 			}
 
-			// Save off JWT token
-			await AsyncStorage.setItem(JWT_TOKEN, data.jwtToken);
-
 			if (data.newUser) {
-				// TODO: GO TO NEW PROFILE SETUP
 				console.log('New User');
-				// this.props.navigation.navigate('NewUser');
+				this.props.navigation.navigate('StartNewUser', {
+					jwtToken: data.jwtToken,
+				});
+				// this.props.navigation.navigate(
+				// 	'NewUser',
+				// 	{},
+				// 	{
+				// 		type: 'Navigate',
+				// 		routeName: 'StartNewUser',
+				// 		params: {
+				// 			jwtToken: data.jwtToken,
+				// 		},
+				// 	}
+				// );
 			} else {
 				console.log('Existing User');
 				this.props.navigation.navigate('App');
+				// TODO: Redux method to set and save JWT_TOKEN
 			}
 		} catch (err) {
 			// TODO: SHOW SOME ERROR

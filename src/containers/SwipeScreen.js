@@ -14,9 +14,14 @@ import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIc
 import IonIcon from 'react-native-vector-icons/Ionicons';
 
 import COLORS from '../styles/colors';
+import AsyncStorage from '@react-native-community/async-storage';
 
 class SwipeScreen extends Component {
 	componentDidMount() {}
+
+	testClear = async () => {
+		await AsyncStorage.clear();
+	};
 
 	render() {
 		return (
@@ -51,6 +56,8 @@ class SwipeScreen extends Component {
 								color={COLORS.gray}
 							/>
 						</Text>
+
+						<Button onPress={this.testClear} title="Clear Storage" />
 					</View>
 				</SafeAreaView>
 			</Fragment>

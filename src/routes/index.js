@@ -21,6 +21,7 @@ import { store } from '../redux/store/';
 // Screens
 import InitializingScreen from '../containers/InitializingScreen';
 import SignInScreen from '../containers/SignInScreen';
+import StartNewUserScreen from '../containers/StartNewUserScreen';
 import SwipeScreen from '../containers/SwipeScreen';
 import ConnectionsScreen from '../containers/ConnectionsScreen';
 import ProfileScreen from '../containers/ProfileScreen';
@@ -55,6 +56,18 @@ const AuthStack = createStackNavigator(
 
 	{
 		initialRouteName: 'SignIn',
+		headerLayoutPreset: 'center',
+		defaultNavigationOptions,
+	}
+);
+
+// New User
+const NewUserStack = createStackNavigator(
+	{
+		StartNewUser: StartNewUserScreen,
+	},
+	{
+		initialRouteName: 'StartNewUser',
 		headerLayoutPreset: 'center',
 		defaultNavigationOptions,
 	}
@@ -178,6 +191,7 @@ const AppContainer = createAppContainer(
 			Initializing: InitializingScreen,
 			App: DrawerNavigator,
 			Auth: AuthStack,
+			NewUser: NewUserStack,
 		},
 		{
 			initialRouteName: 'Initializing',
