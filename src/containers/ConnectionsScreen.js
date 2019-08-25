@@ -10,6 +10,7 @@ import {
 	StatusBar,
 } from 'react-native';
 import { connect } from 'react-redux';
+import AsyncStorage from '@react-native-community/async-storage';
 
 // Components
 import { HeaderCalendarIcon } from '../components/NavigationItems';
@@ -32,6 +33,10 @@ class ConnectionsScreen extends Component {
 		// TODO: navigate to home or auth routes
 	}
 
+	testClear = async () => {
+		await AsyncStorage.clear();
+	};
+
 	render() {
 		return (
 			<Fragment>
@@ -44,6 +49,7 @@ class ConnectionsScreen extends Component {
 							title="Sample Message"
 							onPress={() => this.props.navigation.navigate('Messaging')}
 						/>
+						<Button onPress={this.testClear} title="Clear Storage" />
 					</View>
 				</SafeAreaView>
 			</Fragment>

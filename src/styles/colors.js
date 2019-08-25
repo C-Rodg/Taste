@@ -1,11 +1,11 @@
 const colors = {
 	black: '#111', // test 333
 	gray: '#ADADAD',
-	lightGray: 'F2F4FA',
+	lightGray: '#F2F4FA',
 	pink: '#df7599',
 	blue: '#7189BF',
 	yellow: '#FFC785',
-	green: '#72D6C9'
+	green: '#72D6C9',
 };
 
 // Other colors to maybe try:

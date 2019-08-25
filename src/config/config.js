@@ -1,1 +1,1 @@
-export const JWT_TOKEN = 'JWT_TOKEN';
+export const JWT_TOKEN_KEY = 'JWT_TOKEN_KEY';

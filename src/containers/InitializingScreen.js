@@ -9,15 +9,21 @@ import {
 	StatusBar,
 } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
+import { connect } from 'react-redux';
 
-import { JWT_TOKEN } from '../config/config';
+// Actions
+import { setJwtToken } from '../redux/actions/settings';
+
+// Config
+import { JWT_TOKEN_KEY } from '../config/config';
 
 class InitializingScreen extends Component {
 	async componentDidMount() {
 		// Determine if user is logged in or not
 		try {
-			const user = await AsyncStorage.getItem(JWT_TOKEN);
-			if (user) {
+			const jwtToken = await AsyncStorage.getItem(JWT_TOKEN_KEY);
+			if (jwtToken) {
+				this.props.setJwtToken(jwtToken);
 				this.props.navigation.navigate('App');
 			} else {
 				this.props.navigation.navigate('Auth');
@@ -42,7 +48,14 @@ class InitializingScreen extends Component {
 	}
 }
 
-export default InitializingScreen;
+const mapDispatchToProps = dispatch => ({
+	setJwtToken: token => dispatch(setJwtToken(token)),
+});
+
+export default connect(
+	null,
+	mapDispatchToProps
+)(InitializingScreen);
 
 const styles = StyleSheet.create({
 	container: {

@@ -10,54 +10,106 @@ import {
 	Button,
 	StatusBar,
 } from 'react-native';
-import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-import IonIcon from 'react-native-vector-icons/Ionicons';
 
+// Components
+import { CardSwiper, SwipeCard } from '../components/CardSwiper';
+
+// Props
 import COLORS from '../styles/colors';
-import AsyncStorage from '@react-native-community/async-storage';
+
+const CARDS = [
+	{
+		id: 1,
+		name: 'Micky Wilson',
+		age: 28,
+		title: 'CEO',
+		foods: ['Mexican', 'Korean'],
+	},
+	{
+		id: 2,
+		name: 'Bobbi Jones',
+		age: 33,
+		title: 'Software Engineer',
+		foods: ['Korean', 'Chinese', 'Vietnamese'],
+	},
+	{
+		id: 3,
+		name: 'Wintona Wild',
+		age: 22,
+		title: 'HR Lady',
+		foods: ['Mexica', 'American', 'Italian'],
+	},
+	{
+		id: 4,
+		name: 'Nikki Hughes',
+		age: 24,
+		title: 'Accountant',
+		foods: ['Cocktails', 'Wine'],
+	},
+	{
+		id: 5,
+		name: 'Sansa Gozda',
+		age: 23,
+		title: 'Librarian',
+		foods: ['Desserts', 'French', 'Malaysian'],
+	},
+	{
+		id: 6,
+		name: 'Yui Ju',
+		age: 22,
+		title: 'Developer',
+		foods: ['Middle Easter', 'Turkish', 'American'],
+	},
+	{
+		id: 7,
+		name: 'Finding Dori',
+		age: 21,
+		title: 'Real Estate',
+		foods: ['Greek', 'English'],
+	},
+	{
+		id: 8,
+		name: 'Bla Tulik',
+		age: 24,
+		title: 'Lawyer',
+		foods: ['Mexican', 'Peruvian'],
+	},
+	{
+		id: 9,
+		name: 'Jackson Jones',
+		age: 28,
+		title: 'Accountant for HR',
+		foods: ['Beer', 'American'],
+	},
+	{
+		id: 10,
+		name: 'Jackie Wilso',
+		age: 32,
+		title: 'Profession Basketball Player',
+		foods: ['American', 'English'],
+	},
+];
 
 class SwipeScreen extends Component {
 	componentDidMount() {}
-
-	testClear = async () => {
-		await AsyncStorage.clear();
-	};
 
 	render() {
 		return (
 			<Fragment>
 				<StatusBar barStyle="light-content" />
-				<SafeAreaView>
+				<SafeAreaView style={{ flex: 1 }}>
 					<View style={styles.container}>
-						<Text style={{ fontFamily: 'FiraSans-Bold', fontSize: 34 }}>
-							Swiper screen.
-						</Text>
-
-						<Text>
-							<MaterialCommunityIcon
-								name="silverware-fork-knife"
-								size={30}
-								color={COLORS.gray}
+						<View style={styles.cards}>
+							<CardSwiper
+								ref={c => (this._cardSwiper = c)}
+								dataSource={CARDS}
+								renderEmpty={() => <Text>ALLLLL OVER</Text>}
+								renderItem={item => {
+									return <SwipeCard key={item.id} {...item} />;
+								}}
+								looping={false}
 							/>
-							<IonIcon name="ios-link" size={30} color={COLORS.gray} />
-							<MaterialCommunityIcon
-								name="map-marker"
-								size={30}
-								color={COLORS.gray}
-							/>
-							<MaterialCommunityIcon
-								name="school"
-								size={30}
-								color={COLORS.gray}
-							/>
-							<MaterialCommunityIcon
-								name="information"
-								size={30}
-								color={COLORS.gray}
-							/>
-						</Text>
-
-						<Button onPress={this.testClear} title="Clear Storage" />
+						</View>
 					</View>
 				</SafeAreaView>
 			</Fragment>
@@ -76,8 +128,12 @@ export default connect(mapStateToProps)(SwipeScreen);
 
 const styles = StyleSheet.create({
 	container: {
-		//flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
+		flex: 1,
+		backgroundColor: COLORS.lightGray,
+	},
+	cards: {
+		flex: 1,
+		marginVertical: 40,
+		marginHorizontal: 20,
 	},
 });
