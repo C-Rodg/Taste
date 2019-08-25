@@ -53,7 +53,6 @@ _:app:installDebug failed_
 
 LOGIN:
 
-- setup 'new user' routes
 - test on android
 
 SWIPE:

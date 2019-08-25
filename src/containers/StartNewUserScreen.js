@@ -9,9 +9,13 @@ import {
 	Button,
 	StatusBar,
 } from 'react-native';
+import { connect } from 'react-redux';
 
 // Components
 import { HeaderButton } from '../components/NavigationItems';
+
+// Actions
+import { saveJwtToken } from '../redux/actions/settings';
 
 class StartNewUserScreen extends Component {
 	static navigationOptions = ({ navigation }) => {
@@ -37,11 +41,13 @@ class StartNewUserScreen extends Component {
 	}
 
 	_validateNewUser = () => {
-		// TODO: VALIDATE USER HAS COMPLETED FIELDS
-		// TODO: SET USER & SAVE JWT TOKEN
-		console.log('VALIDATING USER HERE');
+		// TODO: Validate user
+
+		// TODO: Set user
+
+		// Set JWT Token
 		const jwtToken = this.props.navigation.getParam('jwtToken');
-		console.log(jwtToken);
+		this.props.saveJwtToken(jwtToken);
 
 		// If all is good, then navigate to App
 		this.props.navigation.navigate('App');
@@ -61,7 +67,14 @@ class StartNewUserScreen extends Component {
 	}
 }
 
-export default StartNewUserScreen;
+const mapDispatchToProps = dispatch => ({
+	saveJwtToken: token => dispatch(saveJwtToken(token)),
+});
+
+export default connect(
+	null,
+	mapDispatchToProps
+)(StartNewUserScreen);
 
 const styles = StyleSheet.create({
 	container: {

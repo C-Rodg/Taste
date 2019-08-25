@@ -4,7 +4,10 @@ import { SafeAreaView, View, StatusBar } from 'react-native';
 import styled from 'styled-components';
 import { loginInWithPermissions } from '../components/FacebookWebView';
 import axios from 'axios';
-import AsyncStorage from '@react-native-community/async-storage';
+import { connect } from 'react-redux';
+
+// Actions
+import { saveJwtToken } from '../redux/actions/settings';
 
 // Secrets
 import { SECRETS } from '../secrets';
@@ -40,21 +43,10 @@ class SignInScreen extends Component {
 				this.props.navigation.navigate('StartNewUser', {
 					jwtToken: data.jwtToken,
 				});
-				// this.props.navigation.navigate(
-				// 	'NewUser',
-				// 	{},
-				// 	{
-				// 		type: 'Navigate',
-				// 		routeName: 'StartNewUser',
-				// 		params: {
-				// 			jwtToken: data.jwtToken,
-				// 		},
-				// 	}
-				// );
 			} else {
 				console.log('Existing User');
+				this.props.saveJwtToken(data.jwtToken);
 				this.props.navigation.navigate('App');
-				// TODO: Redux method to set and save JWT_TOKEN
 			}
 		} catch (err) {
 			// TODO: SHOW SOME ERROR
@@ -116,7 +108,14 @@ class SignInScreen extends Component {
 	}
 }
 
-export default SignInScreen;
+const mapDispatchToProps = dispatch => ({
+	saveJwtToken: token => dispatch(saveJwtToken(token)),
+});
+
+export default connect(
+	null,
+	mapDispatchToProps
+)(SignInScreen);
 
 // Styles
 const ContentWrapperView = styled.View`
