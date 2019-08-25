@@ -14,69 +14,60 @@ import COLORS from '../styles/colors';
 
 class SignInScreen extends Component {
 	state = {
-		login: false,
+		loggingOn: false,
 	};
 
 	// Handle login success from facebook
-	handleLoginSuccess = data => {
-		console.log(data);
-		const { access_token } = data;
-		console.log(access_token);
+	handleLoginSuccess = async userAccessToken => {
 		// Login with our service
-		axios
-			.post(
+		try {
+			const { data } = await axios.post(
 				'http://localhost:8086/api/v1/auth/user',
 				{
-					accessToken: access_token,
+					userAccessToken,
 					partnerType: 'Fb',
 				},
 				{ headers: { 'Content-Type': 'application/json' } }
-			)
-			.then(({ data, ...resp }) => {
-				console.log(resp);
-				console.log(data);
-				if (data.error) {
-					throw new Error(resp.errorMessage);
-				}
-				console.log(data.jwtToken);
-				// TODO: set state with what? accessToken? jwt? profile info?
-				if (data.newUser) {
-					// TODO: GO TO NEW PROFILE SETUP
-					console.log('New User');
-				} else {
-					console.log('Existing User');
-					this.props.navigation.navigate('App');
-				}
-			})
-			.catch(err => {
-				console.log('ERROR LOGGING IN WITH OUR SERVICE');
-				console.log(err);
-			});
+			);
+			console.log(data);
+			if (data.error) {
+				throw new Error(resp.errorMessage);
+			}
+			if (data.newUser) {
+				// TODO: GO TO NEW PROFILE SETUP
+				console.log('New User');
+				// this.props.navigation.navigate('NewUser');
+			} else {
+				console.log('Existing User');
+				this.props.navigation.navigate('App');
+			}
+		} catch (err) {
+			// TODO: SHOW SOME ERROR
+			console.log('ERROR LOGGING IN WITH OUR SERVICE');
+			console.log(err);
+		}
 	};
 
 	// Handle login error
 	handleLoginError = err => {
+		// TODO: SHOW SOME ERROR
 		console.log('ERROR LOGGING IN WITH FACEBOOK SERVICE');
 		console.log(err);
 	};
 
 	// Render the login component
 	renderLogin = () => {
-		const { login } = this.state;
-		if (login) {
+		const { loggingOn } = this.state;
+		if (loggingOn) {
 			return loginInWithPermissions({
 				runNow: true,
 				redirectUrl: 'https://facebook.com/connect/login_success.html',
-				getMyInformationsFields: [
-					'id,first_name,last_name,name,email,picture,birthday,gender,location',
-				],
 				clientId: SECRETS.facebook_clientId,
 				secretKey: SECRETS.facebook_secretKey,
 				onLoginSuccess: this.handleLoginSuccess,
 				onLoginFailure: this.handleLoginError,
 			});
 		}
-		// eventually call: this.props.navigation.navigate('App')
 	};
 
 	render() {
@@ -97,7 +88,9 @@ class SignInScreen extends Component {
 					</ContentWrapperView>
 
 					<ContentWrapperView>
-						<GetStartedTouchable onPress={() => this.setState({ login: true })}>
+						<GetStartedTouchable
+							onPress={() => this.setState({ loggingOn: true })}
+						>
 							<GetStartedTouchableText>Get Started</GetStartedTouchableText>
 						</GetStartedTouchable>
 					</ContentWrapperView>

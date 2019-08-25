@@ -10,81 +10,51 @@ import {
 	Text,
 	View,
 } from 'react-native';
-import Axios from 'axios';
 import { WebView } from 'react-native-webview';
 
 var keyParent = 1;
 class FacebookWebView extends Component {
-	_graphURL = 'https://graph.facebook.com';
 	_errorsMessages = {
 		whenPropsIsInvalid: 'Please provide missing required props correctly',
 	};
 
 	state = {
 		url: {
-			//authLoginUrl: `https://www.facebook.com/v3.3/dialog/oauth?client_id=${this.props.clientId}&redirect_uri=${this.props.redirectUrl}&response_type=token`,
-			authLoginUrl: `https://www.facebook.com/dialog/oauth?client_id=${this.props.clientId}&redirect_uri=${this.props.redirectUrl}&scope=email`,
-			authTokenUrl: `https://graph.facebook.com/oauth/access_token?client_id=${this.props.clientId}&redirect_uri=${this.props.redirectUrl}&client_secret=${this.props.secretKey}&code=`,
+			authLoginUrl: `https://www.facebook.com/v3.3/dialog/oauth?client_id=${this.props.clientId}&redirect_uri=${this.props.redirectUrl}&state=hi123what456&response_type=token`,
 		},
-		loginData: '',
 		visible: true,
-		randomUrl: '',
-		ready: false,
 	};
 
 	_onNavigationStateChange = event => {
-		console.log(event);
-		const { onLoginFailure } = this.props;
-		const { authTokenUrl } = this.state.url;
+		const { onLoginFailure, onLoginSuccess } = this.props;
 		let getEvent = event;
+		// Check for errors
 		if (getEvent.title.includes('Error')) {
+			console.log('ERROR FOR FB LOGIN');
+			console.log(getEvent);
 			this._openCloseModal(false, () => {
 				onLoginFailure(this._errorsMessages.whenPropsIsInvalid);
 				throw new Error(this._errorsMessages.whenPropsIsInvalid);
 			});
 		} else {
-			if (Platform.OS === 'ios') {
-				if (
-					getEvent.url.includes('login_success.html?code=') &&
-					//getEvent.jsEvaluationValue === '' &&
-					getEvent.loading === false
-					//getEvent.url.includes('login_success.html#access_token=')
-				) {
-					if (getEvent.url.includes('code=')) {
-						//if (getEvent.url.includes('#access_token=')) {
-						let decodeURL = getEvent.url
-							.substr(50, 350)
-							.replace('#', '')
-							.replace('code=', '');
-						const urlFinal = authTokenUrl + decodeURL;
-						console.log('URL FINAL IS:');
-						console.log(urlFinal);
-						this.setState({ randomUrl: urlFinal.toString() }, () => {
-							this._openCloseModal(false, () => {
-								this._requester(this.state.randomUrl);
-							});
-						});
-					}
+			if (getEvent.url.includes('login_success.html#access_token=')) {
+				// Find the position of the token in the URL
+				const tokenStartString = '#access_token=';
+				const tokenStartPos =
+					getEvent.url.indexOf(tokenStartString) + tokenStartString.length;
+				const tokenEndPos = getEvent.url.indexOf('&', tokenStartPos);
+				let token = '';
+				if (~tokenEndPos) {
+					token = getEvent.url.substring(tokenStartPos, tokenEndPos);
+				} else {
+					token = getEvent.url.substring(tokenStartPos);
 				}
-			} else {
-				if (
-					getEvent.url.includes('login_success.html?code=') &&
-					getEvent.title !== '' &&
-					getEvent.loading === false
-				) {
-					if (getEvent.url.includes('code=')) {
-						let decodeURL = getEvent.url
-							.substr(50, 350)
-							.replace('#', '')
-							.replace('code=', '');
-						const urlFinal = authTokenUrl + decodeURL;
-						this.setState({ randomUrl: urlFinal.toString() }, () => {
-							this._openCloseModal(false, () => {
-								this._requester(this.state.randomUrl);
-							});
-						});
-					}
-				}
+
+				// Save the access token
+				this._setAccessToken(token);
+				this._openCloseModal(false, () => {
+					onLoginSuccess(token);
+				});
 			}
 		}
 	};
@@ -121,13 +91,12 @@ class FacebookWebView extends Component {
 					transparent={false}
 					visible={this.state.visible}
 					onRequestClose={() => this._openCloseModal(false)}
-					style={{ backgroundColor: 'red' }}
 				>
-					<View style={styles.webViewLead}></View>
+					<View style={styles.webViewTop}></View>
 					<WebView
 						style={styles.webView}
 						javaScriptEnabled
-						startInLoadingState
+						startInLoadingState={true}
 						source={{ uri: this.state.url.authLoginUrl }}
 						onNavigationStateChange={this._onNavigationStateChange}
 						injectedJavaScript={
@@ -148,62 +117,7 @@ class FacebookWebView extends Component {
 		}
 	};
 
-	async _requester(url) {
-		try {
-			const { status, data } = await Axios.get(url);
-			console.log(status);
-			console.log(data);
-			if (status === 200) {
-				this.setState({ loginData: data }, () => {
-					this._setAccessToken();
-					this._setInformations();
-				});
-			}
-		} catch (error) {
-			const { onLoginFailure } = this.props;
-			this._openCloseModal(false, () => {
-				onLoginFailure(error.message);
-			});
-		}
-	}
-
-	_setAccessToken = async () =>
-		(global.GET_ACCESS_TOKEN = this.state.loginData);
-
-	async _setInformations(
-		endpoint = '/me',
-		fields = this.props.getMyInformations[0]
-	) {
-		try {
-			const { status, data } = await Axios.get(
-				this._graphURL +
-					endpoint +
-					'?fields=' +
-					fields +
-					'&access_token=' +
-					this.state.loginData.access_token
-			);
-			console.log(status);
-			console.log(data);
-
-			if (status === 200) {
-				this.setState({ ready: true }, () => {
-					global.INFORMATIONS = data;
-					this.props.onLoginSuccess({
-						isLoggedIn: this.state.ready,
-						...getAccessToken(),
-						...getMyInformations(),
-					});
-					global.ready = this.state.ready;
-				});
-			}
-		} catch (error) {
-			const { onLoginFailure } = this.props;
-			this._openCloseModal(false, () => {
-				onLoginFailure(error.message);
-			});
-		}
-	}
+	_setAccessToken = token => (global.GET_ACCESS_TOKEN = token);
 
 	render = () =>
 		this.props.isInvoke ? this._commander(this.props.isInvoke) : null;
@@ -212,7 +126,6 @@ class FacebookWebView extends Component {
 export const loginInWithPermissions = ({
 	login = true,
 	redirectUrl = 'https://facebook.com/connect/login_success.html',
-	getMyInformationsFields = 'id,first_name,last_name,name,email,picture',
 	clientId = '',
 	secretKey = '',
 	onLoginSuccess = data => console.log(data),
@@ -222,21 +135,17 @@ export const loginInWithPermissions = ({
 		'REPLACE_WITH_YOUR_APP_ID',
 		'REPLACE_WITH_YOUR_SECRET_KEY',
 	];
-	console.log(clientId);
-	console.log(secretKey);
 	if (
 		clientId &&
 		secretKey &&
 		clientId !== _CLIENT_VARS[0] &&
 		secretKey !== _CLIENT_VARS[1]
 	) {
-		global.ready = false;
 		++keyParent;
 		return (
 			<FacebookWebView
 				isInvoke={login}
 				redirectUrl={redirectUrl}
-				getMyInformations={getMyInformationsFields}
 				clientId={clientId}
 				secretKey={secretKey}
 				key={keyParent}
@@ -255,40 +164,9 @@ export const getAccessToken = () =>
 		? global.GET_ACCESS_TOKEN
 		: { message: 'No access token found in store yet.', status: false };
 
-export const getMyInformations = () =>
-	global.INFORMATIONS
-		? global.INFORMATIONS
-		: { message: 'No information found in store yet.', status: false };
-
-export const getUsername = async () => {
-	if (global.ready) {
-		try {
-			const _settingsURL = 'https://mbasic.facebook.com/settings';
-			const { status, data } = await Axios.get(_settingsURL);
-			if (status === 200) {
-				return {
-					username: data
-						.match(/<a[^>]*/g)[2]
-						.split('?')[0]
-						.replace('<a href=', '')
-						.replace('"/', ''),
-				};
-			}
-		} catch (error) {
-			return error.message;
-		}
-	} else {
-		return {
-			message:
-				'Please login first with this component in your Facebook account',
-			status: false,
-		};
-	}
-};
-
 export const logout = () => {
-	if (global.GET_ACCESS_TOKEN && global.INFORMATIONS) {
-		(global.GET_ACCESS_TOKEN = ''), (global.INFORMATIONS = '');
+	if (global.GET_ACCESS_TOKEN) {
+		global.GET_ACCESS_TOKEN = '';
 		return { message: 'Successfully logout.', status: true };
 	} else {
 		return { message: 'Nothing to logout.', status: false };
@@ -296,7 +174,7 @@ export const logout = () => {
 };
 
 const styles = StyleSheet.create({
-	webViewLead: {
+	webViewTop: {
 		marginTop: 0,
 		height: Platform.OS === 'ios' ? 35 : 0,
 		backgroundColor: '#3b5997',

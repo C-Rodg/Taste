@@ -53,9 +53,7 @@ _:app:installDebug failed_
 
 LOGIN:
 
-- hook up requests for login screen: click 'Get Started' and go to facebook auth or call our internal auth endpoint?
 - new user response would go to collect data/edit profile screen
-- fix styling on login page
 
 SWIPE:
 

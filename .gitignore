@@ -11,6 +11,9 @@ docker/
 # API Keys
 src/secrets/index.js
 
+# Environment variables
+.env
+
 # Xcode
 #
 build/
