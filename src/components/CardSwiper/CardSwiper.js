@@ -73,6 +73,7 @@ class CardSwiper extends Component {
 	getCardStyles = () => {
 		const { pan, enter } = this.state;
 		const [translateX, translateY] = [pan.x, pan.y];
+		console.log(translateX, translateY);
 
 		const rotate = pan.x.interpolate({
 			inputRange: [-700, 0, 700],
@@ -257,6 +258,7 @@ class CardSwiper extends Component {
 	}
 
 	render() {
+		// Disabled state
 		if (this.state.disabled) {
 			return (
 				<View style={{ flexDirection: 'column' }}>
@@ -264,6 +266,7 @@ class CardSwiper extends Component {
 				</View>
 			);
 		} else if (this.state.lastCard) {
+			// Last Card
 			return (
 				<View style={{ flexDirection: 'column' }}>
 					{this.state.selectedItem === undefined ? (
@@ -295,6 +298,11 @@ class CardSwiper extends Component {
 				</View>
 			);
 		}
+		console.log(this.state.selectedItem);
+		console.log(this.getCardStyles()[0]);
+		console.log(this.state.selectedItem2);
+		console.log(this.getCardStyles()[1]);
+		// TODO: POSITION 2nd card just behind
 		return (
 			<View style={{ flexDirection: 'column' }}>
 				{this.state.selectedItem === undefined ? (

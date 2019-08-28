@@ -1,6 +1,6 @@
 // Libraries
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Image } from 'react-native';
 
 // Icons
 // silverware-fork-knife, map-marker, school, information
@@ -10,12 +10,17 @@ import IonIcon from 'react-native-vector-icons/Ionicons';
 
 // TODO: Onclick open card up
 
-function SwipeCard({ id, name, age, title, foods }) {
+function SwipeCard({ id, name, age, title, foods, imageURI }) {
 	return (
 		<View style={styles.card}>
 			<View>
 				<View style={{ height: 200 }}>
-					<Text>Image here</Text>
+					<Image
+						style={{ flex: 1 }}
+						source={{
+							uri: imageURI,
+						}}
+					/>
 				</View>
 				<View>
 					<Text>{name}</Text>

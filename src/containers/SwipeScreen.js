@@ -20,6 +20,7 @@ import COLORS from '../styles/colors';
 const CARDS = [
 	{
 		id: 1,
+		imageURI: 'https://source.unsplash.com/random/600x700?person',
 		name: 'Micky Wilson',
 		age: 28,
 		title: 'CEO',
@@ -28,6 +29,7 @@ const CARDS = [
 	{
 		id: 2,
 		name: 'Bobbi Jones',
+		imageURI: 'https://source.unsplash.com/random/600x700?person',
 		age: 33,
 		title: 'Software Engineer',
 		foods: ['Korean', 'Chinese', 'Vietnamese'],
@@ -35,6 +37,7 @@ const CARDS = [
 	{
 		id: 3,
 		name: 'Wintona Wild',
+		imageURI: 'https://source.unsplash.com/random/600x700?person',
 		age: 22,
 		title: 'HR Lady',
 		foods: ['Mexica', 'American', 'Italian'],
@@ -42,6 +45,7 @@ const CARDS = [
 	{
 		id: 4,
 		name: 'Nikki Hughes',
+		imageURI: 'https://source.unsplash.com/random/600x700?person',
 		age: 24,
 		title: 'Accountant',
 		foods: ['Cocktails', 'Wine'],
@@ -49,6 +53,7 @@ const CARDS = [
 	{
 		id: 5,
 		name: 'Sansa Gozda',
+		imageURI: 'https://source.unsplash.com/random/600x700?person',
 		age: 23,
 		title: 'Librarian',
 		foods: ['Desserts', 'French', 'Malaysian'],
@@ -56,6 +61,7 @@ const CARDS = [
 	{
 		id: 6,
 		name: 'Yui Ju',
+		imageURI: 'https://source.unsplash.com/random/600x700?person',
 		age: 22,
 		title: 'Developer',
 		foods: ['Middle Easter', 'Turkish', 'American'],
@@ -63,6 +69,7 @@ const CARDS = [
 	{
 		id: 7,
 		name: 'Finding Dori',
+		imageURI: 'https://source.unsplash.com/random/600x700?person',
 		age: 21,
 		title: 'Real Estate',
 		foods: ['Greek', 'English'],
@@ -70,6 +77,7 @@ const CARDS = [
 	{
 		id: 8,
 		name: 'Bla Tulik',
+		imageURI: 'https://source.unsplash.com/random/600x700?person',
 		age: 24,
 		title: 'Lawyer',
 		foods: ['Mexican', 'Peruvian'],
@@ -77,6 +85,7 @@ const CARDS = [
 	{
 		id: 9,
 		name: 'Jackson Jones',
+		imageURI: 'https://source.unsplash.com/random/600x700?person',
 		age: 28,
 		title: 'Accountant for HR',
 		foods: ['Beer', 'American'],
@@ -84,6 +93,7 @@ const CARDS = [
 	{
 		id: 10,
 		name: 'Jackie Wilso',
+		imageURI: 'https://source.unsplash.com/random/600x700?person',
 		age: 32,
 		title: 'Profession Basketball Player',
 		foods: ['American', 'English'],
