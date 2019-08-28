@@ -14,11 +14,15 @@ function SwipeCard({ id, name, age, title, foods, imageURI }) {
 	return (
 		<View style={styles.card}>
 			<View>
-				<View style={{ height: 200 }}>
+				<View style={{ height: 300 }}>
 					<Image
 						style={{ flex: 1 }}
 						source={{
 							uri: imageURI,
+							headers: {
+								Pragma: 'no-cache',
+							},
+							cache: 'reload',
 						}}
 					/>
 				</View>
@@ -48,5 +52,6 @@ const styles = StyleSheet.create({
 		shadowRadius: 1.7,
 		elevation: 3,
 		padding: 10,
+		minHeight: 390,
 	},
 });
