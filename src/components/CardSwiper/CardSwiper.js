@@ -12,7 +12,6 @@ class CardSwiper extends Component {
 		super(props);
 		this.state = {
 			pan: new Animated.ValueXY(),
-			pan2: new Animated.ValueXY(),
 			enter: new Animated.Value(0.8),
 			selectedItem: this.props.dataSource[0],
 			selectedItem2: this.props.dataSource[1],
@@ -54,6 +53,7 @@ class CardSwiper extends Component {
 	}
 
 	getInitialStyle = () => {
+		console.log('getInitialStyles');
 		return {
 			topCard: {
 				position: 'absolute',
@@ -73,25 +73,35 @@ class CardSwiper extends Component {
 	getCardStyles = () => {
 		const { pan, enter } = this.state;
 		const [translateX, translateY] = [pan.x, pan.y];
-		console.log(translateX, translateY);
+		console.log('getCardStyles');
 
+		// This controls the rotation of the top card as you drag
 		const rotate = pan.x.interpolate({
 			inputRange: [-700, 0, 700],
-			outputRange: ['-10deg', '0deg', '10deg'],
+			outputRange: ['-50deg', '0deg', '50deg'],
 		});
 
+		// This controls the opacity of the top card as you drag
 		const opacity = pan.x.interpolate({
 			inputRange: [-320, 0, 320],
 			outputRange: [0.9, 1, 0.9],
 		});
 
+		// This controls the scaling of the back card as you drag the top card
 		const scale = enter;
+		const secondCardTranslateY = pan.x.interpolate({
+			inputRange: [-500, 0, 500],
+			outputRange: [0, 20, 0],
+		});
 
 		const animatedCardStyles = {
 			transform: [{ translateX }, { translateY }, { rotate }],
 			opacity,
 		};
 		const animatedCardStyles2 = { transform: [{ scale }] };
+		// const animatedCardStyles2 = {
+		// 	transform: [{ scale }, { translateY: secondCardTranslateY }],
+		// };
 
 		return [animatedCardStyles, animatedCardStyles2];
 	};
@@ -129,6 +139,7 @@ class CardSwiper extends Component {
 				}).start();
 				Animated.event([null, { dx: this.state.pan.x }])(e, gestureState);
 			},
+			// on RELEASE
 			onPanResponderRelease: (e, { vx, vy }) => {
 				if (this.props.onSwiping) {
 					this.props.onSwiping(null);
@@ -141,6 +152,7 @@ class CardSwiper extends Component {
 				}
 
 				if (Math.abs(this.state.pan.x._value) > SWIPE_THRESHOLD) {
+					// You've swiped far enough left or right - go to next item
 					if (velocity > 0) {
 						this.props.onSwipeRight
 							? this.props.onSwipeRight(this.state.selectedItem)
@@ -156,6 +168,7 @@ class CardSwiper extends Component {
 						deceleration: 0.98,
 					}).start(this._resetState.bind(this));
 				} else {
+					// This occurs when you haven't swiped far enough to a side
 					Animated.spring(this.state.pan, {
 						toValue: { x: 0, y: 0 },
 						friction: 4,
@@ -298,11 +311,6 @@ class CardSwiper extends Component {
 				</View>
 			);
 		}
-		console.log(this.state.selectedItem);
-		console.log(this.getCardStyles()[0]);
-		console.log(this.state.selectedItem2);
-		console.log(this.getCardStyles()[1]);
-		// TODO: POSITION 2nd card just behind
 		return (
 			<View style={{ flexDirection: 'column' }}>
 				{this.state.selectedItem === undefined ? (
