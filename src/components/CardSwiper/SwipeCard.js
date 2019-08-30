@@ -43,15 +43,15 @@ export default SwipeCard;
 const styles = StyleSheet.create({
 	card: {
 		flex: 1,
-		borderRadius: 10,
+		borderRadius: 6,
 		flexWrap: 'nowrap',
 		backgroundColor: '#fff',
 		shadowColor: '#000',
 		shadowOffset: { width: 0, height: 3 },
-		shadowOpacity: 0.13,
+		shadowOpacity: 0.18,
 		shadowRadius: 1.7,
 		elevation: 3,
-		padding: 10,
+		padding: 15,
 		minHeight: 390,
 	},
 });

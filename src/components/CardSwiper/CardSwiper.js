@@ -2,6 +2,9 @@
 import React, { Component } from 'react';
 import { View, Animated, PanResponder } from 'react-native';
 
+// Components
+import FakeCard from './FakeCard';
+
 // Utils
 import { clamp } from '../../utils/clamp';
 
@@ -12,7 +15,7 @@ class CardSwiper extends Component {
 		super(props);
 		this.state = {
 			pan: new Animated.ValueXY(),
-			enter: new Animated.Value(0.8),
+			enter: new Animated.Value(0.9),
 			selectedItem: this.props.dataSource[0],
 			selectedItem2: this.props.dataSource[1],
 			card1Top: true,
@@ -20,8 +23,8 @@ class CardSwiper extends Component {
 			fadeAnim: new Animated.Value(0.8),
 			disabled: this.props.dataSource.length === 0,
 			lastCard: this.props.dataSource.length === 1,
+			secondLastCard: this.props.dataSource.length === 2,
 		};
-		console.log('**Constructor**');
 		this.setPanresponder();
 	}
 
@@ -34,6 +37,7 @@ class CardSwiper extends Component {
 					selectedItem2: undefined,
 					disabled: dataSource.length === 0,
 					lastCard: dataSource.length === 1,
+					secondLastCard: dataSource.length === 2,
 				});
 				return;
 			}
@@ -51,25 +55,27 @@ class CardSwiper extends Component {
 	}
 
 	getInitialStyle = () => {
-		console.log('**getInitialStyles**');
-		//return { topCard: {}, nextCard: {} };
 		return {
 			topCard: {
 				position: 'absolute',
-				// //position: 'relative',
-				top: 10,
+				top: 12,
 				right: 0,
 				left: 0,
 				bottom: 0,
-				//transform: [{ translateY: 30 }],
 			},
-			nextCard: {
+			secondCard: {
 				position: 'absolute',
 				top: 0,
 				right: 0,
 				left: 0,
 				bottom: 0,
-				//transform: [{ translateY: -30 }],
+			},
+			thirdCard: {
+				position: 'absolute',
+				top: -10,
+				right: 0,
+				left: 0,
+				bottom: 0,
 			},
 		};
 	};
@@ -77,39 +83,61 @@ class CardSwiper extends Component {
 	getCardStyles = () => {
 		const { pan, enter } = this.state;
 		const [translateX] = [pan.x, pan.y];
-		console.log('**getCardStyles**');
 
 		// TOP CARD - controls rotation as you drag
-		const rotate = pan.x.interpolate({
+		const topCardRotate = pan.x.interpolate({
 			inputRange: [-700, 0, 700],
 			outputRange: ['-50deg', '0deg', '50deg'],
 		});
 
 		// TOP CARD - controls opacity as you drag
-		const opacity = pan.x.interpolate({
+		const topCardOpacity = pan.x.interpolate({
 			inputRange: [-320, 0, 320],
-			outputRange: [0.9, 1, 0.9],
+			outputRange: [0.85, 1, 0.85],
 		});
 
 		// 2ND CARD - controls scale as you drag
-		const scale = enter;
+		const secondCardScale = enter;
 
 		// 2ND CARD - controls the 'top' property as you drag
-		const absoluteTopPosition = scale.interpolate({
-			inputRange: [0.8, 1],
-			outputRange: [0, 10],
+		const absoluteTopPosition = secondCardScale.interpolate({
+			inputRange: [0.9, 1],
+			outputRange: [0, 12],
 		});
 
-		const animatedCardStyles = {
-			transform: [{ translateX }, { rotate }],
-			opacity,
+		// 3RD CARD - controls the scale as you drag
+		const thirdCardScale = secondCardScale.interpolate({
+			inputRange: [0.9, 1],
+			outputRange: [0.8, 0.9],
+		});
+
+		// 3RD CARD - controls the 'top' property as you drag
+		const thirdCardTopPosition = secondCardScale.interpolate({
+			inputRange: [0.9, 1],
+			outputRange: [-10, 0],
+		});
+
+		// TOP CARD:
+		const topCardAnimatedStyles = {
+			transform: [{ translateX }, { rotate: topCardRotate }],
+			opacity: topCardOpacity,
 		};
-		const animatedCardStyles2 = {
+		// 2ND CARD:
+		const secondCardAnimatedStyles = {
 			top: absoluteTopPosition,
-			transform: [{ scale }],
+			transform: [{ scale: secondCardScale }],
+		};
+		// 3RD CARD:
+		const thirdCardAnimatedStyles = {
+			top: thirdCardTopPosition,
+			transform: [{ scale: thirdCardScale }],
 		};
 
-		return [animatedCardStyles, animatedCardStyles2];
+		return [
+			topCardAnimatedStyles,
+			secondCardAnimatedStyles,
+			thirdCardAnimatedStyles,
+		];
 	};
 
 	setPanresponder() {
@@ -118,7 +146,6 @@ class CardSwiper extends Component {
 			onMoveShouldSetPanResponderCapture: (evt, gestureState) =>
 				Math.abs(gestureState.dx) > 5,
 			onPanResponderGrant: () => {
-				console.log('**onPanResponderGrant**');
 				this.state.pan.setOffset({
 					x: this.state.pan.x._value,
 					y: this.state.pan.y._value,
@@ -136,13 +163,13 @@ class CardSwiper extends Component {
 					}
 				}
 				let val = Math.abs(gestureState.dx * 0.0013);
-				if (val > 0.2) {
-					val = 0.2;
+				if (val > 0.1) {
+					val = 0.1;
 				}
 
 				Animated.timing(this.state.fadeAnim, { toValue: 0.8 + val }).start();
 				Animated.spring(this.state.enter, {
-					toValue: 0.8 + val,
+					toValue: 0.9 + val,
 					friction: 7,
 				}).start();
 
@@ -188,9 +215,9 @@ class CardSwiper extends Component {
 	}
 
 	_resetState() {
-		console.log('**_resetState**');
 		this.state.pan.setValue({ x: 0, y: 0 });
-		this.state.enter.setValue(0.8);
+		this.state.enter.setValue(0.9);
+
 		this.state.fadeAnim.setValue(0.8);
 		this.setState({
 			card1Top: !this.state.card1Top,
@@ -234,6 +261,7 @@ class CardSwiper extends Component {
 	selectNext() {
 		const dataSource = this.props.dataSource;
 		const currentIndex = dataSource.indexOf(this.state.selectedItem);
+		let secondLastCard = false;
 
 		// Check if we are at the end or close to it
 		if (currentIndex === dataSource.length - 1) {
@@ -247,11 +275,14 @@ class CardSwiper extends Component {
 					this.setState({ lastCard: true });
 				}, 350);
 			}, 50);
+		} else if (currentIndex === dataSource.length - 3) {
+			secondLastCard = true;
 		}
 
 		const nextIndexes = this.findNextIndexes(currentIndex);
 		setTimeout(() => {
 			this.setState({
+				secondLastCard,
 				selectedItem: this.props.dataSource[nextIndexes[0]],
 			});
 			setTimeout(() => {
@@ -287,7 +318,9 @@ class CardSwiper extends Component {
 					{<View>{this.props.renderEmpty && this.props.renderEmpty()}</View>}
 				</View>
 			);
-		} else if (this.state.lastCard) {
+		}
+		const cardStyles = this.getCardStyles();
+		if (this.state.lastCard) {
 			// Last Card
 			return (
 				<View style={{ flexDirection: 'column', position: 'relative' }}>
@@ -297,8 +330,8 @@ class CardSwiper extends Component {
 						<View>
 							<Animated.View
 								style={[
-									this.getCardStyles()[1],
-									this.getInitialStyle().nextCard,
+									this.getInitialStyle().secondCard,
+									cardStyles[1],
 									{ opacity: this.state.fadeAnim },
 								]}
 								{...this._panResponder.panHandlers}
@@ -306,11 +339,7 @@ class CardSwiper extends Component {
 								{this.props.renderEmpty && this.props.renderEmpty()}
 							</Animated.View>
 							<Animated.View
-								style={[
-									this.getCardStyles()[0],
-									this.getInitialStyle().topCard,
-									{ opacity: this.state.fadeAnim },
-								]}
+								style={[this.getInitialStyle().topCard, cardStyles[0]]}
 								{...this._panResponder.panHandlers}
 							>
 								{this.props.renderItem(this.state.selectedItem)}
@@ -326,10 +355,16 @@ class CardSwiper extends Component {
 					<View />
 				) : (
 					<View>
+						{!this.state.secondLastCard ? (
+							<FakeCard
+								cardStyles={[this.getInitialStyle().thirdCard, cardStyles[2]]}
+							/>
+						) : null}
+
 						<Animated.View
 							style={[
-								this.getInitialStyle().nextCard,
-								this.getCardStyles()[1],
+								this.getInitialStyle().secondCard,
+								cardStyles[1],
 								{ opacity: this.state.fadeAnim },
 							]}
 							{...this._panResponder.panHandlers}
@@ -337,7 +372,7 @@ class CardSwiper extends Component {
 							{this.props.renderItem(this.state.selectedItem2)}
 						</Animated.View>
 						<Animated.View
-							style={[this.getInitialStyle().topCard, this.getCardStyles()[0]]}
+							style={[this.getInitialStyle().topCard, cardStyles[0]]}
 							{...this._panResponder.panHandlers}
 						>
 							{this.props.renderItem(this.state.selectedItem)}
