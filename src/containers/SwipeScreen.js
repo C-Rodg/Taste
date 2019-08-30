@@ -139,7 +139,7 @@ export default connect(mapStateToProps)(SwipeScreen);
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: 'red', //COLORS.lightGray,
+		backgroundColor: 'lightblue', //COLORS.lightGray,
 	},
 	cards: {
 		flex: 1,

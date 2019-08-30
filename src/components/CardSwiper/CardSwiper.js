@@ -18,12 +18,10 @@ class CardSwiper extends Component {
 			card1Top: true,
 			card2Top: false,
 			fadeAnim: new Animated.Value(0.8),
-			looping:
-				typeof this.props.looping === 'undefined' ? true : this.props.looping,
 			disabled: this.props.dataSource.length === 0,
 			lastCard: this.props.dataSource.length === 1,
 		};
-
+		console.log('**Constructor**');
 		this.setPanresponder();
 	}
 
@@ -53,55 +51,63 @@ class CardSwiper extends Component {
 	}
 
 	getInitialStyle = () => {
-		console.log('getInitialStyles');
+		console.log('**getInitialStyles**');
+		//return { topCard: {}, nextCard: {} };
 		return {
 			topCard: {
+				position: 'absolute',
+				// //position: 'relative',
+				top: 10,
+				right: 0,
+				left: 0,
+				bottom: 0,
+				//transform: [{ translateY: 30 }],
+			},
+			nextCard: {
 				position: 'absolute',
 				top: 0,
 				right: 0,
 				left: 0,
+				bottom: 0,
+				//transform: [{ translateY: -30 }],
 			},
-			// secondCard: {
-			// 	position: 'absolute',
-			// 	top: 0,
-			// 	right: 0,
-			// 	left: 0,
-			// },
 		};
 	};
 
 	getCardStyles = () => {
 		const { pan, enter } = this.state;
-		const [translateX, translateY] = [pan.x, pan.y];
-		console.log('getCardStyles');
+		const [translateX] = [pan.x, pan.y];
+		console.log('**getCardStyles**');
 
-		// This controls the rotation of the top card as you drag
+		// TOP CARD - controls rotation as you drag
 		const rotate = pan.x.interpolate({
 			inputRange: [-700, 0, 700],
 			outputRange: ['-50deg', '0deg', '50deg'],
 		});
 
-		// This controls the opacity of the top card as you drag
+		// TOP CARD - controls opacity as you drag
 		const opacity = pan.x.interpolate({
 			inputRange: [-320, 0, 320],
 			outputRange: [0.9, 1, 0.9],
 		});
 
-		// This controls the scaling of the back card as you drag the top card
+		// 2ND CARD - controls scale as you drag
 		const scale = enter;
-		const secondCardTranslateY = pan.x.interpolate({
-			inputRange: [-500, 0, 500],
-			outputRange: [0, 20, 0],
+
+		// 2ND CARD - controls the 'top' property as you drag
+		const absoluteTopPosition = scale.interpolate({
+			inputRange: [0.8, 1],
+			outputRange: [0, 10],
 		});
 
 		const animatedCardStyles = {
-			transform: [{ translateX }, { translateY }, { rotate }],
+			transform: [{ translateX }, { rotate }],
 			opacity,
 		};
-		const animatedCardStyles2 = { transform: [{ scale }] };
-		// const animatedCardStyles2 = {
-		// 	transform: [{ scale }, { translateY: secondCardTranslateY }],
-		// };
+		const animatedCardStyles2 = {
+			top: absoluteTopPosition,
+			transform: [{ scale }],
+		};
 
 		return [animatedCardStyles, animatedCardStyles2];
 	};
@@ -112,6 +118,7 @@ class CardSwiper extends Component {
 			onMoveShouldSetPanResponderCapture: (evt, gestureState) =>
 				Math.abs(gestureState.dx) > 5,
 			onPanResponderGrant: () => {
+				console.log('**onPanResponderGrant**');
 				this.state.pan.setOffset({
 					x: this.state.pan.x._value,
 					y: this.state.pan.y._value,
@@ -132,11 +139,13 @@ class CardSwiper extends Component {
 				if (val > 0.2) {
 					val = 0.2;
 				}
+
 				Animated.timing(this.state.fadeAnim, { toValue: 0.8 + val }).start();
 				Animated.spring(this.state.enter, {
 					toValue: 0.8 + val,
 					friction: 7,
 				}).start();
+
 				Animated.event([null, { dx: this.state.pan.x }])(e, gestureState);
 			},
 			// on RELEASE
@@ -179,6 +188,7 @@ class CardSwiper extends Component {
 	}
 
 	_resetState() {
+		console.log('**_resetState**');
 		this.state.pan.setValue({ x: 0, y: 0 });
 		this.state.enter.setValue(0.8);
 		this.state.fadeAnim.setValue(0.8);
@@ -225,19 +235,18 @@ class CardSwiper extends Component {
 		const dataSource = this.props.dataSource;
 		const currentIndex = dataSource.indexOf(this.state.selectedItem);
 
-		if (!this.state.looping) {
-			if (currentIndex === dataSource.length - 1) {
-				return this.setState({
-					disabled: true,
-				});
-			} else if (currentIndex === dataSource.length - 2) {
-				return setTimeout(() => {
-					this.setState({ selectedItem: dataSource[currentIndex + 1] });
-					setTimeout(() => {
-						this.setState({ lastCard: true });
-					}, 350);
-				}, 50);
-			}
+		// Check if we are at the end or close to it
+		if (currentIndex === dataSource.length - 1) {
+			return this.setState({
+				disabled: true,
+			});
+		} else if (currentIndex === dataSource.length - 2) {
+			return setTimeout(() => {
+				this.setState({ selectedItem: dataSource[currentIndex + 1] });
+				setTimeout(() => {
+					this.setState({ lastCard: true });
+				}, 350);
+			}, 50);
 		}
 
 		const nextIndexes = this.findNextIndexes(currentIndex);
@@ -281,7 +290,7 @@ class CardSwiper extends Component {
 		} else if (this.state.lastCard) {
 			// Last Card
 			return (
-				<View style={{ flexDirection: 'column' }}>
+				<View style={{ flexDirection: 'column', position: 'relative' }}>
 					{this.state.selectedItem === undefined ? (
 						<View />
 					) : (
@@ -289,7 +298,7 @@ class CardSwiper extends Component {
 							<Animated.View
 								style={[
 									this.getCardStyles()[1],
-									this.getInitialStyle().topCard,
+									this.getInitialStyle().nextCard,
 									{ opacity: this.state.fadeAnim },
 								]}
 								{...this._panResponder.panHandlers}
@@ -312,30 +321,26 @@ class CardSwiper extends Component {
 			);
 		}
 		return (
-			<View style={{ flexDirection: 'column' }}>
+			<View style={{ flexDirection: 'column', position: 'relative' }}>
 				{this.state.selectedItem === undefined ? (
 					<View />
 				) : (
 					<View>
 						<Animated.View
 							style={[
+								this.getInitialStyle().nextCard,
 								this.getCardStyles()[1],
-								this.getInitialStyle().secondCard,
 								{ opacity: this.state.fadeAnim },
 							]}
 							{...this._panResponder.panHandlers}
 						>
-							{this.props.renderBottom
-								? this.props.renderBottom(this.state.selectedItem2)
-								: this.props.renderItem(this.state.selectedItem2)}
+							{this.props.renderItem(this.state.selectedItem2)}
 						</Animated.View>
 						<Animated.View
-							style={[this.getCardStyles()[0], this.getInitialStyle().topCard]}
+							style={[this.getInitialStyle().topCard, this.getCardStyles()[0]]}
 							{...this._panResponder.panHandlers}
 						>
-							{this.props.renderTop
-								? this.props.renderTop(this.state.selectedItem)
-								: this.props.renderItem(this.state.selectedItem)}
+							{this.props.renderItem(this.state.selectedItem)}
 						</Animated.View>
 					</View>
 				)}
