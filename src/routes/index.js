@@ -181,6 +181,7 @@ const DrawerNavigator = createDrawerNavigator(
 	},
 	{
 		contentComponent: FiltersScreen,
+		drawerPosition: 'right',
 	}
 );
 
