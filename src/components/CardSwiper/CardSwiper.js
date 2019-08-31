@@ -1,6 +1,6 @@
 // Libraries
 import React, { Component } from 'react';
-import { View, Animated, PanResponder } from 'react-native';
+import { View, Animated, PanResponder, StyleSheet } from 'react-native';
 
 // Components
 import FakeCard from './FakeCard';
@@ -57,6 +57,7 @@ class CardSwiper extends Component {
 	getInitialStyle = () => {
 		return {
 			topCard: {
+				flex: 1,
 				position: 'absolute',
 				top: 12,
 				right: 0,
@@ -64,6 +65,7 @@ class CardSwiper extends Component {
 				bottom: 0,
 			},
 			secondCard: {
+				flex: 1,
 				position: 'absolute',
 				top: 0,
 				right: 0,
@@ -71,6 +73,7 @@ class CardSwiper extends Component {
 				bottom: 0,
 			},
 			thirdCard: {
+				flex: 1,
 				position: 'absolute',
 				top: -10,
 				right: 0,
@@ -252,7 +255,7 @@ class CardSwiper extends Component {
 			Animated.spring(this.state.enter, { toValue: 1, friction: 7 }).start();
 			this.selectNext();
 			Animated.decay(this.state.pan, {
-				velocity: { x: 8, y: 1 },
+				velocity: { x: -8, y: 1 },
 				deceleration: 0.98,
 			}).start(this._resetState.bind(this));
 		}, 300);
@@ -350,7 +353,13 @@ class CardSwiper extends Component {
 			);
 		}
 		return (
-			<View style={{ flexDirection: 'column', position: 'relative' }}>
+			<View
+				style={{
+					flexDirection: 'column',
+					position: 'relative',
+					flex: 1,
+				}}
+			>
 				{this.state.selectedItem === undefined ? (
 					<View />
 				) : (

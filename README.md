@@ -63,6 +63,11 @@ OTHER:
 
 - create logo
 
+Stream of thoughts:
+
+- fix 3rd card blinking animation
+- 'like' / 'dislike' text needed?
+
 ## Contributors
 
 [Curtis](https://curtisrodgers.com/)
