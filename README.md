@@ -58,8 +58,7 @@ LOGIN:
 SWIPE:
 
 - build image swiper
-- build expandable card
-- build color changing text
+- build expandable card / toggle - may need scroll view?
 
 OTHER:
 
