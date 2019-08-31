@@ -5,7 +5,7 @@ import {
 	View,
 	Text,
 	Image,
-	TouchableWithoutFeedback,
+	Animated,
 	TouchableOpacity,
 } from 'react-native';
 
@@ -20,17 +20,8 @@ import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIc
 import IonIcon from 'react-native-vector-icons/Ionicons';
 
 class SwipeCard extends Component {
-	state = {
-		isOpen: false,
-	};
-
-	// Toggle Card being open
-	toggleOpen = () => {
-		this.setState(prevState => {
-			return {
-				isOpen: !prevState.isOpen,
-			};
-		});
+	testMethod = ev => {
+		console.log(ev.nativeEvent.layout.height);
 	};
 
 	render() {
@@ -45,12 +36,13 @@ class SwipeCard extends Component {
 			lookingFor,
 			bio,
 			imageURI,
+			onToggleCardOpen,
 		} = this.props;
 		return (
 			<TouchableOpacity
 				style={styles.card}
 				activeOpacity={1}
-				onPress={this.toggleOpen}
+				onPress={onToggleCardOpen}
 			>
 				<Image
 					style={{ width: null, height: 300 }}
@@ -71,7 +63,7 @@ class SwipeCard extends Component {
 					<View style={styles.spacer}></View>
 					<Text>{foods.join(', ')}</Text>
 
-					<View>
+					<View onLayout={this.testMethod}>
 						<Text>Hidden things here...</Text>
 					</View>
 				</View>

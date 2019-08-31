@@ -11,6 +11,7 @@ import {
 	Button,
 	StatusBar,
 	Dimensions,
+	Animated,
 } from 'react-native';
 
 // Components
@@ -221,13 +222,62 @@ const CARDS = [
 ];
 
 class SwipeScreen extends Component {
+	state = {
+		cardIsOpen: false,
+		animatedLeft: new Animated.Value(0),
+		animatedRight: new Animated.Value(0),
+	};
+
 	componentDidMount() {}
+
+	// Toggle Card being open
+	handleToggleCardOpen = () => {
+		const isCardOpening = !this.state.cardIsOpen;
+		isCardOpening
+			? this.setSwipersVisible(false)
+			: this.setSwipersVisible(true);
+		this.setState({ cardIsOpen: isCardOpening });
+	};
 
 	handleGetMoreCards = () => {
 		console.log('TODO: GET MORE CARDS');
 	};
 
+	// Get left and right swipe animation styles
+	getSwipeButtonStyles = () => {
+		const { animatedLeft, animatedRight } = this.state;
+
+		return {
+			left: {
+				position: 'absolute',
+				top: '38%',
+				left: -50,
+				transform: [{ translateX: animatedLeft }],
+			},
+			right: {
+				position: 'absolute',
+				top: '38%',
+				right: -50,
+				transform: [{ translateX: animatedRight }],
+			},
+		};
+	};
+
+	// Show/hide swiper buttons
+	setSwipersVisible = setVisible => {
+		const newTranslateValue = setVisible ? 0 : 180;
+		Animated.spring(this.state.animatedLeft, {
+			toValue: newTranslateValue * -1,
+			friction: 7,
+		}).start();
+		Animated.spring(this.state.animatedRight, {
+			toValue: newTranslateValue,
+			friction: 7,
+		}).start();
+	};
+
 	render() {
+		const swipeButtonStyles = this.getSwipeButtonStyles();
 		return (
 			<Fragment>
 				<StatusBar barStyle="light-content" />
@@ -237,34 +287,49 @@ class SwipeScreen extends Component {
 							<CardSwiper
 								ref={c => (this._cardSwiper = c)}
 								dataSource={CARDS}
-								renderEmpty={() => (
-									<EmptyMessage onGetMoreCards={this.handleGetMoreCards} />
-								)}
+								renderEmpty={() => {
+									this.setSwipersVisible(false);
+									return (
+										<EmptyMessage onGetMoreCards={this.handleGetMoreCards} />
+									);
+								}}
 								renderItem={item => {
-									return <SwipeCard key={item.id} {...item} />;
+									return (
+										<SwipeCard
+											key={item.id}
+											cardIsOpen={this.state.cardIsOpen}
+											onToggleCardOpen={this.handleToggleCardOpen}
+											{...item}
+										/>
+									);
 								}}
 								looping={false}
 							/>
 						</View>
 					</View>
-					<TouchableOpacity
-						style={styles.swipeLeftButton}
-						activeOpacity={0.87}
-						onPress={() => this._cardSwiper.swipeLeft()}
-					>
-						<Text style={styles.swipeLeftIconWrapper}>
-							<MaterialCommunityIcon name="close" color="#fff" size={42} />
-						</Text>
-					</TouchableOpacity>
-					<TouchableOpacity
-						style={styles.swipeRightButton}
-						activeOpacity={0.87}
-						onPress={() => this._cardSwiper.swipeRight()}
-					>
-						<Text style={styles.swipeRightIconWrapper}>
-							<MaterialCommunityIcon name="check" color="#fff" size={42} />
-						</Text>
-					</TouchableOpacity>
+					<Animated.View style={swipeButtonStyles.left}>
+						<TouchableOpacity
+							style={styles.swipeLeftButton}
+							activeOpacity={0.87}
+							onPress={() => this._cardSwiper.swipeLeft()}
+						>
+							<Text style={styles.swipeLeftIconWrapper}>
+								<MaterialCommunityIcon name="close" color="#fff" size={42} />
+							</Text>
+						</TouchableOpacity>
+					</Animated.View>
+
+					<Animated.View style={swipeButtonStyles.right}>
+						<TouchableOpacity
+							style={styles.swipeRightButton}
+							activeOpacity={0.87}
+							onPress={() => this._cardSwiper.swipeRight()}
+						>
+							<Text style={styles.swipeRightIconWrapper}>
+								<MaterialCommunityIcon name="check" color="#fff" size={42} />
+							</Text>
+						</TouchableOpacity>
+					</Animated.View>
 				</SafeAreaView>
 			</Fragment>
 		);
@@ -292,7 +357,6 @@ const styles = StyleSheet.create({
 	},
 	swipeLeftButton: {
 		opacity: 0.94,
-		position: 'absolute',
 		backgroundColor: '#080808',
 		display: 'flex',
 		alignItems: 'center',
@@ -300,12 +364,9 @@ const styles = StyleSheet.create({
 		width: 110,
 		height: 110,
 		borderRadius: 55,
-		top: '38%',
-		left: -50,
 	},
 	swipeRightButton: {
 		opacity: 0.94,
-		position: 'absolute',
 		backgroundColor: COLORS.pink,
 		display: 'flex',
 		alignItems: 'center',
@@ -313,8 +374,6 @@ const styles = StyleSheet.create({
 		width: 110,
 		height: 110,
 		borderRadius: 55,
-		top: '38%',
-		right: -50,
 	},
 	swipeLeftIconWrapper: {
 		paddingLeft: 30,

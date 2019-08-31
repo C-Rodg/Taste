@@ -332,16 +332,6 @@ class CardSwiper extends Component {
 					) : (
 						<View>
 							<Animated.View
-								style={[
-									this.getInitialStyle().secondCard,
-									cardStyles[1],
-									{ opacity: this.state.fadeAnim },
-								]}
-								{...this._panResponder.panHandlers}
-							>
-								{this.props.renderEmpty && this.props.renderEmpty()}
-							</Animated.View>
-							<Animated.View
 								style={[this.getInitialStyle().topCard, cardStyles[0]]}
 								{...this._panResponder.panHandlers}
 							>
