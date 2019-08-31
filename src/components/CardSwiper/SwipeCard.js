@@ -34,7 +34,18 @@ class SwipeCard extends Component {
 	};
 
 	render() {
-		const { id, name, age, title, foods, imageURI } = this.props;
+		const {
+			id,
+			name,
+			age,
+			title,
+			foods,
+			location,
+			school,
+			lookingFor,
+			bio,
+			imageURI,
+		} = this.props;
 		return (
 			<TouchableOpacity
 				style={styles.card}
@@ -59,6 +70,10 @@ class SwipeCard extends Component {
 					<Text style={styles.title}>{title}</Text>
 					<View style={styles.spacer}></View>
 					<Text>{foods.join(', ')}</Text>
+
+					<View>
+						<Text>Hidden things here...</Text>
+					</View>
 				</View>
 			</TouchableOpacity>
 		);

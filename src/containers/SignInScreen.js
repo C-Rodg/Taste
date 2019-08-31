@@ -6,6 +6,9 @@ import { loginInWithPermissions } from '../components/FacebookWebView';
 import axios from 'axios';
 import { connect } from 'react-redux';
 
+// Components
+import { GhostButton } from '../components/Buttons';
+
 // Actions
 import { saveJwtToken } from '../redux/actions/settings';
 
@@ -95,11 +98,11 @@ class SignInScreen extends Component {
 					</ContentWrapperView>
 
 					<ContentWrapperView>
-						<GetStartedTouchable
-							onPress={() => this.setState({ loggingOn: true })}
-						>
-							<GetStartedTouchableText>Get Started</GetStartedTouchableText>
-						</GetStartedTouchable>
+						<GhostButton
+							text="Get Started"
+							isBlock={true}
+							onTap={() => this.setState({ loggingOn: true })}
+						/>
 					</ContentWrapperView>
 					{this.renderLogin()}
 				</SafeAreaView>
@@ -155,21 +158,5 @@ const TaglineText = styled.Text`
 	text-align: center;
 	font-family: ${FONTS.family.medium};
 	font-size: ${FONTS.sizes.regular};
-	font-weight: ${FONTS.weights.medium};
-`;
-
-const GetStartedTouchable = styled.TouchableOpacity`
-	width: 100%;
-	border: 1px solid ${COLORS.pink};
-	padding-top: 20;
-	padding-bottom: 20;
-	justify-content: center;
-	align-items: center;
-	border-radius: 10px;
-`;
-const GetStartedTouchableText = styled.Text`
-	font-size: 20;
-	color: ${COLORS.pink};
-	font-family: ${FONTS.family.medium};
 	font-weight: ${FONTS.weights.medium};
 `;

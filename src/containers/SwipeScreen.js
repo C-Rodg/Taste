@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 
 // Components
-import { CardSwiper, SwipeCard } from '../components/CardSwiper';
+import { CardSwiper, SwipeCard, EmptyMessage } from '../components/CardSwiper';
 
 // Icons
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -223,6 +223,10 @@ const CARDS = [
 class SwipeScreen extends Component {
 	componentDidMount() {}
 
+	handleGetMoreCards = () => {
+		console.log('TODO: GET MORE CARDS');
+	};
+
 	render() {
 		return (
 			<Fragment>
@@ -233,7 +237,9 @@ class SwipeScreen extends Component {
 							<CardSwiper
 								ref={c => (this._cardSwiper = c)}
 								dataSource={CARDS}
-								renderEmpty={() => <Text>ALLLLL OVER</Text>}
+								renderEmpty={() => (
+									<EmptyMessage onGetMoreCards={this.handleGetMoreCards} />
+								)}
 								renderItem={item => {
 									return <SwipeCard key={item.id} {...item} />;
 								}}
