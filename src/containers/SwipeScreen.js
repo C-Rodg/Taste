@@ -26,7 +26,10 @@ import COLORS from '../styles/colors';
 const CARDS = [
 	{
 		id: 1,
-		imageURI: 'https://source.unsplash.com/random/600x700?person',
+		imageURIs: [
+			'https://source.unsplash.com/random/600x700?person',
+			'https://source.unsplash.com/random/600x700?dog',
+		],
 		name: 'Micky Wilson',
 		age: 28,
 		title: 'CEO',
@@ -35,6 +38,10 @@ const CARDS = [
 		foods: [
 			{ value: 'Mexican', isMatch: false },
 			{ value: 'Korean', isMatch: true },
+			{ value: 'Chinese', isMatch: false },
+			{ value: 'Italian', isMatch: true },
+			{ value: 'Drinks', isMatch: true },
+			{ value: 'Soda', isMatch: false },
 		],
 		lookingFor: [
 			{ value: 'Foodie Friend', isMatch: false },
@@ -47,7 +54,10 @@ const CARDS = [
 	{
 		id: 2,
 		name: 'Bobbi Jones',
-		imageURI: 'https://source.unsplash.com/random/600x700?person',
+		imageURIs: [
+			'https://source.unsplash.com/random/600x700?person',
+			'https://source.unsplash.com/random/600x700?dog',
+		],
 		age: 33,
 		title: 'Software Engineer',
 		location: 'Florence, Italy',
@@ -67,7 +77,10 @@ const CARDS = [
 	{
 		id: 3,
 		name: 'Wintona Wild',
-		imageURI: 'https://source.unsplash.com/random/600x700?person',
+		imageURIs: [
+			'https://source.unsplash.com/random/600x700?person',
+			'https://source.unsplash.com/random/600x700?dog',
+		],
 		age: 22,
 		title: 'HR Lady',
 		location: 'District 1, Saigon, Vietnam',
@@ -86,7 +99,10 @@ const CARDS = [
 	{
 		id: 4,
 		name: 'Nikki Hughes',
-		imageURI: 'https://source.unsplash.com/random/600x700?person',
+		imageURIs: [
+			'https://source.unsplash.com/random/600x700?person',
+			'https://source.unsplash.com/random/600x700?dog',
+		],
 		age: 24,
 		title: 'Accountant',
 		location: 'Canggu, Bali, Indonesia',
@@ -106,7 +122,10 @@ const CARDS = [
 	{
 		id: 5,
 		name: 'Sansa Gozda',
-		imageURI: 'https://source.unsplash.com/random/600x700?person',
+		imageURIs: [
+			'https://source.unsplash.com/random/600x700?person',
+			'https://source.unsplash.com/random/600x700?dog',
+		],
 		age: 23,
 		title: 'Librarian',
 		location: 'Seoul, South Korea',
@@ -127,7 +146,10 @@ const CARDS = [
 	{
 		id: 6,
 		name: 'Yui Ju',
-		imageURI: 'https://source.unsplash.com/random/600x700?person',
+		imageURIs: [
+			'https://source.unsplash.com/random/600x700?person',
+			'https://source.unsplash.com/random/600x700?dog',
+		],
 		age: 22,
 		title: 'Developer',
 		location: 'Seattle, Washington, USA',
@@ -148,7 +170,10 @@ const CARDS = [
 	{
 		id: 7,
 		name: 'Finding Dori',
-		imageURI: 'https://source.unsplash.com/random/600x700?person',
+		imageURIs: [
+			'https://source.unsplash.com/random/600x700?person',
+			'https://source.unsplash.com/random/600x700?dog',
+		],
 		age: 21,
 		title: 'Real Estate',
 		location: 'Santa Monica, California',
@@ -167,7 +192,10 @@ const CARDS = [
 	{
 		id: 8,
 		name: 'Bla Tulik',
-		imageURI: 'https://source.unsplash.com/random/600x700?person',
+		imageURIs: [
+			'https://source.unsplash.com/random/600x700?person',
+			'https://source.unsplash.com/random/600x700?dog',
+		],
 		age: 24,
 		title: 'Lawyer',
 		location: 'Echo Park, Los Angeles, California',
@@ -187,7 +215,10 @@ const CARDS = [
 	{
 		id: 9,
 		name: 'Jackson Jones',
-		imageURI: 'https://source.unsplash.com/random/600x700?person',
+		imageURIs: [
+			'https://source.unsplash.com/random/600x700?person',
+			'https://source.unsplash.com/random/600x700?dog',
+		],
 		age: 28,
 		title: 'Accountant for HR',
 		location: 'Mexico City, Mexico',
@@ -203,7 +234,10 @@ const CARDS = [
 	{
 		id: 10,
 		name: 'Jackie Wilso',
-		imageURI: 'https://source.unsplash.com/random/600x700?person',
+		imageURIs: [
+			'https://source.unsplash.com/random/600x700?person',
+			'https://source.unsplash.com/random/600x700?dog',
+		],
 		age: 32,
 		title: 'Profession Basketball Player',
 		location: 'Los Angeles, California',
@@ -352,7 +386,7 @@ const styles = StyleSheet.create({
 	},
 	cards: {
 		flex: 1,
-		marginVertical: 40,
+		marginVertical: 35,
 		marginHorizontal: 20,
 	},
 	swipeLeftButton: {

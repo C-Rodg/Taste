@@ -57,7 +57,9 @@ LOGIN:
 
 SWIPE:
 
-- build out swipe screen
+- build image swiper
+- build expandable card
+- build color changing text
 
 OTHER:
 
