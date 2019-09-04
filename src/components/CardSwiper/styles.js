@@ -21,6 +21,7 @@ const StyledNormalText = styled.Text`
 	font-size: ${FONTS.sizes.regular};
 	font-family: ${FONTS.family.medium};
 	font-weight: ${FONTS.weights.medium};
+	flex-shrink: 1;
 `;
 
 const StyledIconSidebar = styled.Text`

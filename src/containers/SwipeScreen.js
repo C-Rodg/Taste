@@ -49,7 +49,7 @@ const CARDS = [
 			{ value: 'Relationship', isMatch: false },
 		],
 		bio:
-			"Hey! I'm Micky. I'm oly 152cm, so it's not going to be too tough to beat my height 🇰🇷 ",
+			"Hey! I'm Micky. I'm oly 152cm, so it's not going to be too tough to beat my height. Wooohooo yeah yea 🇰🇷 ",
 	},
 	{
 		id: 2,
@@ -314,10 +314,13 @@ class SwipeScreen extends Component {
 		const swipeButtonStyles = this.getSwipeButtonStyles();
 		return (
 			<Fragment>
-				<StatusBar barStyle="light-content" />
+				<StatusBar barStyle="dark-content" />
 				<SafeAreaView style={{ flex: 1 }}>
 					<View style={styles.container}>
-						<View style={styles.cards}>
+						<ScrollView
+							style={styles.scrollView}
+							onContentSizeChange={e => console.log('onContentSizeChange')}
+						>
 							<CardSwiper
 								ref={c => (this._cardSwiper = c)}
 								dataSource={CARDS}
@@ -327,20 +330,23 @@ class SwipeScreen extends Component {
 										<EmptyMessage onGetMoreCards={this.handleGetMoreCards} />
 									);
 								}}
-								renderItem={item => {
+								renderItem={(item, isCurrent) => {
 									return (
 										<SwipeCard
 											key={item.id}
+											isCurrent={isCurrent}
 											cardIsOpen={this.state.cardIsOpen}
 											onToggleCardOpen={this.handleToggleCardOpen}
 											{...item}
 										/>
 									);
 								}}
+								cardIsOpen={this.state.cardIsOpen}
 								looping={false}
 							/>
-						</View>
+						</ScrollView>
 					</View>
+
 					<Animated.View style={swipeButtonStyles.left}>
 						<TouchableOpacity
 							style={styles.swipeLeftButton}
@@ -384,10 +390,10 @@ const styles = StyleSheet.create({
 		flex: 1,
 		backgroundColor: COLORS.lightGray,
 	},
-	cards: {
+	scrollView: {
 		flex: 1,
-		marginVertical: 35,
-		marginHorizontal: 20,
+		paddingHorizontal: 20,
+		paddingVertical: 35,
 	},
 	swipeLeftButton: {
 		opacity: 0.94,

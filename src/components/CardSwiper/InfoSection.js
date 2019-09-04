@@ -35,7 +35,7 @@ const iconMap = {
 	),
 };
 
-function InfoSection({ propName, value }) {
+function InfoSection({ propName, value, limitLines }) {
 	const isArray = Array.isArray(value);
 	if (!value || (isArray && value.length === 0)) {
 		return null;
@@ -46,7 +46,9 @@ function InfoSection({ propName, value }) {
 	return (
 		<StyledInfoSectionView>
 			<StyledIconSidebar>{iconMap[propName]}</StyledIconSidebar>
-			<StyledNormalText>{transformedValue}</StyledNormalText>
+			<StyledNormalText numberOfLines={limitLines}>
+				{transformedValue}
+			</StyledNormalText>
 		</StyledInfoSectionView>
 	);
 }

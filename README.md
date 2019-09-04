@@ -51,14 +51,14 @@ _:app:installDebug failed_
 
 ## TODO:
 
-LOGIN:
-
-- test on android
-
 SWIPE:
 
+- fix scroll view height bottom padding issue
 - build image swiper
-- build expandable card / toggle - may need scroll view?
+
+TEST:
+
+- test login, animations on android emulator and real iOS
 
 OTHER:
 

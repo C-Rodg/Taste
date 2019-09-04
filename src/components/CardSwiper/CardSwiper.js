@@ -63,6 +63,7 @@ class CardSwiper extends Component {
 				right: 0,
 				left: 0,
 				bottom: 0,
+				height: '100%',
 			},
 			secondCard: {
 				flex: 1,
@@ -156,27 +157,29 @@ class CardSwiper extends Component {
 				this.state.pan.setValue({ x: 0, y: 0 });
 			},
 			onPanResponderMove: (e, gestureState) => {
-				if (gestureState.dx > 20) {
-					if (this.props.onSwiping) {
-						this.props.onSwiping('right', gestureState.dx);
+				if (!this.props.cardIsOpen) {
+					if (gestureState.dx > 20) {
+						if (this.props.onSwiping) {
+							this.props.onSwiping('right', gestureState.dx);
+						}
+					} else if (gestureState.dx < -20) {
+						if (this.props.onSwiping) {
+							this.props.onSwiping('left', gestureState.dx);
+						}
 					}
-				} else if (gestureState.dx < -20) {
-					if (this.props.onSwiping) {
-						this.props.onSwiping('left', gestureState.dx);
+					let val = Math.abs(gestureState.dx * 0.0013);
+					if (val > 0.1) {
+						val = 0.1;
 					}
-				}
-				let val = Math.abs(gestureState.dx * 0.0013);
-				if (val > 0.1) {
-					val = 0.1;
-				}
 
-				Animated.timing(this.state.fadeAnim, { toValue: 0.8 + val }).start();
-				Animated.spring(this.state.enter, {
-					toValue: 0.9 + val,
-					friction: 7,
-				}).start();
+					Animated.timing(this.state.fadeAnim, { toValue: 0.8 + val }).start();
+					Animated.spring(this.state.enter, {
+						toValue: 0.9 + val,
+						friction: 7,
+					}).start();
 
-				Animated.event([null, { dx: this.state.pan.x }])(e, gestureState);
+					Animated.event([null, { dx: this.state.pan.x }])(e, gestureState);
+				}
 			},
 			// on RELEASE
 			onPanResponderRelease: (e, { vx, vy }) => {
@@ -322,6 +325,7 @@ class CardSwiper extends Component {
 				</View>
 			);
 		}
+		const initalCardStyles = this.getInitialStyle();
 		const cardStyles = this.getCardStyles();
 		if (this.state.lastCard) {
 			// Last Card
@@ -330,12 +334,12 @@ class CardSwiper extends Component {
 					{this.state.selectedItem === undefined ? (
 						<View />
 					) : (
-						<View>
+						<View style={{ flex: 1 }}>
 							<Animated.View
-								style={[this.getInitialStyle().topCard, cardStyles[0]]}
+								style={[initalCardStyles.topCard, cardStyles[0]]}
 								{...this._panResponder.panHandlers}
 							>
-								{this.props.renderItem(this.state.selectedItem)}
+								{this.props.renderItem(this.state.selectedItem, true)}
 							</Animated.View>
 						</View>
 					)}
@@ -353,28 +357,28 @@ class CardSwiper extends Component {
 				{this.state.selectedItem === undefined ? (
 					<View />
 				) : (
-					<View>
+					<View style={{ flex: 1 }}>
 						{!this.state.secondLastCard ? (
 							<FakeCard
-								cardStyles={[this.getInitialStyle().thirdCard, cardStyles[2]]}
+								cardStyles={[initalCardStyles.thirdCard, cardStyles[2]]}
 							/>
 						) : null}
 
 						<Animated.View
 							style={[
-								this.getInitialStyle().secondCard,
+								initalCardStyles.secondCard,
 								cardStyles[1],
 								{ opacity: this.state.fadeAnim },
 							]}
 							{...this._panResponder.panHandlers}
 						>
-							{this.props.renderItem(this.state.selectedItem2)}
+							{this.props.renderItem(this.state.selectedItem2, false)}
 						</Animated.View>
 						<Animated.View
-							style={[this.getInitialStyle().topCard, cardStyles[0]]}
+							style={[initalCardStyles.topCard, cardStyles[0]]}
 							{...this._panResponder.panHandlers}
 						>
-							{this.props.renderItem(this.state.selectedItem)}
+							{this.props.renderItem(this.state.selectedItem, true)}
 						</Animated.View>
 					</View>
 				)}
