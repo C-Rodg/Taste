@@ -262,8 +262,6 @@ class SwipeScreen extends Component {
 		animatedRight: new Animated.Value(0),
 	};
 
-	componentDidMount() {}
-
 	// Toggle Card being open
 	handleToggleCardOpen = () => {
 		const isCardOpening = !this.state.cardIsOpen;
@@ -310,42 +308,52 @@ class SwipeScreen extends Component {
 		}).start();
 	};
 
+	// Get scrollview height
+	getScrollViewContentStyles = () => {
+		// just setting arbitrary values for now of estimated height ranges
+		// eventually should refactor to get exact view heights
+		const { cardIsOpen } = this.state;
+		const screenHeight = Dimensions.get('screen').height;
+		const paddingBottom = cardIsOpen ? 1.3 * screenHeight : 0.7 * screenHeight;
+		return {
+			paddingBottom,
+		};
+	};
+
 	render() {
 		const swipeButtonStyles = this.getSwipeButtonStyles();
 		return (
 			<Fragment>
 				<StatusBar barStyle="dark-content" />
 				<SafeAreaView style={{ flex: 1 }}>
-					<View style={styles.container}>
-						<ScrollView
-							style={styles.scrollView}
-							onContentSizeChange={e => console.log('onContentSizeChange')}
-						>
-							<CardSwiper
-								ref={c => (this._cardSwiper = c)}
-								dataSource={CARDS}
-								renderEmpty={() => {
-									this.setSwipersVisible(false);
-									return (
-										<EmptyMessage onGetMoreCards={this.handleGetMoreCards} />
-									);
-								}}
-								renderItem={(item, isCurrent) => {
-									return (
-										<SwipeCard
-											key={item.id}
-											isCurrent={isCurrent}
-											cardIsOpen={this.state.cardIsOpen}
-											onToggleCardOpen={this.handleToggleCardOpen}
-											{...item}
-										/>
-									);
-								}}
-								cardIsOpen={this.state.cardIsOpen}
-								looping={false}
-							/>
-						</ScrollView>
-					</View>
+					<ScrollView
+						style={styles.scrollView}
+						contentContainerStyle={this.getScrollViewContentStyles()}
+					>
+						<CardSwiper
+							ref={c => (this._cardSwiper = c)}
+							dataSource={CARDS}
+							renderEmpty={() => {
+								this.setSwipersVisible(false);
+								return (
+									<EmptyMessage onGetMoreCards={this.handleGetMoreCards} />
+								);
+							}}
+							renderItem={(item, isCurrent) => {
+								return (
+									<SwipeCard
+										key={item.id}
+										isCurrent={isCurrent}
+										cardIsOpen={this.state.cardIsOpen}
+										onToggleCardOpen={this.handleToggleCardOpen}
+										{...item}
+									/>
+								);
+							}}
+							cardIsOpen={this.state.cardIsOpen}
+							looping={false}
+						/>
+					</ScrollView>
 
 					<Animated.View style={swipeButtonStyles.left}>
 						<TouchableOpacity
@@ -386,14 +394,11 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps)(SwipeScreen);
 
 const styles = StyleSheet.create({
-	container: {
+	scrollView: {
+		paddingHorizontal: 20,
+		paddingTop: 35,
 		flex: 1,
 		backgroundColor: COLORS.lightGray,
-	},
-	scrollView: {
-		flex: 1,
-		paddingHorizontal: 20,
-		paddingVertical: 35,
 	},
 	swipeLeftButton: {
 		opacity: 0.94,

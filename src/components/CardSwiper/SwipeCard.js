@@ -52,8 +52,8 @@ class SwipeCard extends Component {
 	toggleCardHeight = () => {
 		const { cardIsOpen } = this.props;
 		const { topContentHeight, bottomContentHeight } = this.state;
-		const openHeight = 300 + topContentHeight + bottomContentHeight + 32;
-		const closedHeight = 300 + topContentHeight + 32;
+		const openHeight = 300 + topContentHeight + bottomContentHeight + 34;
+		const closedHeight = 300 + topContentHeight + 34;
 
 		this.state.animation.setValue(cardIsOpen ? closedHeight : openHeight);
 		Animated.spring(this.state.animation, {
@@ -67,7 +67,7 @@ class SwipeCard extends Component {
 			...styles.container,
 		};
 
-		const originalCardHeight = 300 + this.state.topContentHeight + 32;
+		const originalCardHeight = 300 + this.state.topContentHeight + 34;
 		this.state.animation.setValue(originalCardHeight);
 
 		return cardStyles;

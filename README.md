@@ -53,7 +53,6 @@ _:app:installDebug failed_
 
 SWIPE:
 
-- fix scroll view height bottom padding issue
 - build image swiper
 
 TEST:
@@ -64,10 +63,11 @@ OTHER:
 
 - create logo
 
-Stream of thoughts:
+Other minor bugs:
 
 - fix 3rd card blinking animation
 - 'like' / 'dislike' text needed?
+- calculate height of swipe card expanded
 
 ## Contributors
 

@@ -11,6 +11,7 @@ class FakeCard extends Component {
 						minHeight: 390,
 						backgroundColor: '#fcfcfc',
 						borderRadius: 6,
+						opacity: 0.95,
 					}}
 				></View>
 			</Animated.View>
