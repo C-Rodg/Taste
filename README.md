@@ -53,7 +53,7 @@ _:app:installDebug failed_
 
 SWIPE:
 
-- build image swiper
+- build image swiper up to 6 images
 
 TEST:
 

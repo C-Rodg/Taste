@@ -29,6 +29,10 @@ const CARDS = [
 		imageURIs: [
 			'https://source.unsplash.com/random/600x700?person',
 			'https://source.unsplash.com/random/600x700?dog',
+			'https://source.unsplash.com/random/600x700?cats',
+			'https://source.unsplash.com/random/600x700?houses',
+			'https://source.unsplash.com/random/600x700?tech',
+			'https://source.unsplash.com/random/600x700?nature',
 		],
 		name: 'Micky Wilson',
 		age: 28,
@@ -57,6 +61,7 @@ const CARDS = [
 		imageURIs: [
 			'https://source.unsplash.com/random/600x700?person',
 			'https://source.unsplash.com/random/600x700?dog',
+			'https://source.unsplash.com/random/600x700?cats',
 		],
 		age: 33,
 		title: 'Software Engineer',
