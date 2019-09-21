@@ -11,6 +11,7 @@ import {
 
 // Components
 import InfoSection from './InfoSection';
+import { ImageSlider } from '../ImageSlider/';
 
 // Styles
 import {
@@ -99,16 +100,7 @@ class SwipeCard extends Component {
 					activeOpacity={1}
 					onPress={onToggleCardOpen}
 				>
-					<Image
-						style={{ width: null, minHeight: 300 }}
-						source={{
-							uri: imageURIs[0],
-							headers: {
-								Pragma: 'no-cache',
-							},
-							cache: 'reload',
-						}}
-					/>
+					<ImageSlider imageList={imageURIs} />
 					<View>
 						<View onLayout={this.onTopCardContentLayout}>
 							<StyledNameHeader>
@@ -160,3 +152,16 @@ const styles = StyleSheet.create({
 		padding: 15,
 	},
 });
+
+{
+	/* <Image
+	style={{ width: null, minHeight: 300 }}
+	source={{
+		uri: imageURIs[0],
+		headers: {
+			Pragma: 'no-cache',
+		},
+		cache: 'reload',
+	}}
+/> */
+}

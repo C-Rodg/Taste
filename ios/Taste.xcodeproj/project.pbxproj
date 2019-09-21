@@ -34,8 +34,6 @@
 		D8F6B36B100E410980051D39 /* FiraSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B9C2BF1D15A44F819EF5AAF4 /* FiraSans-ExtraBold.ttf */; };
 		DC7FE58BEB30C6A99AAB9918 /* libPods-Taste-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E157D895F65955D725B65BF2 /* libPods-Taste-tvOS.a */; };
 		E780D7F8AE8B4734B2B7E960 /* FiraSans-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3097251966284028A7048134 /* FiraSans-ThinItalic.ttf */; };
-		E941883922FBC4590039CBC7 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E941883722FBC4590039CBC7 /* Ionicons.ttf */; };
-		E941883A22FBC4590039CBC7 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E941883822FBC4590039CBC7 /* MaterialCommunityIcons.ttf */; };
 		E9F7E62E223A4A8CAB652D8C /* FiraSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F448C1B5D8BC44C1BF542081 /* FiraSans-BoldItalic.ttf */; };
 		EE8D096C92794C51A67E81F1 /* FiraSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0693A72A327451388624F89 /* FiraSans-Black.ttf */; };
 		F07F639E49364791889868EB /* FiraSans-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 468F6CFCC5074EE0B320BAFE /* FiraSans-Thin.ttf */; };
@@ -420,13 +418,11 @@
 				4CC6C2210616406A9D3B1B1B /* FiraSans-ExtraLightItalic.ttf in Resources */,
 				10382AA8B5C349D7A0BB0101 /* FiraSans-Light.ttf in Resources */,
 				233E47E2AEC64B028E153B85 /* FiraSans-LightItalic.ttf in Resources */,
-				E941883A22FBC4590039CBC7 /* MaterialCommunityIcons.ttf in Resources */,
 				870A0FD79C2942C194AC0A75 /* FiraSans-Medium.ttf in Resources */,
 				A676C6D1DA0D4F178FD321BA /* FiraSans-MediumItalic.ttf in Resources */,
 				4AB6FAE48B324D57895783DC /* FiraSans-Regular.ttf in Resources */,
 				58321BC061BB4F45981866C6 /* FiraSans-RegularItalic.ttf in Resources */,
 				B2200E58A232428C9BD9EBBB /* FiraSans-SemiBold.ttf in Resources */,
-				E941883922FBC4590039CBC7 /* Ionicons.ttf in Resources */,
 				4230D9779CBA4836AD3E0511 /* FiraSans-SemiBoldItalic.ttf in Resources */,
 				F07F639E49364791889868EB /* FiraSans-Thin.ttf in Resources */,
 				E780D7F8AE8B4734B2B7E960 /* FiraSans-ThinItalic.ttf in Resources */,
