@@ -128,7 +128,10 @@ class SwiperWrapper extends Component {
 			isScrolling: false,
 		};
 		return initState;
-		// TODO: Start onScroll events
+	}
+
+	fullState() {
+		return Object.assign({}, this.state, this.internals);
 	}
 
 	onLayout = event => {
@@ -156,6 +159,225 @@ class SwiperWrapper extends Component {
 		}
 
 		this.setState(state);
+	};
+
+	onScrollBegin = e => {
+		this.internals.isScrolling = true;
+		this.props.onScrollBeginDrag &&
+			this.props.onScrollBeginDrag(e, this.fullState, this);
+	};
+
+	onScrollEnd = e => {
+		this.internals.isScrolling = false;
+
+		if (!e.nativeEvent.contentOffset) {
+			console.log('MUST BE ANDROID');
+			if (this.state.dir === 'x') {
+				e.nativeEvent.contentOffset = {
+					x: e.nativeEvent.position * this.state.width,
+				};
+			} else {
+				e.nativeEvent.contentOffset = {
+					y: e.nativeEvent.position * this.state.height,
+				};
+			}
+		}
+
+		this.updateIndex(e.nativeEvent.contentOffset, this.state.dir, () => {
+			this.props.onMomentumScrollEnd &&
+				this.props.onMomentumScrollEnd(e, this.fullState(), this);
+		});
+	};
+
+	onScrollEndDrag = e => {
+		const { contentOffset } = e.nativeEvent;
+		const { horizontal } = this.props;
+		const { children, index } = this.state;
+		const { offset } = this.internals;
+		const previousOffset = horizontal ? offset.x : offset.y;
+		const newOffset = horizontal ? contentOffset.x : contentOffset.y;
+
+		if (
+			previousOffset === newOffset &&
+			(index === 0 || index === children.length)
+		) {
+			this.internals.isScrolling = false;
+		}
+	};
+
+	updateIndex = (offset, dir, cb) => {
+		const state = this.state;
+		const callback = async () => {
+			cb();
+			if (Platform.OS === 'android') {
+				if (this.state.index === 0) {
+					this.props.horizontal
+						? this.scrollView.scrollTo({
+								x: state.width,
+								y: 0,
+								animated: false,
+						  })
+						: this.scrollView.scrollTo({
+								x: 0,
+								y: state.height,
+								animated: false,
+						  });
+				} else if (this.state.index === this.state.total - 1) {
+					this.props.horizontal
+						? this.scrollView.scrollTo({
+								x: state.width * this.state.total,
+								y: 0,
+								animated: false,
+						  })
+						: this.scrollView.scrollTo({
+								x: 0,
+								y: state.height * this.state.total,
+								animated: false,
+						  });
+				}
+			}
+		};
+
+		let index = state.index;
+		if (!this.internals.offset) {
+			this.internals.offset = {};
+		}
+		const diff = offset[dir] - this.internals.offset[dir];
+		const step = dir === 'x' ? state.width : state.height;
+
+		if (!diff) return;
+
+		index = parseInt(index + Math.round(diff / step));
+
+		const newState = {};
+		newState.index = index;
+
+		this.internals.offset = offset;
+
+		this.setState(newState, callback);
+	};
+
+	scrollBy = (index, animated = true) => {
+		if (this.internals.isScrolling || this.state.total < 2) {
+			return;
+		}
+
+		const state = this.state;
+		const diff = index + this.state.index;
+		let x = 0;
+		let y = 0;
+		if (state.dir === 'x') {
+			x = diff * state.width;
+		} else if (state.dir === 'y') {
+			y = diff * state.height;
+		}
+
+		this.scrollView && this.scrollView.scrollTo({ x, y, animated });
+
+		this.internals.isScrolling = true;
+
+		if (!animated || Platform.OS !== 'ios') {
+			setImmediate(() => {
+				this.onScrollEnd({
+					nativeEvent: {
+						position: diff,
+					},
+				});
+			});
+		}
+	};
+
+	scrollTo = (index, animated = true) => {
+		if (
+			this.internals.isScrolling ||
+			this.state.total < 2 ||
+			index == this.state.index
+		) {
+			return;
+		}
+
+		const state = this.state;
+		const diff = this.state.index + (index - this.state.index);
+
+		let x = 0;
+		let y = 0;
+		if (state.dir === 'x') {
+			x = diff * state.width;
+		} else if (state.dir === 'y') {
+			y = diff * state.height;
+		}
+
+		this.scrollView && this.scrollView.scrollTo({ x, y, animated });
+
+		this.internals.isScrolling = true;
+
+		if (!animated || Platform.OS !== 'ios') {
+			setImmediate(() => {
+				this.onScrollEnd({
+					nativeEvent: {
+						position: diff,
+					},
+				});
+			});
+		}
+	};
+
+	scrollViewPropOverrides = () => {
+		const props = this.props;
+		let overrides = {};
+
+		for (let prop in props) {
+			if (
+				typeof props[prop] === 'function' &&
+				prop !== 'onMomentumScrollEnd' &&
+				prop !== 'renderPagination' &&
+				prop !== 'onScrollBeginDrag'
+			) {
+				let originResponder = props[prop];
+				overrides[prop] = e => originalResponder(e, this.fullState(), this);
+			}
+		}
+
+		return overrides;
+	};
+
+	renderPagination = () => {
+		// TODO...
+	};
+
+	refScrollView = view => {
+		this.scrollView = view;
+	};
+
+	onPageScrollStateChange = state => {
+		switch (state) {
+			case 'dragging':
+				return this.onScrollBegin();
+			case 'idle':
+			case 'settling':
+				if (this.props.onTouchEnd) {
+					this.props.onTouchEnd();
+				}
+		}
+	};
+
+	renderScrollView = pages => {
+		return (
+			<ScrollView
+				ref={this.refScrollView}
+				{...this.props}
+				{...this.scrollViewPropOverrides()}
+				contentContainerStyle={[
+					{ backgroundColor: 'transparent' },
+					this.props.style,
+				]}
+				contentOffset={this.state.offset}
+				onScrollBeginDrag={this.onScrollBegin}
+				onMomentumScrollEnd={this.onScrollEnd}
+				onScrollEndDrag={this.onScrollEndDrag}
+				style={this.props.scrollViewStyle}
+			/>
+		);
 	};
 
 	render() {
