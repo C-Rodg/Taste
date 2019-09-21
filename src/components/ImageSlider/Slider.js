@@ -294,7 +294,7 @@ class ImageScrollViewSlider extends Component {
 				prop !== 'onScrollBeginDrag'
 			) {
 				let originResponder = props[prop];
-				overrides[prop] = e => originalResponder(e, this.fullState(), this);
+				overrides[prop] = e => originResponder(e, this.fullState(), this);
 			}
 		}
 
@@ -327,12 +327,15 @@ class ImageScrollViewSlider extends Component {
 				ref={this.refScrollView}
 				{...this.props}
 				{...this.scrollViewPropOverrides()}
-				contentContainerStyle={[{ backgroundColor: 'green' }, this.props.style]}
+				contentContainerStyle={[
+					{ backgroundColor: 'orange', border: '2px solid black' },
+					this.props.style,
+				]}
 				contentOffset={this.state.offset}
 				onScrollBeginDrag={this.onScrollBegin}
 				onMomentumScrollEnd={this.onScrollEnd}
 				onScrollEndDrag={this.onScrollEndDrag}
-				style={this.props.scrollViewStyle}
+				style={{ border: '2px solid black' }}
 			>
 				{pages}
 			</ScrollView>
@@ -340,10 +343,11 @@ class ImageScrollViewSlider extends Component {
 	};
 
 	render() {
-		console.log('rendering slider!');
 		const { index, total, width, height, children } = this.state;
 		const { loadMinimal, loadMinimalSize } = this.props;
 		let pages = [];
+		console.log('rendering slider!');
+		console.log(`width: ${width}, height: ${height}`);
 
 		// STYLES
 		const pageStyle = [{ width, height }, { backgroundColor: 'transparent' }];
@@ -357,7 +361,6 @@ class ImageScrollViewSlider extends Component {
 
 		if (total > 1) {
 			pages = Object.keys(children);
-
 			pages = pages.map((page, i) => {
 				if (loadMinimal) {
 					if (i >= index - loadMinimalSize && i <= index + loadMinimalSize) {
@@ -388,6 +391,7 @@ class ImageScrollViewSlider extends Component {
 				</View>
 			);
 		}
+		console.log(pages);
 		return (
 			<View style={styles.container} onLayout={this.onLayout}>
 				{this.renderScrollView(pages)}
