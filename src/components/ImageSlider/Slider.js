@@ -1,6 +1,12 @@
 // Libraries
 import React, { Component } from 'react';
-import { View, ActivityIndicator, ScrollView, Dimensions } from 'react-native';
+import {
+	View,
+	ActivityIndicator,
+	ScrollView,
+	Dimensions,
+	StyleSheet,
+} from 'react-native';
 
 class ImageScrollViewSlider extends Component {
 	static defaultProps = {
@@ -88,6 +94,7 @@ class ImageScrollViewSlider extends Component {
 
 	onLayout = event => {
 		const { width, height } = event.nativeEvent.layout;
+		console.log({ width, height });
 		const offset = (this.internals.offset = {});
 		const state = { width, height };
 
@@ -114,6 +121,7 @@ class ImageScrollViewSlider extends Component {
 	};
 
 	onScrollBegin = e => {
+		console.log('SCROLL BEGIN');
 		this.internals.isScrolling = true;
 		this.props.onScrollBeginDrag &&
 			this.props.onScrollBeginDrag(e, this.fullState, this);
@@ -319,22 +327,22 @@ class ImageScrollViewSlider extends Component {
 				ref={this.refScrollView}
 				{...this.props}
 				{...this.scrollViewPropOverrides()}
-				contentContainerStyle={[
-					{ backgroundColor: 'transparent' },
-					this.props.style,
-				]}
+				contentContainerStyle={[{ backgroundColor: 'green' }, this.props.style]}
 				contentOffset={this.state.offset}
 				onScrollBeginDrag={this.onScrollBegin}
 				onMomentumScrollEnd={this.onScrollEnd}
 				onScrollEndDrag={this.onScrollEndDrag}
 				style={this.props.scrollViewStyle}
-			/>
+			>
+				{pages}
+			</ScrollView>
 		);
 	};
 
 	render() {
+		console.log('rendering slider!');
 		const { index, total, width, height, children } = this.state;
-		const { loadMinimal } = this.props;
+		const { loadMinimal, loadMinimalSize } = this.props;
 		let pages = [];
 
 		// STYLES
@@ -381,18 +389,19 @@ class ImageScrollViewSlider extends Component {
 			);
 		}
 		return (
-			<View
-				style={{
-					backgroundColor: 'transparent',
-					position: 'relative',
-					flex: 1,
-				}}
-				onLayout={this.onLayout}
-			>
+			<View style={styles.container} onLayout={this.onLayout}>
 				{this.renderScrollView(pages)}
 			</View>
 		);
 	}
 }
+
+const styles = StyleSheet.create({
+	container: {
+		backgroundColor: 'transparent',
+		position: 'relative',
+		flex: 1,
+	},
+});
 
 export default ImageScrollViewSlider;

@@ -18,6 +18,17 @@ import { HeaderCalendarIcon } from '../components/NavigationItems';
 // Actions
 import { setConnectionsViewed } from '../redux/actions/connections';
 
+// Testing
+import { ImageSlider } from '../components/ImageSlider';
+const TEST_IMAGES = [
+	'https://source.unsplash.com/random/600x700?person',
+	'https://source.unsplash.com/random/600x700?dog',
+	'https://source.unsplash.com/random/600x700?cats',
+	'https://source.unsplash.com/random/600x700?houses',
+	'https://source.unsplash.com/random/600x700?tech',
+	'https://source.unsplash.com/random/600x700?nature',
+];
+
 class ConnectionsScreen extends Component {
 	static navigationOptions = ({ navigation }) => {
 		return {
@@ -50,6 +61,7 @@ class ConnectionsScreen extends Component {
 							onPress={() => this.props.navigation.navigate('Messaging')}
 						/>
 						<Button onPress={this.testClear} title="Clear Storage" />
+						<ImageSlider imageList={TEST_IMAGES} />
 					</View>
 				</SafeAreaView>
 			</Fragment>
@@ -69,6 +81,7 @@ export default connect(
 const styles = StyleSheet.create({
 	container: {
 		//flex: 1,
+		backgroundColor: 'blue',
 		justifyContent: 'center',
 		alignItems: 'center',
 	},

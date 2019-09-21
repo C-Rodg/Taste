@@ -1,13 +1,6 @@
 // Libraries
 import React, { Component } from 'react';
-import {
-	StyleSheet,
-	View,
-	Text,
-	Image,
-	Animated,
-	TouchableOpacity,
-} from 'react-native';
+import { StyleSheet, View, Animated, TouchableOpacity } from 'react-native';
 
 // Components
 import InfoSection from './InfoSection';

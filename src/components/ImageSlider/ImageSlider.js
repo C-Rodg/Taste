@@ -1,6 +1,6 @@
 // Libraries
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 // Components
 import Slider from './Slider';
@@ -22,18 +22,23 @@ class ImageSlider extends Component {
 
 	render() {
 		return (
-			<View style={{ flex: 1 }}>
-				<Slider loadMinimal loadMinimalSize={2}>
+			<View style={{ backgroundColor: 'red', flex: 1, minHeight: 300 }}>
+				<Slider loadMinimal loadMinimalSize={2} style={{}}>
 					{this.props.imageList.map((item, idx) => {
-						<ImageSlide
-							loadHandle={this.loadHandle}
-							loaded={!!this.state.loadQueue[idx]}
-							uri={item}
-							idx={idx}
-							key={idx}
-						/>;
+						return (
+							<ImageSlide
+								loadHandle={this.loadHandle}
+								loaded={!!this.state.loadQueue[idx]}
+								uri={item}
+								idx={idx}
+								key={idx}
+							/>
+						);
 					})}
 				</Slider>
+				<View>
+					<Text>Current Loaded Images: {this.state.loadQueue}</Text>
+				</View>
 			</View>
 		);
 	}
