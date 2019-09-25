@@ -53,7 +53,8 @@ _:app:installDebug failed_
 
 SWIPE:
 
-- build image swiper up to 6 images
+- fix image swiper so it is able to listen to touches properly
+- delete ImageSwiper components...
 
 TEST:
 

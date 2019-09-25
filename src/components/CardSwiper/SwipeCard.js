@@ -4,7 +4,7 @@ import { StyleSheet, View, Animated, TouchableOpacity } from 'react-native';
 
 // Components
 import InfoSection from './InfoSection';
-import { ImageSlider } from '../ImageSlider/';
+import { SliderCarousel } from '../SliderCarousel/';
 
 // Styles
 import {
@@ -12,6 +12,9 @@ import {
 	StyledNameHeader,
 	StyledSectionSpacer,
 } from './styles';
+
+// Props
+import COLORS from '../../styles/colors';
 
 class SwipeCard extends Component {
 	state = {
@@ -93,7 +96,11 @@ class SwipeCard extends Component {
 					activeOpacity={1}
 					onPress={onToggleCardOpen}
 				>
-					<ImageSlider imageList={imageURIs} />
+					<SliderCarousel
+						images={imageURIs}
+						dotColor={COLORS.pink}
+						showDots={cardIsOpen}
+					/>
 					<View>
 						<View onLayout={this.onTopCardContentLayout}>
 							<StyledNameHeader>

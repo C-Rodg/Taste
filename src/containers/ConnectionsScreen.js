@@ -19,7 +19,7 @@ import { HeaderCalendarIcon } from '../components/NavigationItems';
 import { setConnectionsViewed } from '../redux/actions/connections';
 
 // Testing
-import { ImageSlider } from '../components/ImageSlider';
+import { SliderCarousel } from '../components/SliderCarousel';
 const TEST_IMAGES = [
 	'https://picsum.photos/id/1/600/600',
 	'https://picsum.photos/id/2/600/600',
@@ -61,8 +61,8 @@ class ConnectionsScreen extends Component {
 							onPress={() => this.props.navigation.navigate('Messaging')}
 						/>
 						<Button onPress={this.testClear} title="Clear Storage" />
-						<ImageSlider imageList={TEST_IMAGES} />
 					</View>
+					<SliderCarousel images={TEST_IMAGES} />
 				</SafeAreaView>
 			</Fragment>
 		);

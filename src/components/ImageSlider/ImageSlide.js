@@ -21,7 +21,6 @@ const ImageSlide = props => {
 };
 
 const { width } = Dimensions.get('window');
-console.log('THE WIDTH FOR THE WINDOW IS: ' + width);
 const styles = StyleSheet.create({
 	slide: {
 		flex: 1,

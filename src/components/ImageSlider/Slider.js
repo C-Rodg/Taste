@@ -23,8 +23,13 @@ class ImageScrollViewSlider extends Component {
 
 	componentWillReceiveProps(nextProps) {
 		if (nextProps.index === this.props.index) {
+			console.log('componentWillReceiveProps...same index...');
 			return;
 		}
+		console.log(
+			'componentWillReceiveProps...different index...' + this.props.index !==
+				nextProps.index
+		);
 		this.setState(
 			this.initState(nextProps, this.props.index !== nextProps.index)
 		);
@@ -32,12 +37,14 @@ class ImageScrollViewSlider extends Component {
 
 	componentWillUpdate(nextProps, nextState) {
 		if (this.state.index !== nextState.index) {
+			console.log('componentWillUpdate...' + nextState.index);
 			this.props.onIndexChanged(nextState.index);
 		}
 	}
 
 	componentDidUpdate(prevProps) {
 		if (this.props.children !== prevProps.children) {
+			console.log('componentDidUpdate...' + this.state.index);
 			this.setState(
 				this.initState({ ...this.props, index: this.state.index }, true)
 			);
@@ -126,14 +133,14 @@ class ImageScrollViewSlider extends Component {
 	};
 
 	onScrollBegin = e => {
-		console.log('EVENT-onScrollBegin');
+		console.log('1.) EVENT-onScrollBegin');
 		this.internals.isScrolling = true;
 		this.props.onScrollBeginDrag &&
 			this.props.onScrollBeginDrag(e, this.fullState, this);
 	};
 
 	onScrollEndDrag = e => {
-		console.log('EVENT-onScrollEndDrag');
+		console.log('2.) EVENT-onScrollEndDrag');
 
 		const { contentOffset } = e.nativeEvent;
 		const { horizontal } = this.props;
@@ -151,7 +158,7 @@ class ImageScrollViewSlider extends Component {
 	};
 
 	onScrollEnd = e => {
-		console.log('EVENT-onScrollEnd');
+		console.log('3.) EVENT-onScrollEnd');
 		this.internals.isScrolling = false;
 
 		if (!e.nativeEvent.contentOffset) {
@@ -167,6 +174,8 @@ class ImageScrollViewSlider extends Component {
 			}
 		}
 
+		console.log(`nativeEvent.contentOffset is:`, e.nativeEvent.contentOffset);
+
 		this.updateIndex(e.nativeEvent.contentOffset, this.state.dir, () => {
 			this.props.onMomentumScrollEnd &&
 				this.props.onMomentumScrollEnd(e, this.fullState(), this);
@@ -174,6 +183,7 @@ class ImageScrollViewSlider extends Component {
 	};
 
 	updateIndex = (offset, dir, cb) => {
+		console.log('4.) onUpdateIndex');
 		const state = this.state;
 		const callback = async () => {
 			cb();
@@ -212,13 +222,21 @@ class ImageScrollViewSlider extends Component {
 		}
 		const diff = offset[dir] - this.internals.offset[dir];
 		const step = dir === 'x' ? state.width : state.height;
-
-		if (!diff) return;
+		console.log(`this.internals.offset is..`, this.internals.offset);
+		console.log(`new offset is..`, offset);
+		console.log(`dir is ${dir}`);
+		console.log(`diff is ${diff}`);
+		console.log(`step is ${step}`);
+		if (!diff) {
+			console.log('no differencing, short circuiting');
+			return;
+		}
 
 		index = parseInt(index + Math.round(diff / step));
 
 		const newState = {};
 		newState.index = index;
+		console.log(`new index is ${index}`);
 
 		this.internals.offset = offset;
 
@@ -244,6 +262,7 @@ class ImageScrollViewSlider extends Component {
 
 		this.internals.isScrolling = true;
 
+		console.log(diff);
 		if (!animated || Platform.OS !== 'ios') {
 			setImmediate(() => {
 				this.onScrollEnd({
@@ -279,6 +298,7 @@ class ImageScrollViewSlider extends Component {
 
 		this.internals.isScrolling = true;
 
+		console.log(diff);
 		if (!animated || Platform.OS !== 'ios') {
 			setImmediate(() => {
 				this.onScrollEnd({
