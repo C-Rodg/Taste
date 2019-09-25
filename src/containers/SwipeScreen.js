@@ -319,7 +319,7 @@ class SwipeScreen extends Component {
 		// eventually should refactor to get exact view heights
 		const { cardIsOpen } = this.state;
 		const screenHeight = Dimensions.get('screen').height;
-		const paddingBottom = cardIsOpen ? 1.3 * screenHeight : 0.7 * screenHeight;
+		const paddingBottom = cardIsOpen ? screenHeight : 300;
 		return {
 			paddingBottom,
 		};
