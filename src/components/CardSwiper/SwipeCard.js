@@ -91,17 +91,14 @@ class SwipeCard extends Component {
 			<Animated.View
 				style={[this.getSwipeCardStyles(), { minHeight: this.state.animation }]}
 			>
-				<TouchableOpacity
-					style={styles.card}
-					activeOpacity={1}
-					onPress={onToggleCardOpen}
-				>
+				<View style={styles.card}>
 					<SliderCarousel
 						images={imageURIs}
 						dotColor={COLORS.pink}
 						showDots={cardIsOpen}
 					/>
-					<View>
+
+					<TouchableOpacity onPress={onToggleCardOpen} activeOpacity={1}>
 						<View onLayout={this.onTopCardContentLayout}>
 							<StyledNameHeader>
 								{name}, {age}
@@ -120,8 +117,8 @@ class SwipeCard extends Component {
 							<InfoSection propName="lookingFor" value={lookingFor} />
 							<InfoSection propName="bio" value={bio} />
 						</View>
-					</View>
-				</TouchableOpacity>
+					</TouchableOpacity>
+				</View>
 			</Animated.View>
 		);
 	}

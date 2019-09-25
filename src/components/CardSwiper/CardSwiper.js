@@ -150,6 +150,7 @@ class CardSwiper extends Component {
 			onMoveShouldSetPanResponderCapture: (evt, gestureState) =>
 				Math.abs(gestureState.dx) > 5,
 			onPanResponderGrant: () => {
+				console.log('onPanResponderGrant');
 				this.state.pan.setOffset({
 					x: this.state.pan.x._value,
 					y: this.state.pan.y._value,
@@ -157,6 +158,7 @@ class CardSwiper extends Component {
 				this.state.pan.setValue({ x: 0, y: 0 });
 			},
 			onPanResponderMove: (e, gestureState) => {
+				console.log('onPanResponderMove');
 				if (!this.props.cardIsOpen) {
 					if (gestureState.dx > 20) {
 						if (this.props.onSwiping) {

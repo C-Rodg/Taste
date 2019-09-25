@@ -263,6 +263,7 @@ class SwipeScreen extends Component {
 
 	// Toggle Card being open
 	handleToggleCardOpen = () => {
+		console.log('toggling card opening');
 		const isCardOpening = !this.state.cardIsOpen;
 		isCardOpening
 			? this.setSwipersVisible(false)
