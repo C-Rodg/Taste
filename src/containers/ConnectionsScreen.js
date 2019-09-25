@@ -21,12 +21,12 @@ import { setConnectionsViewed } from '../redux/actions/connections';
 // Testing
 import { ImageSlider } from '../components/ImageSlider';
 const TEST_IMAGES = [
-	'https://source.unsplash.com/random/600x700?person',
-	'https://source.unsplash.com/random/600x700?dog',
-	'https://source.unsplash.com/random/600x700?cats',
-	'https://source.unsplash.com/random/600x700?houses',
-	'https://source.unsplash.com/random/600x700?tech',
-	'https://source.unsplash.com/random/600x700?nature',
+	'https://picsum.photos/id/1/600/600',
+	'https://picsum.photos/id/2/600/600',
+	'https://picsum.photos/id/3/600/600',
+	'https://picsum.photos/id/4/600/600',
+	'https://picsum.photos/id/5/600/600',
+	'https://picsum.photos/id/6/600/600',
 ];
 
 class ConnectionsScreen extends Component {

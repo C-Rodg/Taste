@@ -4,7 +4,6 @@ import { Text, Image, View, StyleSheet, Dimensions } from 'react-native';
 
 // Image slide element - TODO: add image loader
 const ImageSlide = props => {
-	console.log('IMAGE_SLIDE...' + props.uri);
 	return (
 		<View style={styles.slide}>
 			<Image

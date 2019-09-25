@@ -23,7 +23,7 @@ class ImageSlider extends Component {
 	render() {
 		return (
 			<View style={{ backgroundColor: 'red', flex: 1, minHeight: 300 }}>
-				<Slider loadMinimal loadMinimalSize={2} style={{}}>
+				<Slider loadMinimal loadMinimalSize={1} style={{}} horizontal={true}>
 					{this.props.imageList.map((item, idx) => {
 						return (
 							<ImageSlide
