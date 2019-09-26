@@ -95,7 +95,8 @@ class SwipeCard extends Component {
 					<SliderCarousel
 						images={imageURIs}
 						dotColor={COLORS.pink}
-						showDots={cardIsOpen}
+						isEnabled={cardIsOpen}
+						onImagePress={onToggleCardOpen}
 					/>
 
 					<TouchableOpacity onPress={onToggleCardOpen} activeOpacity={1}>

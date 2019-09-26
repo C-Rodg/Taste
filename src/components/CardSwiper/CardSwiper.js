@@ -147,18 +147,23 @@ class CardSwiper extends Component {
 	setPanresponder() {
 		this._panResponder = PanResponder.create({
 			onMoveShouldSetResponderCapture: () => true,
-			onMoveShouldSetPanResponderCapture: (evt, gestureState) =>
-				Math.abs(gestureState.dx) > 5,
+			onMoveShouldSetPanResponderCapture: (evt, gestureState) => {
+				if (this.props.cardIsOpen) {
+					// Allow it to go through capture -> bubble phase
+					return false;
+				}
+				return Math.abs(gestureState.dx) > 5;
+			},
+			// Gesture has started, start showing visual feedback
 			onPanResponderGrant: () => {
-				console.log('onPanResponderGrant');
 				this.state.pan.setOffset({
 					x: this.state.pan.x._value,
 					y: this.state.pan.y._value,
 				});
 				this.state.pan.setValue({ x: 0, y: 0 });
 			},
+			// The most recent move coordinates
 			onPanResponderMove: (e, gestureState) => {
-				console.log('onPanResponderMove');
 				if (!this.props.cardIsOpen) {
 					if (gestureState.dx > 20) {
 						if (this.props.onSwiping) {
@@ -183,7 +188,7 @@ class CardSwiper extends Component {
 					Animated.event([null, { dx: this.state.pan.x }])(e, gestureState);
 				}
 			},
-			// on RELEASE
+			// Gesture suceeded and all touches released
 			onPanResponderRelease: (e, { vx, vy }) => {
 				if (this.props.onSwiping) {
 					this.props.onSwiping(null);

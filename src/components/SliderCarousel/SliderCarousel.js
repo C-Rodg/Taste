@@ -1,6 +1,12 @@
 // Libraries
 import React, { Component } from 'react';
-import { View, Image, Dimensions, StyleSheet } from 'react-native';
+import {
+	View,
+	Image,
+	Dimensions,
+	StyleSheet,
+	TouchableWithoutFeedback,
+} from 'react-native';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 
 // Get initial screen width
@@ -21,14 +27,15 @@ class SliderCarousel extends Component {
 
 	_renderItem({ item, index }) {
 		return (
-			<Image
-				key={index}
-				style={{
-					width: width - 70,
-					flex: 1,
-				}}
-				source={{ uri: item }}
-			/>
+			<TouchableWithoutFeedback key={index} onPress={this.props.onImagePress}>
+				<Image
+					style={{
+						width: width - 70,
+						flex: 1,
+					}}
+					source={{ uri: item }}
+				/>
+			</TouchableWithoutFeedback>
 		);
 	}
 
@@ -78,7 +85,9 @@ class SliderCarousel extends Component {
 					itemWidth={this.props.parentWidth || width}
 					loop={this.props.loop}
 				/>
-				{this.props.images.length > 1 && this.props.showDots && this.pagination}
+				{this.props.images.length > 1 &&
+					this.props.isEnabled &&
+					this.pagination}
 			</View>
 		);
 	}

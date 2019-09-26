@@ -53,12 +53,10 @@ _:app:installDebug failed_
 
 SWIPE:
 
-- fix image swiper so it is able to listen to touches properly
-- delete ImageSwiper components...
+- test on real iOS device
+- test with Android (login, animations, etc)
 
-TEST:
-
-- test login, animations on android emulator and real iOS
+- next step: filters side menu
 
 OTHER:
 
@@ -68,7 +66,6 @@ Other minor bugs:
 
 - fix 3rd card blinking animation
 - 'like' / 'dislike' text needed?
-- calculate height of swipe card expanded
 
 ## Contributors
 
